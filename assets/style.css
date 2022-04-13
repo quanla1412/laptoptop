@@ -3,3 +3,29 @@
     --second-color: #f1f3ce;
     --third-color: #1e656d;
 }
+.container_swap{
+
+    width: 100%;
+    
+    }
+    
+    .div_left{
+    
+    width: 600px;
+    
+    float: left;
+    
+
+    
+    }
+    
+    .div_right{
+    
+    width: 50%;
+    
+    float: left;
+    
+
+    }
+    
+    </style>
