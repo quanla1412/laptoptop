@@ -3,6 +3,7 @@
     --second-color: #f1f3ce;
     --third-color: #1e656d;
     --gray-color: #E5E5E5;
+    --dark-color: rgb(33, 37, 41);
 }
 .container_swap{
 
@@ -29,3 +30,21 @@ float: left;
 
 }
     
+/* Custom button in nav */
+.btn-nav:hover {
+    background-color: var(--second-color);
+    color: var(--dark-color) !important; 
+}
+
+.btn-nav.active,
+.btn-nav:focus {
+    box-shadow: none;
+    background-color: var(--second-color);
+    color: var(--dark-color) !important; 
+}
+
+/* Find icon in header */
+.find-icon:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
