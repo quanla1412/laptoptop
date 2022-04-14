@@ -12,3 +12,45 @@
     <title>Laptoptop</title>
 </head>
 <body>
+    <div class="container-fluid mb-3">
+        <div class="row" style="background-color: var(--primary-color); height: 60px;"> 
+            <div class="container-xl">
+                <div class="row">                    
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="./assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;">
+                    </div>
+                    <div class="col-5 d-flex align-items-center">                        
+                        <div class="search-box position-relative w-100">
+                            <input type="text" class="form-control" placeholder="Tìm kiếm">
+                            <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
+                        </div>
+                    </div>
+                    <div class="header-user">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row " style="background-color: var(--third-color); height: 60px;"> 
+            <ul class="nav justify-content-center ">
+                <li class="nav-item d-flex align-items-center me-2">
+                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light active">Trang chủ</button>
+                </li>
+                <li class="nav-item d-flex align-items-center me-2">
+                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Giới thiệu</button>
+                </li>
+                <li class="nav-item d-flex align-items-center me-2">
+                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Liên hệ</button>
+                </li>
+                <li class="nav-item d-flex align-items-center me-2">
+                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Bảo hành</button>
+                </li>
+                <li class="nav-item d-flex align-items-center me-2">
+                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Sản phẩm</button>
+                </li>
+                <li class="nav-item d-flex align-items-center me-2">
+                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Khuyến mãi</button>
+                </li>
+            </ul>
+        </div>
+    </div>
