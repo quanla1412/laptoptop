@@ -16,16 +16,16 @@
         <div class="row" style="background-color: var(--primary-color); height: 60px;"> 
             <div class="container-xl">
                 <div class="row">                    
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-4 d-flex justify-content-center">
                         <img src="./assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;">
                     </div>
-                    <div class="col-5 d-flex align-items-center">                        
+                    <div class="col-4 d-flex align-items-center">                        
                         <div class="search-box position-relative w-100">
                             <input type="text" class="form-control" placeholder="Tìm kiếm">
                             <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
                         </div>
                     </div>
-                    <div class="header-user">
+                    <div class="col-4 header-user">
                         ...
                     </div>
                 </div>
