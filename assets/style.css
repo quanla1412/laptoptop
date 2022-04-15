@@ -48,3 +48,21 @@ float: left;
     cursor: pointer;
     opacity: 0.7;
 }
+
+
+/* Custom header menu */
+.header-menu {
+    background-color: var(--gray-color);
+}
+
+/* Custom button in header menu */
+.btn-header-menu {
+    background-color: white;
+    color: var(--dark-color);
+}
+
+.btn-header-menu:hover,
+.btn-header-menu.active {    
+    background-color: var(--third-color);
+    color: whitesmoke;
+}
