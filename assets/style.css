@@ -15,7 +15,6 @@
     width: 600px;
     
     float: left;
-    
 
     
     }
@@ -28,4 +27,9 @@
     
 
     }
+button:hover
+{
+    color: #fff;
+    background-color:black;
+}
     
