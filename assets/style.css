@@ -127,3 +127,37 @@ float: left;
     background-color: var(--dark-color);
     color: whitesmoke;
 }
+
+/* Custom hover list dropdown at header-user */
+.account-user:hover {
+    cursor: pointer;
+}
+.account-user:hover .header-dropdown{
+    cursor: pointer;
+    display: block !important;
+}
+
+.header-user .list-group-item:hover {
+    cursor: pointer;
+    background-color: var(--gray-color);
+}
+
+/* Custom button inc or dec quantity of product */
+.btn-quantity:hover {
+    user-select: none;
+    cursor: pointer;
+    background-color: rgb(200, 200, 200) !important;
+}
+
+/* Custom button add cart in product */
+.btn-add-cart {    
+    user-select: none;
+    background-color: var(--third-color);
+    color: whitesmoke;
+}
+
+.btn-add-cart:hover,
+.btn-add-cart.active {
+    background-color: var(--second-color);
+    color: var(--dark-color);
+}

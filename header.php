@@ -39,15 +39,24 @@
 
                         
                         <!-- Dang nhap user -->
-                        <div class="account-user me-3">
+                        <div class="account-user me-3 position-relative">
                             <i class="fa-solid fa-user"></i>
                             <span>User</span>  
                             <i class="fa-solid fa-caret-down"></i>
+                            <div class="position-absolute pt-2 d-none header-dropdown" style="width: 200px; z-index:2; ">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Tài khoản của tôi</li>
+                                    <li class="list-group-item">Lịch sử đơn hàng</li>
+                                    <li class="list-group-item">Đăng xuất</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="btn btn-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Giỏ hàng</span>   
-                        </div>
+                        <a href="./giohang.php">
+                            <div class="btn btn-cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>Giỏ hàng</span>   
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
