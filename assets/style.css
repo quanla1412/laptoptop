@@ -7,10 +7,25 @@
 }
 .container_swap{
 
+    width: 100%;
+    
+    }
+    
+    .div_left{
+    
+    width: 600px;
+    
+    float: left;
 width: 100%;
 
 }
 
+    
+button:hover
+{
+    color: #fff;
+    background-color:black;
+}
 .div_left{
 
 width: 600px;
@@ -64,5 +79,29 @@ float: left;
 .btn-header-menu:hover,
 .btn-header-menu.active {    
     background-color: var(--third-color);
+    color: whitesmoke;
+}
+
+/* button giohang xoa */
+.btn-giohang-xoa {
+    background-color: white;
+    color: var(--dark-color);
+}
+
+.btn-giohang-xoa:hover,
+.btn-giohang-xoa.active {    
+    background-color: var(--dark-color);
+    color: whitesmoke;
+}
+
+/* button giohang dat hang */
+.btn-giohang-dathang {
+    background-color: var(--third-color);
+    color: whitesmoke;
+}
+
+.btn-giohang-dathang:hover,
+.btn-giohang-dathang.active {    
+    background-color: var(--dark-color);
     color: whitesmoke;
 }
