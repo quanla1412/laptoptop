@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-2">
                     <h6 class="mt-3 pt-1 mb-0" style="color: #1E656D">22.000.000</h6><br>
-                    <button type="button" class="btn btn-outline-dark border-0 ps-4 pe-4 pt-0 pb-0 bg-white"style="font-weight: bold">Xóa</button>
+                    <button type="button" class=" border-0 ps-4 pe-4 pt-0 pb-0 btn-giohang-xoa"style="font-weight: bold">Xóa</button>
                 </div>
             </div> 
             <div class="row  mt-1" style="background-color: #E5E5E5; height: 200px; border-radius: 20px;">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-2">
                     <h6 class="mt-3 pt-1 mb-0" style="color: #1E656D">22.000.000</h6><br>
-                    <button type="button" class="btn btn-outline-dark border-0 ps-4 pe-4 pt-0 pb-0 bg-white"style="font-weight: bold">Xóa</button>
+                    <button type="button" class=" border-0 ps-4 pe-4 pt-0 pb-0 btn-giohang-xoa"style="font-weight: bold">Xóa</button>
                 </div>
             </div>
             <div class="row  mt-1" style="background-color: #E5E5E5; height: 200px; border-radius: 20px;">
@@ -49,12 +49,12 @@
                 </div>
                 <div class="col-2">
                     <h6 class="mt-3 pt-1 mb-0" style="color: #1E656D">22.000.000</h6><br>
-                    <button type="button" class="btn btn-outline-dark border-0 ps-4 pe-4 pt-0 pb-0 bg-white"style="font-weight: bold">Xóa</button>
+                    <button type="button" class=" border-0 ps-4 pe-4 pt-0 pb-0 btn-giohang-xoa"style="font-weight: bold">Xóa</button>
                 </div>
             </div>
         </div>
         <div class="col-4" >
-            <div class="mt-0" style="background-color: #E5E5E5;height: 166px;border-radius: 20px;">
+            <div class="mt-0" style="background-color: #E5E5E5;height: 166px;style=">
                 <h5 class="pt-2 ps-3">Thông Tin Thanh Toán</h5>
                 <h6 class="mt-4 mb-2 ps-3">
                     <h6 class="ps-3" style="float: left;">Tạm tính</h6>
@@ -63,7 +63,7 @@
                     <h6 class="pe-3" style="text-align: right;color: #1E656D; font-size: 24px;">66.000.000 </h6>
                 </h6>
                 <div class="d-grid gap-2 mt-2">
-                    <button class="btn btn-outline-primary border-0 ms-3 me-3" type="button" style="background-color: #1E656D; color: white">Đặt Hàng</button>
+                    <button class="border-0 ms-3 me-3 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 20px;">Đặt Hàng</button>
                 </div>
             </div>
         </div>

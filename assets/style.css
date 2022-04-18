@@ -3,6 +3,7 @@
     --second-color: #f1f3ce;
     --third-color: #1e656d;
     --gray-color: #E5E5E5;
+    --dark-color: rgb(33, 37, 41);
 }
 .container_swap{
 
@@ -15,21 +16,92 @@
     width: 600px;
     
     float: left;
+width: 100%;
+
+}
 
     
-    }
-    
-    .div_right{
-    
-    width: 50%;
-    
-    float: left;
-    
-
-    }
 button:hover
 {
     color: #fff;
     background-color:black;
 }
+.div_left{
+
+width: 600px;
+
+float: left;
+
+
+
+}
+
+.div_right{
+
+width: 50%;
+
+float: left;
+
+
+}
     
+/* Custom button in nav */
+.btn-nav:hover {
+    background-color: var(--second-color);
+    color: var(--dark-color) !important; 
+}
+
+.btn-nav.active,
+.btn-nav:focus {
+    box-shadow: none;
+    background-color: var(--second-color);
+    color: var(--dark-color) !important; 
+}
+
+/* Find icon in header */
+.find-icon:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+/* Custom header menu */
+.header-menu {
+    background-color: var(--gray-color);
+}
+
+/* Custom button in header menu */
+.btn-header-menu {
+    background-color: white;
+    color: var(--dark-color);
+}
+
+.btn-header-menu:hover,
+.btn-header-menu.active {    
+    background-color: var(--third-color);
+    color: whitesmoke;
+}
+
+/* button giohang xoa */
+.btn-giohang-xoa {
+    background-color: white;
+    color: var(--dark-color);
+}
+
+.btn-giohang-xoa:hover,
+.btn-giohang-xoa.active {    
+    background-color: var(--dark-color);
+    color: whitesmoke;
+}
+
+/* button giohang dat hang */
+.btn-giohang-dathang {
+    background-color: var(--third-color);
+    color: whitesmoke;
+}
+
+.btn-giohang-dathang:hover,
+.btn-giohang-dathang.active {    
+    background-color: var(--dark-color);
+    color: whitesmoke;
+}
