@@ -17,7 +17,7 @@
             <div class="container-xl">
                 <div class="row">                    
                     <div class="col-4 d-flex justify-content-center">
-                        <img src="./assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;">
+                        <a href="./"><img src="./assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;"></a>
                     </div>
                     <div class="col-4 d-flex align-items-center">                        
                         <div class="search-box position-relative w-100">
@@ -25,8 +25,29 @@
                             <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
                         </div>
                     </div>
-                    <div class="col-4 header-user">
-                        ...
+                    <div class="col-4 header-user d-flex align-items-center justify-content-center position-relative">
+                        <!-- Chua dang nhap -->
+                        <!-- <div class="account me-3">                                                        
+                            <a href="./login.php">Đăng nhập</a>
+                            <span class="text-light">/</span>
+                            <a href="./register.php">Đăng ký</a>
+                        </div>
+                        <div class="btn btn-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Giỏ hàng</span>   
+                        </div> -->
+
+                        
+                        <!-- Dang nhap user -->
+                        <div class="account-user me-3">
+                            <i class="fa-solid fa-user"></i>
+                            <span>User</span>  
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div class="btn btn-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Giỏ hàng</span>   
+                        </div>
                     </div>
                 </div>
             </div>

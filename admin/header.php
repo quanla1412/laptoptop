@@ -16,7 +16,7 @@
         <div class="container-xl">
             <div class="row">                    
                 <div class="col-4 d-flex justify-content-center">
-                    <img src="../assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;">
+                    <a href="../"> <img src="../assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;"></a>
                 </div>
                 <div class="col d-flex align-items-center">
                     <p class="h3 text-light">ADMIN</p>

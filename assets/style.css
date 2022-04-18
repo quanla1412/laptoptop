@@ -70,6 +70,28 @@ float: left;
     background-color: var(--gray-color);
 }
 
+.header-user .account a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.header-user .account a:hover {
+    color: var(--second-color);
+}
+
+.btn-cart {
+    background-color: none;
+    color: whitesmoke;
+}
+
+.btn-cart:hover {
+    background-color: var(--second-color);
+}
+
+.account-user {
+    color: whitesmoke;
+}
+
 /* Custom button in header menu */
 .btn-header-menu {
     background-color: white;
