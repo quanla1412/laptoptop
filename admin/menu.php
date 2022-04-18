@@ -1,4 +1,4 @@
-<div class="header-menu p-3 d-flex flex-column justify-content-center">
+<div class="rounded header-menu p-3 d-flex flex-column justify-content-center">
     <div class="btn w-80 btn-header-menu mb-3">
         Quản lý sản phẩm
     </div>
