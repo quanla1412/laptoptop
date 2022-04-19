@@ -39,11 +39,11 @@
 
                         
                         <!-- Dang nhap user -->
-                        <div class="account-user me-3 position-relative">
+                        <!-- <div class="account-user me-3 position-relative">
                             <i class="fa-solid fa-user"></i>
                             <span>User</span>  
                             <i class="fa-solid fa-caret-down"></i>
-                            <div class="position-absolute pt-2 d-none header-dropdown" style="width: 200px; z-index:2; ">
+                            <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Tài khoản của tôi</li>
                                     <li class="list-group-item">Lịch sử đơn hàng</li>
@@ -55,6 +55,24 @@
                             <div class="btn btn-cart">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span>Giỏ hàng</span>   
+                            </div>
+                        </a> -->
+
+                         <!-- Dang nhap admin -->
+                        <div class="account-user me-3 position-relative">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Admin</span>  
+                            <i class="fa-solid fa-caret-down"></i>
+                            <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Đăng xuất</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="./giohang.php">
+                            <div class="btn btn-cart">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Cài đặt</span>   
                             </div>
                         </a>
                     </div>
