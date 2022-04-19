@@ -161,3 +161,16 @@ float: left;
     background-color: var(--second-color);
     color: var(--dark-color);
 }
+
+/* Custom button filter in coleections */
+.btn-filter {    
+    background-color: whitesmoke;
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+}
+
+.btn-filter:hover,
+.btn-filter.active {
+    background-color: var(--third-color);
+    color: whitesmoke;
+}

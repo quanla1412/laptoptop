@@ -10,10 +10,10 @@
             </div>
             <div class="row">
                 <div class="container-fluid p-3" style="background-color: var(--gray-color)">
-                    <div class="row">
+                    <div class="row mb-3">
                         <p class="h5">Cấu hình chi tiết</p>
                     </div>
-                    <div class="row">
+                    <div class="row mb-2">
                         <div class="col-6">
                             <div class="row">
                                 <p class="h6">Vi xử lý(CPU)</p>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-2">
                         <div class="col-6">
                             <div class="row">
                                 <p class="h6">Ổ cứng</p>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <p class="h5">Bảo hành</p>
                         <p>Bảo hành 24 tháng tại của hàng mua tính từ ngày mua</p>
                     </div>
