@@ -55,17 +55,17 @@
                     </div>
                     <div class="row mb-3">
                         <p class="h5">Bảo hành</p>
-                        <p>Bảo hành 24 tháng tại của hàng mua tính từ ngày mua</p>
+                        <p class="h6">Bảo hành 24 tháng tại của hàng mua tính từ ngày mua</p>
                     </div>
                     <div class="row">
                         <p class="h5">Mô tả sản phẩm</p>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/F4WWdLTfGFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="600" height="500" src="https://www.youtube.com/embed/F4WWdLTfGFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-4">            
-            <div class="container-fluid p-3 sticky-top" style="background-color: var(--gray-color)">
+            <div class="container-fluid p-3 sticky-top ps-5" style="background-color: var(--gray-color)">
                 <h4>Acer Nitro 5</h4>
                 <p>AN520212022</p>
                 <p class="h5">Thông tin máy</p>
@@ -81,14 +81,14 @@
                         Số lượng: 
                     </div>
                     <div class="col d-flex mb-3">
-                        <div class="btn-quantity d-flex align-items-center m-0 py-1 px-2" style="background-color: white; border-radius: 30px 0 0 30px; border-right: 1px solid var(--gray-color)">-</div>
-                        <div class="d-flex justify-content-center align-items-center m-0 p-1" style="background-color: white; width:36px; justify-content: center">1</div>
-                        <div class="btn-quantity d-flex align-items-center m-0 py-1 px-2" style="background-color: white; border-radius:  0 50px 50px 0; border-left: 1px solid var(--gray-color)">+</div>
+                        <div class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius: 30px 0 0 30px; border-right: 1px solid var(--gray-color)">-</div>
+                        <div class="d-flex justify-content-center align-items-center m-0 p-1 mt-3" style="background-color: white; width:36px; height:25px; justify-content: center">1</div>
+                        <div class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius:  0 50px 50px 0; border-left: 1px solid var(--gray-color)">+</div>
                     </div>
                 </div>
                 <p class="h5 text-decoration-line-through">25.000.000 đ</p>
                 <p class="h3 mb-3" style="color: var(--third-color)">22.000.000 đ</p>
-                <div class="btn btn-add-cart w-100">Thêm vào giỏ hàng</div>
+                <button class="border border-dark border-2 pt-2 pb-2 ps-5 pe-5 btn-giohang-dathang border border-dark border-2" style="border-radius: 5px;">Thêm vào Giỏ Hàng</button>
             </div>
         </div>
     </div>

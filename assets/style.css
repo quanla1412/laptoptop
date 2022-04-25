@@ -243,3 +243,15 @@ float: left;
 .btn-themsp:hover {
     opacity: 0.9;
 }
+
+.btn-lsdonhang:hover {
+    background-color: var(--third-color);
+    color: white; 
+}
+
+.btn-lsdonhang.active,
+.btn-lsdonhang:focus {
+    box-shadow: none;
+    background-color: var(--third-color);
+    color: white; 
+}
