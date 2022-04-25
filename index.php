@@ -43,10 +43,10 @@
             <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Loại sản phẩm</div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="d-none col-lg-3 d-lg-block">
                         <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100">
                     </div>
-                    <div class="col-9">
+                    <div class="col-md-12 col-lg-9">
                         <div class="row">
                             <div class="col-3">
                                 <div class="card" style="width: 100%;">
@@ -112,10 +112,10 @@
             <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Loại sản phẩm</div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="d-none col-lg-3 d-lg-block">
                         <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100">
                     </div>
-                    <div class="col-9">
+                    <div class="col-md-12 col-lg-9">
                         <div class="row">
                             <div class="col-3">
                                 <div class="card" style="width: 100%;">
