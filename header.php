@@ -85,7 +85,7 @@
                     <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light active">Trang chủ</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Giới thiệu</button></a>
+                    <a href="./gioithieu.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Giới thiệu</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./lienhe.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Liên hệ</button></a>
