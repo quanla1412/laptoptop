@@ -1,7 +1,12 @@
 <?php include "./header.php" ?>
 
 <div class="container-fluid px-4">
-    <div class="row mb-2">
+    <div class="row rounded mb-3">
+        <div class="qldh-nav col-4 border border-1 p-2 d-flex justify-content-center fw-bold active">Chưa thanh toán</div>
+        <div class="qldh-nav col-4 border border-1 p-2 d-flex justify-content-center fw-bold">Đang xử lý</div>
+        <div class="qldh-nav col-4 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hoàn thành</div>
+    </div>
+    <div class="row ">
         <div class="col-6">
             <span class="h6 me-2">Bộ lọc:</span>
             <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập tên sản phẩm hoặc mã sản phẩm">
@@ -20,99 +25,90 @@
                 <div class="btn-qldh-timkiem w-100">Tìm kiếm</div>
         </div>
     </div>
-    <div class="d-flex mb-3">
-        <div class="btn-suasp me-2">Nhập hàng</div>
-        <div class="btn-themsp">Thêm sản phẩm</div>
-    </div>
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">Tên sản phẩm</th>
-            <th scope="col">Mã sản phẩm</th>
-            <th scope="col">Giá</th>
+            <th scope="col">Mã đơn hàng</th>
+            <th scope="col">Sản phẩm</th>
             <th scope="col">Cơ sở</th>
             <th scope="col">Số lượng</th>
-            <th scope="col">Tổng số lượng</th>
-            <th scope="col">Tình trạng</th>
+            <th scope="col">Giá</th>
+            <th scope="col">Tổng tiền</th>
+            <th scope="col">Trạng thái</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row" rowspan="3" class="align-middle">Acer Nitro 5</th>
-                <td rowspan="3" class="align-middle">AN520212022</td>
-                <td rowspan="3" class="align-middle">22.000.000 VND</td>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
                 <td>CSC</td>
                 <td>1</td>
-                <td rowspan="3" class="align-middle text-center">11</td>
-                <td class="text-success">Còn hàng</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
             </tr>
             <tr>
-                <td>CS1</td>
-                <td>1</td>
-                <td class="text-danger">Hết hàng</td>
-            </tr>
-            <tr>
-                <td>CS2</td>
-                <td>1</td>
-                <td class="text-sucess">Còn hàng</td>
-            </tr>
-            
-            <tr>
-                <th scope="row" rowspan="3" class="align-middle">Acer Nitro 5</th>
-                <td rowspan="3" class="align-middle">AN520212022</td>
-                <td rowspan="3" class="align-middle">22.000.000 VND</td>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
                 <td>CSC</td>
                 <td>1</td>
-                <td rowspan="3" class="align-middle text-center">11</td>
-                <td class="text-success">Còn hàng</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
             </tr>
             <tr>
-                <td>CS1</td>
-                <td>1</td>
-                <td class="text-danger">Hết hàng</td>
-            </tr>
-            <tr>
-                <td>CS2</td>
-                <td>1</td>
-                <td class="text-sucess">Còn hàng</td>
-            </tr>
-            <tr>
-                <th scope="row" rowspan="3" class="align-middle">Acer Nitro 5</th>
-                <td rowspan="3" class="align-middle">AN520212022</td>
-                <td rowspan="3" class="align-middle">22.000.000 VND</td>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
                 <td>CSC</td>
                 <td>1</td>
-                <td rowspan="3" class="align-middle text-center">11</td>
-                <td class="text-success">Còn hàng</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
             </tr>
             <tr>
-                <td>CS1</td>
-                <td>1</td>
-                <td class="text-danger">Hết hàng</td>
-            </tr>
-            <tr>
-                <td>CS2</td>
-                <td>1</td>
-                <td class="text-sucess">Còn hàng</td>
-            </tr>
-            <tr>
-                <th scope="row" rowspan="3" class="align-middle">Acer Nitro 5</th>
-                <td rowspan="3" class="align-middle">AN520212022</td>
-                <td rowspan="3" class="align-middle">22.000.000 VND</td>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
                 <td>CSC</td>
                 <td>1</td>
-                <td rowspan="3" class="align-middle text-center">11</td>
-                <td class="text-success">Còn hàng</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
             </tr>
             <tr>
-                <td>CS1</td>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
+                <td>CSC</td>
                 <td>1</td>
-                <td class="text-danger">Hết hàng</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
             </tr>
             <tr>
-                <td>CS2</td>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
+                <td>CSC</td>
                 <td>1</td>
-                <td class="text-sucess">Còn hàng</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
+            </tr>
+            <tr>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
+                <td>CSC</td>
+                <td>1</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
+            </tr>
+            <tr>
+                <th scope="row">20042022</th>
+                <td>AN520212022</td>
+                <td>CSC</td>
+                <td>1</td>
+                <td>22.000.000 VND</td>
+                <td>22.000.000 VND</td>
+                <td class="text-danger">Chưa thanh toán</td>
             </tr>
         </tbody>
     </table>    

@@ -12,15 +12,30 @@
     <title>Laptoptop</title>
 </head>
 <body>
-    <div class="container-fluid mb-3" style = "background-color: var(--primary-color); height: 60px;">
-        <div class="container-xl">
-            <div class="row">                    
-                <div class="col-4 d-flex justify-content-center">
-                    <a href="../"> <img src="../assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;"></a>
+    <div class="container-fluid p-0">
+        <div class="row w-100 mx-0">
+            <div class="col-2 d-flex flex-column px-0" style="height: 100vh; background-color: var(--primary-color)">
+                <img src="./../assets/image/logo/logo.jpg" alt="Logo" class="w-100 mb-5">
+                <div class="menu-admin flex-grow-1 ">
+                    <a href="./"><div class="btn-admenu px-3 py-1 text-white active">Sản phẩm</div></a>
+                    <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white">Quản lý đơn hàng</div></a>
+                    <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white">Lịch sử đơn hàng</div></a>
+                    <a href="./taikhoanuser.php"><div class="btn-admenu px-3 py-1 text-white">Tài khoản người dùng</div></a>
+                    <a href="./taikhoanadmin.php"><div class="btn-admenu px-3 py-1 text-white">Tài khoản admin</div></a>
                 </div>
-                <div class="col d-flex align-items-center">
-                    <p class="h3 text-light">ADMIN</p>
-                </div>
+                <a href="./../" style="text-decoration: none;"><div class="btn-admenu px-3 py-1 text-white d-flex " style="margin-bottom: 100px">Trang chủ<i class="fa-solid fa-rotate-left ms-auto align-self-center" style="font-size: 16px"></i></div></a>
             </div>
-        </div>
-    </div>
+            <div class="col-10">            
+                <div class="row px-4 shadow mb-4" style="height: 100px;">
+                    <div class="d-flex align-items-center px-0">
+                        <h2 class="me-auto" style="color:var(--third-color)">Sản phẩm</h2>
+                        <div class="me-4">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Admin</span>
+                        </div>
+                        <div class="header-admin-logout" style="cursor: pointer">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <a href="./../">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>

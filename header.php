@@ -69,7 +69,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <a href="./giohang.php">
+                        <a href="./admin/">
                             <div class="btn btn-cart">
                                 <i class="fa-solid fa-gear"></i>
                                 <span>Cài đặt</span>   
@@ -82,22 +82,22 @@
         <div class="row " style="background-color: var(--third-color); height: 60px;"> 
             <ul class="nav justify-content-center ">
                 <li class="nav-item d-flex align-items-center me-2">
-                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light active">Trang chủ</button>
+                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light active">Trang chủ</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Giới thiệu</button>
+                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Giới thiệu</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Liên hệ</button>
+                    <a href="./lienhe.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Liên hệ</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Bảo hành</button>
+                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Bảo hành</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Sản phẩm</button>
+                    <a href="./collections.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Sản phẩm</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Khuyến mãi</button>
+                    <a href="./sale.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Khuyến mãi</button></a>
                 </li>
             </ul>
         </div>

@@ -169,3 +169,77 @@ float: left;
     background-color: var(--third-color);
     color: whitesmoke;
 }
+
+/* Custom menu in admin page */
+.menu-admin a{
+    text-decoration: none;
+}
+
+.btn-admenu.active,
+.btn-admenu:hover {
+    background-color: var(--third-color);
+    cursor: pointer;
+}
+
+/* Custom admin header logout */
+.header-admin-logout a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.header-admin-logout:hover,
+.header-admin-logout:hover a{
+    color: var(--third-color) !important;
+}
+
+/* Navbar cua quan ly don hang */
+.qldh-nav:hover,
+.qldh-nav.active {
+    cursor: pointer;
+    color: white;
+    background-color: var(--third-color);
+}
+
+/* Nut tim kiem cua quan ly don hang */
+.btn-qldh-timkiem {
+    background-color: var(--third-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+.btn-qldh-timkiem:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* Điều hướng phân trang admin */
+.page-item.active .page-link{
+    background-color: var(--third-color);
+    color: white !important;
+}
+
+/* Chinh sua account */
+.edit-admin-acc {
+    color: var(--third-color);
+}
+
+.edit-admin-acc:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Chinh sua sp */
+.btn-suasp,
+.btn-themsp {
+    color: white;
+    background-color: var(--third-color);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.btn-suasp:hover,
+.btn-themsp:hover {
+    opacity: 0.9;
+}
