@@ -256,3 +256,10 @@ float: left;
     background-color: var(--third-color);
     color: white; 
 }
+
+.menu-mobile-item:hover,
+.menu-mobile-item.active {
+    cursor: pointer;
+    border: none;
+    background-color: #dedede;
+}

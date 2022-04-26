@@ -13,19 +13,59 @@
 </head>
 <body>
     <div class="container-fluid mb-3">
-        <div class="row" style="background-color: var(--primary-color); height: 60px;"> 
+        <div class="row" style="background-color: var(--primary-color);"> 
             <div class="container-xl">
                 <div class="row">                    
-                    <div class="col-4 d-flex justify-content-center">
-                        <a href="./"><img src="./assets/image/logo/logo.jpg" alt="logo" style=" height: 60px;"></a>
+                    <div class="col-12 col-md-4 d-md-flex justify-content-center">
+                        <div class="d-flex d-md-inline-block justify-content-center">
+                            <a href="./"><img src="./assets/image/logo/logo.jpg" alt="logo" style="height: 60px;"></a>
+                        </div>
+                        
+                        <div class="d-flex d-md-none justify-content-around mb-3">      
+                            <a class="d-flex d-md-none align-items-center text-white" data-bs-toggle="offcanvas" href="#menumobile" role="button" aria-controls="boloc" style="">
+                                <i class="fa-solid fa-bars"></i>
+                            </a>                  
+                            <div class="offcanvas offcanvas-start" tabindex="-1" id="menumobile" aria-labelledby="offcanvasExampleLabel" style="width: 320px;">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                                        <!-- <a href="./login.php" class="text-dark text-decoration-none">Đăng nhập</a> -->
+                                        <!-- <i class="fa-solid fa-user me-2"></i>User -->
+                                        <i class="fa-solid fa-user me-2"></i>Admin
+                                    </h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body px-0">
+                                    <div class="container-fluid px-0">
+                                        <ul class="menu-mobile list-group list-group-flush">
+                                            <li class="menu-mobile-item list-group-item active"><a href="./" class="text-dark text-decoration-none">Trang chủ</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./gioithieu.php" class="text-dark text-decoration-none">Giới thiệu</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./lienhe.php" class="text-dark text-decoration-none">Liên hệ</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./collections.php" class="text-dark text-decoration-none">Sản phẩm</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./baohanh.php" class="text-dark text-decoration-none">Bảo hành</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./sale.php" class="text-dark text-decoration-none">Khuyến mãi</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./admin/" class="text-dark text-decoration-none">Cài đặt</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./" class="text-dark text-decoration-none">Đăng xuất</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-box position-relative w-75">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                                <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
+                            </div>
+                            <div class="d-flex d-md-none align-items-center">
+                                <a href="./giohang.php" class="text-white text-decoration-none"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4 d-flex align-items-center">                        
+                    <div class="col-4 d-none d-md-flex align-items-center">                        
                         <div class="search-box position-relative w-100">
                             <input type="text" class="form-control" placeholder="Tìm kiếm">
                             <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
                         </div>
                     </div>
-                    <div class="col-4 header-user d-flex align-items-center justify-content-center position-relative">
+                    <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
                         <!-- Chua dang nhap -->
                         <!-- <div class="account me-3">                                                        
                             <a href="./login.php">Đăng nhập</a>
@@ -79,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <div class="row " style="background-color: var(--third-color); height: 60px;"> 
+        <div class="row d-none d-md-flex" style="background-color: var(--third-color); height: 60px;"> 
             <ul class="nav justify-content-center ">
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light active">Trang chủ</button></a>
