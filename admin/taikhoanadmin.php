@@ -4,7 +4,7 @@
     <div class="row mb-3">
         <div class="col-10">
             <span class="h6 me-2">Bộ lọc:</span>
-            <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập tên sản phẩm hoặc mã sản phẩm">
+            <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã admin hoặc tên đăng nhập">
         </div>
         <div class="col-2 d-flex align-items-center">
                 <div class="btn-qldh-timkiem w-100">Tìm kiếm</div>

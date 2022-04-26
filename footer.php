@@ -5,7 +5,7 @@
     <!-- Grid row -->
     <div class="row mt-3">
       <!-- Grid column -->
-      <div class="col-4 border-2 mt-5 pb-5">
+      <div class="col-12 col-md-4 border-2 mt-5 pb-5">
         <!-- Links -->
         <h6 class="text-uppercase fw-bold mb-4">
         Hệ thống cửa hàng
@@ -29,7 +29,7 @@
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-4 border-2 mt-5 pb-5">
+      <div class="col-12 col-md-4  border-2 mt-5 pb-5">
         <!-- Links -->
         <h6 class="text-uppercase fw-bold mb-4">
         Thông tin liên hệ
@@ -62,7 +62,7 @@
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-4 border-2 mt-5 pb-5">
+      <div class="d-none d-md-block col-4 border-2 mt-5 pb-5">
           <h6 class="text-uppercase fw-bold mb-4">
             Kết nối với chúng tôi
           </h6>

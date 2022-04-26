@@ -2,24 +2,15 @@
 
 <div class="container-fluid px-4">
     <div class="row rounded mb-3">
-        <div class="qldh-nav col-4 border border-1 p-2 d-flex justify-content-center fw-bold active">Chưa thanh toán</div>
-        <div class="qldh-nav col-4 border border-1 p-2 d-flex justify-content-center fw-bold">Đang xử lý</div>
-        <div class="qldh-nav col-4 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hoàn thành</div>
+        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold active">Chưa thanh toán</div>
+        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đang xử lý</div>
+        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hoàn thành</div>
+        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hủy</div>
     </div>
     <div class="row ">
         <div class="col-6">
             <span class="h6 me-2">Bộ lọc:</span>
-            <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập tên sản phẩm hoặc mã sản phẩm">
-        </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="col-4 d-flex align-items-center"><p class="h6">Khoảng giá: </p></div>
-                <div class="col-8">
-                    <input type="text" class="form-control d-inline-block" placeholder="Từ" style="width: 80px; ">
-                    <p class="d-inline-block fw-bold mx-2" >~</p>
-                    <input type="text" class="form-control d-inline-block" placeholder="Đến" style="width: 80px; " >
-                </div>
-            </div>
+            <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã đơn hàng">
         </div>
         <div class="col-2 d-flex align-items-center">
                 <div class="btn-qldh-timkiem w-100">Tìm kiếm</div>

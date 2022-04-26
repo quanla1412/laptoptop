@@ -15,12 +15,6 @@ width: 100%;
 
 }
 
-    
-button:hover
-{
-    color: #fff;
-    background-color:black;
-}
 .div_left{
 
 width: 600px;
@@ -215,6 +209,10 @@ float: left;
 }
 
 /* Điều hướng phân trang admin */
+.page-link {
+    color: var(--dark-color) !important;
+}
+
 .page-item.active .page-link{
     background-color: var(--third-color);
     color: white !important;
@@ -231,6 +229,7 @@ float: left;
 }
 
 /* Chinh sua sp */
+.btn-admin,
 .btn-suasp,
 .btn-themsp {
     color: white;
@@ -239,9 +238,11 @@ float: left;
     cursor: pointer;
 }
 
+.btn-admin:hover,
 .btn-suasp:hover,
 .btn-themsp:hover {
-    opacity: 0.9;
+    opacity: 0.8;
+    color: white;
 }
 
 .btn-lsdonhang:hover {
