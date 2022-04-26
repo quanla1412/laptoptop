@@ -46,9 +46,9 @@
                     <div class="d-none col-lg-3 d-lg-block">
                         <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100">
                     </div>
-                    <div class="col-md-12 col-lg-9">
+                    <div class="col-12 col-lg-9">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -58,7 +58,7 @@
                                     </div>    
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -68,7 +68,7 @@
                                     </div>    
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="d-none d-md-block col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -78,7 +78,7 @@
                                     </div>    
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="d-none d-md-block col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -88,12 +88,9 @@
                                     </div>    
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="row mt-3 mx-1">
-                            <div class="nav col">                                
-                                <button type="button" class="btn btn-outline-secondary me-2"><i class="fa-solid fa-angles-left"></i></button>
-                                <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-angles-right"></i></button>
-                            </div>
                             <div class="nav-more col pe-0">
                                 <button type="button" class="btn btn-outline-secondary float-end" >Xem thêm</i></button>
                             </div>
@@ -115,9 +112,9 @@
                     <div class="d-none col-lg-3 d-lg-block">
                         <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100">
                     </div>
-                    <div class="col-md-12 col-lg-9">
+                    <div class="col-12 col-lg-9">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -127,7 +124,7 @@
                                     </div>    
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -137,7 +134,7 @@
                                     </div>    
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="d-none d-md-block col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -147,7 +144,7 @@
                                     </div>    
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="d-none d-md-block col-6 col-md-3">
                                 <div class="card" style="width: 100%;">
                                     <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -157,12 +154,9 @@
                                     </div>    
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="row mt-3 mx-1">
-                            <div class="nav col">                                
-                                <button type="button" class="btn btn-outline-secondary me-2"><i class="fa-solid fa-angles-left"></i></button>
-                                <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-angles-right"></i></button>
-                            </div>
                             <div class="nav-more col pe-0">
                                 <button type="button" class="btn btn-outline-secondary float-end" >Xem thêm</i></button>
                             </div>

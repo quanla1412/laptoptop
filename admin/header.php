@@ -14,18 +14,19 @@
 <body>
     <div class="container-fluid p-0">
         <div class="row w-100 mx-0">
-            <div class="col-2 d-flex flex-column px-0" style="height: 100vh; background-color: var(--primary-color)">
+            <div class="col-2 d-flex flex-column px-0 fixed-top" style="height: 100vh; background-color: var(--primary-color)">
                 <img src="./../assets/image/logo/logo.jpg" alt="Logo" class="w-100 mb-5">
                 <div class="menu-admin flex-grow-1 ">
                     <a href="./"><div class="btn-admenu px-3 py-1 text-white active">Sản phẩm</div></a>
                     <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white">Quản lý đơn hàng</div></a>
                     <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white">Lịch sử đơn hàng</div></a>
+                    <a href="./doanhthu.php"><div class="btn-admenu px-3 py-1 text-white">Doanh thu</div></a>
                     <a href="./taikhoanuser.php"><div class="btn-admenu px-3 py-1 text-white">Tài khoản người dùng</div></a>
                     <a href="./taikhoanadmin.php"><div class="btn-admenu px-3 py-1 text-white">Tài khoản admin</div></a>
                 </div>
                 <a href="./../" style="text-decoration: none;"><div class="btn-admenu px-3 py-1 text-white d-flex " style="margin-bottom: 100px">Trang chủ<i class="fa-solid fa-rotate-left ms-auto align-self-center" style="font-size: 16px"></i></div></a>
             </div>
-            <div class="col-10">            
+            <div class="col-10 offset-2">            
                 <div class="row px-4 shadow mb-4" style="height: 100px;">
                     <div class="d-flex align-items-center px-0">
                         <h2 class="me-auto" style="color:var(--third-color)">Sản phẩm</h2>

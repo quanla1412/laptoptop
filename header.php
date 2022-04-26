@@ -91,7 +91,7 @@
                     <a href="./lienhe.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Liên hệ</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Bảo hành</button></a>
+                    <a href="./baohanh.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Bảo hành</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./collections.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Sản phẩm</button></a>
