@@ -7,50 +7,53 @@
   </div>
   <div class="row mt-0">
         <div class="col-8">
-            <div class="row  " style="background-color: #E5E5E5; height: 200px; border-radius: 20px;">
-                <div class="col-3"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 mt-3 ms-2"></div>
-                <div class="col-5 mt-3">
-                    <h4 class="mb-0">Acer Nitro 5</h4><br>
-                    <h6 class="mb-0">Mã máy</h6><br>
-                    <h5 class="mb-0">Cấu hình máy</h5>
-                </div>
-                <div class="col-2">
-                <div class="input_qty_pr mt-3"><input class="variantID" type="hidden" name="variantId" value="63233014"><button class="border rounded" onclick="var result = document.getElementById('qtyItem63233014'); var qtyItem63233014 = result.value; if( !isNaN( qtyItem63233014 ) &amp;&amp; qtyItem63233014 > 1 ) result.value--;return false;" class="reduced_pop items-count btn-minus" type="button">–</button><input class="border rounded" style="text-align: center;" type="text" maxlength="12" min="1" max= "10" class="input-text number-sidebar input_pop input_pop qtyItem63233014" id="qtyItem63233014" name="Lines" size="1" value="1"><button class="border rounded" onclick="var result = document.getElementById('qtyItem63233014'); var qtyItem63233014 = result.value; if( !isNaN( qtyItem63233014 )) result.value++;return false;" class="increase_pop items-count btn-plus" type="button">+</button></div>
-                </div>
-                <div class="col-2">
-                    <h6 class="mt-3 pt-1 mb-0" style="color: #1E656D">22.000.000</h6><br>
-                    <button type="button" class=" border-0 ps-4 pe-4 pt-0 pb-0 btn-giohang-xoa"style="font-weight: bold">Xóa</button>
-                </div>
-            </div> 
-            <div class="row  mt-1" style="background-color: #E5E5E5; height: 200px; border-radius: 20px;">
-            <div class="col-3"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 mt-3 ms-2"></div>
-            <div class="col-5 mt-3">
-                    <h4 class="mb-0">Acer Nitro 5</h4><br>
-                    <h6 class="mb-0">Mã máy</h6><br>
-                    <h5 class="mb-0">Cấu hình máy</h5>
-                </div>
-                <div class="col-2">
-                <div class="input_qty_pr mt-3"><input class="variantID" type="hidden" name="variantId" value="63233014"><button class="border rounded" onclick="var result = document.getElementById('qtyItem63233014'); var qtyItem63233014 = result.value; if( !isNaN( qtyItem63233014 ) &amp;&amp; qtyItem63233014 > 1 ) result.value--;return false;" class="reduced_pop items-count btn-minus" type="button">–</button><input class="border rounded" style="text-align: center;" type="text" maxlength="12" min="1" max= "10" class="input-text number-sidebar input_pop input_pop qtyItem63233014" id="qtyItem63233014" name="Lines" size="1" value="1"><button class="border rounded" onclick="var result = document.getElementById('qtyItem63233014'); var qtyItem63233014 = result.value; if( !isNaN( qtyItem63233014 )) result.value++;return false;" class="increase_pop items-count btn-plus" type="button">+</button></div>
-                </div>
-                <div class="col-2">
-                    <h6 class="mt-3 pt-1 mb-0" style="color: #1E656D">22.000.000</h6><br>
-                    <button type="button" class=" border-0 ps-4 pe-4 pt-0 pb-0 btn-giohang-xoa"style="font-weight: bold">Xóa</button>
-                </div>
+        <div class="row  mt-1" style="background-color: #E5E5E5; border-radius: 20px;">
+            <div class="col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
+                    <div class="col-4 mt-2">
+                        <h4 class="mb-0">Acer Nitro 5</h4><br>
+                        <h6 class="mb-0">Mã máy</h6><br>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <h6 class="">Số lượng: 1</h6><br>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <h6 class="" style="color: #1E656D">22.000.000</h6><br>
+                    </div>
+                    <div class="col-1 d-flex justify-content-center align-items-center">
+                    <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
+                    </div>
             </div>
-            <div class="row  mt-1" style="background-color: #E5E5E5; height: 200px; border-radius: 20px;">
-            <div class="col-3"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 mt-3 ms-2"></div>
-            <div class="col-5 mt-3">
-                    <h4 class="mb-0">Acer Nitro 5</h4><br>
-                    <h6 class="mb-0">Mã máy</h6><br>
-                    <h5 class="mb-0">Cấu hình máy</h5>
-                </div>
-                <div class="col-2">
-                <div class="input_qty_pr mt-3"><input class="variantID" type="hidden" name="variantId" value="63233014"><button class="border rounded" onclick="var result = document.getElementById('qtyItem63233014'); var qtyItem63233014 = result.value; if( !isNaN( qtyItem63233014 ) &amp;&amp; qtyItem63233014 > 1 ) result.value--;return false;" class="reduced_pop items-count btn-minus" type="button">–</button><input class="border rounded" style="text-align: center;" type="text" maxlength="12" min="1" max= "10" class="input-text number-sidebar input_pop input_pop qtyItem63233014" id="qtyItem63233014" name="Lines" size="1" value="1"><button class="border rounded" onclick="var result = document.getElementById('qtyItem63233014'); var qtyItem63233014 = result.value; if( !isNaN( qtyItem63233014 )) result.value++;return false;" class="increase_pop items-count btn-plus" type="button">+</button></div>
-                </div>
-                <div class="col-2">
-                    <h6 class="mt-3 pt-1 mb-0" style="color: #1E656D">22.000.000</h6><br>
-                    <button type="button" class=" border-0 ps-4 pe-4 pt-0 pb-0 btn-giohang-xoa"style="font-weight: bold">Xóa</button>
-                </div>
+            <div class="row  mt-1" style="background-color: #E5E5E5; border-radius: 20px;">
+            <div class="col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
+                    <div class="col-4 mt-2">
+                        <h4 class="mb-0">Acer Nitro 5</h4><br>
+                        <h6 class="mb-0">Mã máy</h6><br>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <h6 class="">Số lượng: 1</h6><br>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <h6 class="" style="color: #1E656D">22.000.000</h6><br>
+                    </div>
+                    <div class="col-1 d-flex justify-content-center align-items-center">
+                    <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
+                    </div>
+            </div>
+            <div class="row  mt-1" style="background-color: #E5E5E5; border-radius: 20px;">
+            <div class="col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
+                    <div class="col-4 mt-2">
+                        <h4 class="mb-0">Acer Nitro 5</h4><br>
+                        <h6 class="mb-0">Mã máy</h6><br>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <h6 class="">Số lượng: 1</h6><br>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <h6 class="" style="color: #1E656D">22.000.000</h6><br>
+                    </div>
+                    <div class="col-1 d-flex justify-content-center align-items-center">
+                    <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
+                    </div>
             </div>
         </div>
         <div class="col-4" >
