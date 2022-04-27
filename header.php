@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/x-icon" href="./assets/image/logo/logo.jpg">
 
     <script src="https://kit.fontawesome.com/26a480acf4.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -108,12 +110,12 @@
                     </div>
                     <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
                         <!-- Chua dang nhap -->
-                        <!-- <div class="account me-3">                                                        
+                        <div class="account me-3">                                                        
                             <a href="./login.php">Đăng nhập</a>
                             <span class="text-light">/</span>
                             <a href="./register.php">Đăng ký</a>
                         </div>
-                        <div class="btn btn-cart">
+                        <!-- <div class="btn btn-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span>Giỏ hàng</span>   
                         </div> -->
@@ -126,8 +128,8 @@
                             <i class="fa-solid fa-caret-down"></i>
                             <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Tài khoản của tôi</li>
-                                    <li class="list-group-item">Lịch sử đơn hàng</li>
+                                    <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
+                                    <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
                                     <li class="list-group-item">Đăng xuất</li>
                                 </ul>
                             </div>
@@ -140,7 +142,7 @@
                         </a> -->
 
                          <!-- Dang nhap admin -->
-                        <div class="account-user me-3 position-relative">
+                        <!-- <div class="account-user me-3 position-relative">
                             <i class="fa-solid fa-user"></i>
                             <span>Admin</span>  
                             <i class="fa-solid fa-caret-down"></i>
@@ -155,7 +157,7 @@
                                 <i class="fa-solid fa-gear"></i>
                                 <span>Cài đặt</span>   
                             </div>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
