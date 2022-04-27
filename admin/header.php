@@ -20,19 +20,78 @@
             <div class="col-2 d-flex flex-column px-0 fixed-top" style="height: 100vh; background-color: var(--primary-color)">
                 <img src="./../assets/image/logo/logo.jpg" alt="Logo" class="w-100 mb-5">
                 <div class="menu-admin flex-grow-1 ">
-                    <a href="./"><div class="btn-admenu px-3 py-1 text-white active">Sản phẩm</div></a>
-                    <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white">Quản lý đơn hàng</div></a>
-                    <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white">Lịch sử đơn hàng</div></a>
-                    <a href="./doanhthu.php"><div class="btn-admenu px-3 py-1 text-white">Doanh thu</div></a>
-                    <a href="./taikhoanuser.php"><div class="btn-admenu px-3 py-1 text-white">Tài khoản người dùng</div></a>
-                    <a href="./taikhoanadmin.php"><div class="btn-admenu px-3 py-1 text-white">Tài khoản admin</div></a>
+                    <a href="./"><div class="btn-admenu px-3 py-1 text-white 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/admin/') {
+                            echo 'active';
+                        }
+                    ?>
+                    ">Sản phẩm</div></a>
+                    <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'quanlydonhang.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>                    
+                    ">Quản lý đơn hàng</div></a>
+                    <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'lichsudonhang.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?> 
+                    ">Lịch sử đơn hàng</div></a>
+                    <a href="./doanhthu.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'doanhthu.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>
+                    ">Doanh thu</div></a>
+                    <a href="./taikhoanuser.php"><div class="btn-admenu px-3 py-1 text-white                     
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'taikhoanuser.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>
+                    ">Tài khoản người dùng</div></a>
+                    <a href="./taikhoanadmin.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'taikhoanadmin.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>                    
+                    ">Tài khoản admin</div></a>
                 </div>
                 <a href="./../" style="text-decoration: none;"><div class="btn-admenu px-3 py-1 text-white d-flex " style="margin-bottom: 100px">Trang chủ<i class="fa-solid fa-rotate-left ms-auto align-self-center" style="font-size: 16px"></i></div></a>
             </div>
             <div class="col-10 offset-2">            
                 <div class="row px-4 shadow mb-4" style="height: 100px;">
                     <div class="d-flex align-items-center px-0">
-                        <h2 class="me-auto" style="color:var(--third-color)">Sản phẩm</h2>
+                        <h2 class="me-auto" style="color:var(--third-color)">
+                        <?php
+                            $cur = $_SERVER['REQUEST_URI'];
+                            if (strpos($cur,'doanhthu.php') !== FALSE) {
+                                echo 'Doanh Thu';
+                            } elseif (strpos($cur,'lichsudonhang.php') !== FALSE) {
+                                echo 'Lịch sử đơn hàng';
+                            } elseif (strpos($cur,'quanlydonhang.php') !== FALSE) {
+                                echo 'Quản lý đơn hàng';
+                            } elseif (strpos($cur,'taikhoanadmin.php') !== FALSE) {
+                                echo 'Tài khoản admin';
+                            } elseif (strpos($cur,'taikhoanuser.php') !== FALSE) {
+                                echo 'Tài khoản user';
+                            } else {
+                                echo 'Sản phẩm';
+                            }
+                        ?>
+                        </h2>
                         <div class="me-4">
                             <i class="fa-solid fa-user"></i>
                             <span>Admin</span>
