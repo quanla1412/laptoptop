@@ -156,6 +156,16 @@ function filter($maSP = '', $tenSP = '', $tenHang = '', $CPU = '', $RAM = '', $m
    return $danhSachMoi;
 }
 
+function laySanPham($maSP = '') {
+    global $tatCaSanPham;
+
+    foreach ($tatCaSanPham as $sanPham) {
+        if(strtolower($sanPham->getMaSP()) == strtolower($maSP)) return $sanPham;
+    }
+
+    return NULL;
+}
+
 function randomSanPham($danhSachSanPham, $number = 1) {
     $rands = range(0, count($danhSachSanPham)-1);
     shuffle($rands);
