@@ -88,7 +88,7 @@
                 </div>
                 <p class="h5 text-decoration-line-through">25.000.000 đ</p>
                 <p class="h3 mb-3" style="color: var(--third-color)">22.000.000 đ</p>
-                <button class="border border-dark border-2 pt-2 pb-2 ps-5 pe-5 btn-giohang-dathang border border-dark border-2" style="border-radius: 5px;">Thêm vào Giỏ Hàng</button>
+                <button class="pt-2 pb-2 ps-5 pe-5 btn btn-giohang-dathang rounded"><a href="./collections.php">Thêm vào giỏ hàng</a></button>
             </div>
         </div>
     </div>

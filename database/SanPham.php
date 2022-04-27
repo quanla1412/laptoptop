@@ -105,7 +105,7 @@ function loadData() {
     $password = "laptoptop";
     $dbname = "laptoptop";
 
-    $DanhSachSanPham = array();
+    $danhSachSanPham = array();
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
