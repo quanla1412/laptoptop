@@ -1,7 +1,7 @@
 <?php include "./header.php"?>
     <div class="slider container-xl" >
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" style="height:400px">
+            <div class="carousel-inner" style="max-height:400px">
                 <div class="carousel-item active">
                     <img src="./assets/image/slider/slider1.png" class="d-block w-100" alt="Slider1">
                 </div>
