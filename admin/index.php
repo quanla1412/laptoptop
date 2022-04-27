@@ -65,7 +65,7 @@
                                     <label for="cpu" class="form-label">CPU</label>
                                     <select id="cpu" class="form-select">
                                     <option selected>Core i3</option>
-                                    <option>>Core i5</option>
+                                    <option>Core i5</option>
                                     <option>Core i7</option>
                                     <option>Core i9</option>
                                     <option>Ryzen 3</option>
@@ -115,8 +115,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-admin">Lưu</button>
                         </div>
                     </form>
                 </div>
@@ -217,8 +217,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-admin">Lưu</button>
                         </div>
                     </form>
                 </div>
@@ -284,8 +284,8 @@
                             </div>
                         </div>                           
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-admin">Lưu</button>
                         </div>     
                     </form>
                 </div>

@@ -123,7 +123,27 @@
         </div>
     </div>
     <div class="row mb-3 gy-4">
-        <div class="col-6 col-md-4 col-lg-3">
+        <?php
+        $quantity = 12;
+        $danhSachSanPham = $tatCaSanPham;
+        
+        for($i=0; $i<$quantity; $i++) {
+            echo '
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card" style="width: 100%;">
+                    <img src="'.$danhSachSanPham[$i]->getAnh().'" class="card-img-top" alt="item1">
+                    <div class="card-body">
+                        <h5 class="card-title" style="height: 72px;">'.$danhSachSanPham[$i]->getTenSP().'</h5>
+                        <p class="card-text mb-0 text-decoration-line-through">'.$danhSachSanPham[$i]->xuLyGia().' đ</p>
+                        <p class="card-text fs-5">'.$danhSachSanPham[$i]->xuLyGiaKhuyenMai().' đ</p>
+                        <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
+                    </div>
+                </div>
+            </div>';
+        }
+
+        ?>
+        <!-- <div class="col-6 col-md-4 col-lg-3">
             <div class="card" style="width: 100%;">
                 <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
                 <div class="card-body">
@@ -133,84 +153,7 @@
                     <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
                 </div>
             </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card" style="width: 100%;">
-                <img src="./assets/image/product/item1.png" class="card-img-top" alt="item1">
-                <div class="card-body">
-                    <h5 class="card-title">Laptop Gaming Acer Aspire 7</h5>
-                    <p class="card-text mb-0 text-decoration-line-through">19,990,000₫</p>
-                    <p class="card-text fs-5">16,990,000₫</p>
-                    <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="d-flex justify-content-center mt-4">

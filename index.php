@@ -40,54 +40,33 @@
     <!-- Content 1 -->
     <div class="content1 container-xl mt-5">
         <div class="card text-center">
-            <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Loại sản phẩm</div>
+            <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Máy tính DELL</div>
             <div class="card-body">
                 <div class="row">
                     <div class="d-none col-lg-3 d-lg-block">
-                        <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100">
+                        <img src="./assets/image/logo/logo-dell.jpg" alt="itemsale1" class="w-100">
                     </div>
                     <div class="col-12 col-lg-9">
                         <div class="row">
-                            <div class="col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="d-none d-md-block col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="d-none d-md-block col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
+                            <?php
+                                $danhSachSanPham = randomSanPham(filter(tenHang: 'DELL'), 4);
+
+                                for($i=0; $i<4; $i++){
+                                    echo '
+                                    <div class="';
+                                    if($i >= 2) echo'd-none d-md-block ';
+                                    echo'col-6 col-md-3 d-flex align-items-stretch">
+                                        <div class="card" style="width: 100%;">
+                                            <img src="'.$danhSachSanPham[$i]->getAnh().'" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="height: 72px;">'.$danhSachSanPham[$i]->getTenSP().'</h5>
+                                                <p class="card-text">'.$danhSachSanPham[$i]->xuLyGia().' đ</p>
+                                                <a href="./product.php" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
+                                            </div>    
+                                        </div>
+                                    </div>';
+                                }
+                            ?>
                             
                         </div>
                         <div class="row mt-3 mx-1">
@@ -103,57 +82,36 @@
     </div>
 
     
-    <!-- Content 2 -->
+    <!-- Content 1 -->
     <div class="content1 container-xl mt-5">
         <div class="card text-center">
-            <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Loại sản phẩm</div>
+            <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Máy tính ASUS</div>
             <div class="card-body">
                 <div class="row">
                     <div class="d-none col-lg-3 d-lg-block">
-                        <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100">
+                        <img src="./assets/image/logo/logo-asus.jpg" alt="itemsale1" class="w-100">
                     </div>
                     <div class="col-12 col-lg-9">
                         <div class="row">
-                            <div class="col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="d-none d-md-block col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="d-none d-md-block col-6 col-md-3">
-                                <div class="card" style="width: 100%;">
-                                    <img src="./assets/image/square-sale/sale1.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Acer Nitro 5</h5>
-                                        <p class="card-text">23.125.000 VND</p>
-                                        <a href="#" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
-                                    </div>    
-                                </div>
-                            </div>
+                            <?php
+                                $danhSachSanPham = randomSanPham(filter(tenHang: 'ASUS'), 4);
+
+                                for($i=0; $i<4; $i++){
+                                    echo '
+                                    <div class="';
+                                    if($i >= 2) echo'd-none d-md-block ';
+                                    echo'col-6 col-md-3 d-flex align-items-stretch">
+                                        <div class="card" style="width: 100%;">
+                                            <img src="'.$danhSachSanPham[$i]->getAnh().'" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="height: 72px;">'.$danhSachSanPham[$i]->getTenSP().'</h5>
+                                                <p class="card-text">'.$danhSachSanPham[$i]->xuLyGia().' đ</p>
+                                                <a href="./product.php" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
+                                            </div>    
+                                        </div>
+                                    </div>';
+                                }
+                            ?>
                             
                         </div>
                         <div class="row mt-3 mx-1">
