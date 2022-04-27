@@ -19,14 +19,14 @@
                 </button>
             </a></div>
             <div class="" style=""><a href="">
-                <button class="border-0 btn-lienhe w-100 "style="text-align:left;" >Cơ Sở 1<br>
+                <button class="border-0 btn-lienhe w-100"style="text-align:left;" >Cơ Sở 1<br>
                 Địa chỉ : 105, Bà Huyện Thanh Quan, Q.3, Tp.Hồ Chí Minh<br>
                 Điện Thoại: 0327658521<br>
                 Email: tuanthanh15112002@gmail.com
                 </button>
             </a></div>
             <div class="" style=""><a href="">
-                <button class="border-0 btn-lienhe w-100 "style="text-align:left;">Cơ Sở 2<br>
+                <button class="border-0 btn-lienhe w-100"style="text-align:left;">Cơ Sở 2<br>
                 Địa chỉ : 1A, Nguyễn Hữu Cảnh, P.Bến Nghé, Q.1, Tp.Hồ Chí Minh<br>
                 Điện Thoại: 0327658521<br>
                 Email: tuanthanh15112002@gmail.com
