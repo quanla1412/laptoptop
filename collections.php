@@ -2,7 +2,7 @@
 
 <div class="container-xl">
     <div class="row mb-3">
-        <a class="btn btn-primary ms-2" data-bs-toggle="offcanvas" href="#boloc" role="button" aria-controls="boloc" style="width: 120px; background-color: var(--third-color);">
+        <a class="d-block d-lg-none btn btn-primary ms-2" data-bs-toggle="offcanvas" href="#boloc" role="button" aria-controls="boloc" style="width: 120px; background-color: var(--third-color);">
             Bộ lọc
         </a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="boloc" aria-labelledby="offcanvasExampleLabel" style="width: 320px;">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="row g-3 mb-4">
                         <div class="col-12 d-flex align-items-center"><p class="h6">Khoảng giá: </p></div>
-                        <div class="col-12 d-flex overflow-scroll ps-0 align-items-center">
+                        <div class="col-12 d-flex ps-0 align-items-center">
                             <input type="text" class="form-control d-inline-block" placeholder="Từ" style="width: 100px; ">
                             <p class="d-inline-block fw-bold mx-2" >~</p>
                             <input type="text" class="form-control d-inline-block" placeholder="Đến" style="width: 100px; " >
@@ -61,11 +61,11 @@
                 </form>
             </div>
         </div>
-        <div class="d-none d-md-block container-fluid rounded p-3" style="background-color: var(--gray-color)">
+        <div class="d-none d-lg-block container-fluid rounded p-3" style="background-color: var(--gray-color)">
             <div class="row"><p class="h5">Bộ lọc: </p></div>
             <div class="row mb-3">
                 <div class="col-2 d-flex align-items-end"><p class="h6">Thương hiệu: </p></div>
-                <div class="col-10 d-flex overflow-scroll ps-0 align-items-center">
+                <div class="col-10 d-flex ps-0 align-items-center">
                     <div class="me-1 btn btn-filter active">ACER</div>
                     <div class="me-1 btn btn-filter">ASUS</div>
                     <div class="me-1 btn btn-filter">DELL</div>
@@ -79,7 +79,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col-2 d-flex align-items-end"><p class="h6">Màu sắc: </p></div>
-                <div class="col-10 d-flex overflow-scroll ps-0 align-items-center">
+                <div class="col-10 d-flex ps-0 align-items-center">
                     <div class="me-1 btn btn-filter active">Bạc</div>
                     <div class="me-1 btn btn-filter">Trắng</div>
                     <div class="me-1 btn btn-filter">Đen</div>
@@ -88,7 +88,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col-2 d-flex align-items-end"><p class="h6">CPU:</p></div>
-                <div class="col-10 d-flex overflow-scroll ps-0 align-items-center">
+                <div class="col-10 d-flex ps-0 align-items-center">
                     <div class="me-1 btn btn-filter active">Core i3</div>
                     <div class="me-1 btn btn-filter">Core i5</div>
                     <div class="me-1 btn btn-filter">Core i7</div>
@@ -101,7 +101,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col-2 d-flex align-items-end"><p class="h6">Dung lượng RAM: </p></div>
-                <div class="col-10 d-flex overflow-scroll ps-0 align-items-center">
+                <div class="col-10 d-flex ps-0 align-items-center">
                     <div class="me-1 btn btn-filter active">4 GB</div>
                     <div class="me-1 btn btn-filter">8 GB</div>
                     <div class="me-1 btn btn-filter">16 GB</div>
@@ -111,7 +111,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-2 d-flex align-items-center"><p class="h6">Khoảng giá: </p></div>
-                <div class="col-10 d-flex overflow-scroll ps-0 align-items-center">
+                <div class="col-10 d-flex ps-0 align-items-center">
                     <input type="text" class="form-control d-inline-block" placeholder="Từ" style="width: 100px; ">
                     <p class="d-inline-block fw-bold mx-2" >~</p>
                     <input type="text" class="form-control d-inline-block" placeholder="Đến" style="width: 100px; " >

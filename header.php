@@ -37,7 +37,14 @@
                                 <div class="offcanvas-body px-0">
                                     <div class="container-fluid px-0">
                                         <ul class="menu-mobile list-group list-group-flush">
-                                            <li class="menu-mobile-item list-group-item active"><a href="./" class="text-dark text-decoration-none">Trang chủ</a></li>
+                                            <li class="menu-mobile-item list-group-item 
+                                                <?php
+                                                    $cur = $_SERVER['REQUEST_URI'];
+                                                    if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop//') {
+                                                        echo 'active';
+                                                    }
+                                                ?>                                                
+                                            "><a href="./" class="text-dark text-decoration-none">Trang chủ</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./gioithieu.php" class="text-dark text-decoration-none">Giới thiệu</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./lienhe.php" class="text-dark text-decoration-none">Liên hệ</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./collections.php" class="text-dark text-decoration-none">Sản phẩm</a></li>
@@ -122,22 +129,58 @@
         <div class="row d-none d-md-flex" style="background-color: var(--third-color); height: 60px;"> 
             <ul class="nav justify-content-center ">
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light active">Trang chủ</button></a>
+                    <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/') {
+                            echo 'active';
+                        }
+                    ?>">Trang chủ</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./gioithieu.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Giới thiệu</button></a>
+                    <a href="./gioithieu.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'gioithieu.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>">Giới thiệu</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./lienhe.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Liên hệ</button></a>
+                    <a href="./lienhe.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'lienhe.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>">Liên hệ</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./baohanh.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Bảo hành</button></a>
+                    <a href="./baohanh.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'baohanh.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>">Bảo hành</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./collections.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Sản phẩm</button></a>
+                    <a href="./collections.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'collections.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>">Sản phẩm</button></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-2">
-                    <a href="./sale.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light">Khuyến mãi</button></a>
+                    <a href="./sale.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'sale.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>">Khuyến mãi</button></a>
                 </li>
             </ul>
         </div>
