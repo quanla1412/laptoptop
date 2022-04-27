@@ -48,7 +48,7 @@
                 <h6>So với năm trước</h6>
                 <p class="text-danger"> - 300.000.000 VND</p>
             </div>
-        </div>|
+        </div>
     </div>
 
     
