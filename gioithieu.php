@@ -8,16 +8,16 @@
     <div class="container-md ">
         <div class="row d-flex justify-content-around ">
             <div class="col-2">
-            <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 mt-3 ms-2"><br>
-            <h4 class="text-center">Huỳnh Tuấn Thanh</h4>
+                <div class=" d-flex justify-content-center mb-2"><img src="./assets/image/avatar/thanh.jpg" alt="itemsale1" class="w-100 mt-3 ms-2"></div>
+                <div class=" d-flex justify-content-center"><h4 class="text-center">Huỳnh Tuấn Thanh</h4></div>
             </div>
             <div class="col-2">
-            <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 mt-3 ms-2"><br>
-            <h4 class="text-center">Huỳnh Tuấn Thanh</h4>
+                <div class=" d-flex justify-content-center mb-2"><img src="./assets/image/avatar/tan.jpg" alt="itemsale1" class="w-100 mt-3 ms-2"></div>
+                <div class=" d-flex justify-content-center"><h4 class="text-center">Phan Hoàng Nhật Tân</h4></div>
             </div>
             <div class="col-2">
-            <img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 mt-3 ms-2"><br>
-            <h4 class="text-center">Huỳnh Tuấn Thanh</h4>
+                <div class=" d-flex justify-content-center mb-2"><img src="./assets/image/avatar/quan.jpg" alt="itemsale1" class="w-100 mt-3 ms-2"></div>
+                <div class=" d-flex justify-content-center"><h4 class="text-center">Lê Anh Quân</h4></div>
             </div>
         </div>
     </div>

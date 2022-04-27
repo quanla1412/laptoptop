@@ -136,7 +136,7 @@
                         <h5 class="card-title" style="height: 72px;">'.$danhSachSanPham[$i]->getTenSP().'</h5>
                         <p class="card-text mb-0 text-decoration-line-through">'.$danhSachSanPham[$i]->xuLyGia().' đ</p>
                         <p class="card-text fs-5">'.$danhSachSanPham[$i]->xuLyGiaKhuyenMai().' đ</p>
-                        <a href="#" class="btn btn-primary rounded-pill" style="background-color: var(--third-color)">Mua ngay</a>
+                        <a href="./product.php" class="btn btn-primary rounded" style="background-color: var(--third-color)">Mua ngay</a>
                     </div>
                 </div>
             </div>';
