@@ -1,68 +1,68 @@
 <?php include "./header.php"?>
 <div class="container">
   <div class="row align-items-start">
-    <div class="col-12  mb-4 mt-5 pt-1 pb-1" style="background-color: #E5E5E5;font-weight: bold; border-radius: 20px; font-size: 24px;">
+    <div class="col-12 mb-4 pt-1 pb-1 rounded" style="background-color: #E5E5E5;font-weight: bold; font-size: 24px;">
       Giỏ Hàng
     </div>
   </div>
-  <div class="row mt-0">
-        <div class="col-8">
-            <div class="row  mt-1" style="background-color: #E5E5E5; border-radius: 20px;">
-            <div class="col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
-                    <div class="col-4 mt-2">
-                        <h4 class="mb-0">Acer Nitro 5</h4><br>
-                        <h6 class="mb-0">Mã máy</h6><br>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
+  <div class="row mt-0 ">
+        <div class="col-12 col-md-8">
+            <div class="row  mt-1 rounded" style="background-color: #E5E5E5;">
+                <div class="d-none d-md-block col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
+                <div class="col-4 col-md-3 mt-2">
+                    <h4 class="mb-0">Acer Nitro 5</h4><br>
+                    <h6 class="mb-0">Mã máy</h6><br>
+                </div>
+                <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
                     <button class="border-1" style="border-radius: 8px 0px 0px 8px;">-</button>
                     <input class="w-25 border-1 text-align:center" style="text-align:center;" value="1">
                     <button class="border-1" style="border-radius: 0px 8px 8px 0px;">+</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <h6 class="" style="color: #1E656D">22.000.000</h6><br>
-                    </div>
-                    <div class="col-1 d-flex justify-content-center align-items-center">
-                    <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
-                    </div>
+                </div>
+                <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
+                    <h6 class="" style="color: #1E656D">22.000.000</h6><br>
+                </div>
+                <div class="col-2 col-md-1 d-flex justify-content-center align-items-center">
+                <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
+                </div>
             </div>
-            <div class="row  mt-1" style="background-color: #E5E5E5; border-radius: 20px;">
-            <div class="col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
-                    <div class="col-4 mt-2">
-                        <h4 class="mb-0">Acer Nitro 5</h4><br>
-                        <h6 class="mb-0">Mã máy</h6><br>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <button class="border-1" style="border-radius: 8px 0px 0px 8px;">-</button>
-                        <input class="w-25 border-1 text-align:center" style="text-align:center;" value="1">
-                        <button class="border-1" style="border-radius: 0px 8px 8px 0px;">+</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <h6 class="" style="color: #1E656D">22.000.000</h6><br>
-                    </div>
-                    <div class="col-1 d-flex justify-content-center align-items-center">
-                    <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
-                    </div>
+            <div class="row mt-1 rounded" style="background-color: #E5E5E5;">
+                <div class="d-none d-md-block col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
+                <div class="col-4 col-md-3 mt-2">
+                    <h4 class="mb-0">Acer Nitro 5</h4><br>
+                    <h6 class="mb-0">Mã máy</h6><br>
+                </div>
+                <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
+                    <button class="border-1" style="border-radius: 8px 0px 0px 8px;">-</button>
+                    <input class="w-25 border-1 text-align:center" style="text-align:center;" value="1">
+                    <button class="border-1" style="border-radius: 0px 8px 8px 0px;">+</button>
+                </div>
+                <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
+                    <h6 class="" style="color: #1E656D">22.000.000</h6><br>
+                </div>
+                <div class="col-2 col-md-1 d-flex justify-content-center align-items-center">
+                <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
+                </div>
             </div>
-            <div class="row  mt-1" style="background-color: #E5E5E5; border-radius: 20px;">
-            <div class="col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
-                    <div class="col-4 mt-2">
-                        <h4 class="mb-0">Acer Nitro 5</h4><br>
-                        <h6 class="mb-0">Mã máy</h6><br>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <button class="border-1" style="border-radius: 8px 0px 0px 8px;">-</button>
-                        <input class="w-25 border-1 text-align:center" style="text-align:center;" value="1">
-                        <button class="border-1" style="border-radius: 0px 8px 8px 0px;">+</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
-                        <h6 class="" style="color: #1E656D">22.000.000</h6><br>
-                    </div>
-                    <div class="col-1 d-flex justify-content-center align-items-center">
-                    <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
-                    </div>
+            <div class="row  mt-1 rounded" style="background-color: #E5E5E5;">
+                <div class="d-none d-md-block col-3 d-flex justify-content-center align-items-center"><img src="./assets/image/square-sale/sale1.png" alt="itemsale1" class="w-100 m-2"></div>
+                <div class="col-4 col-md-3 mt-2">
+                    <h4 class="mb-0">Acer Nitro 5</h4><br>
+                    <h6 class="mb-0">Mã máy</h6><br>
+                </div>
+                <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
+                    <button class="border-1" style="border-radius: 8px 0px 0px 8px;">-</button>
+                    <input class="w-25 border-1 text-align:center" style="text-align:center;" value="1">
+                    <button class="border-1" style="border-radius: 0px 8px 8px 0px;">+</button>
+                </div>
+                <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
+                    <h6 class="" style="color: #1E656D">22.000.000</h6><br>
+                </div>
+                <div class="col-2 col-md-1 d-flex justify-content-center align-items-center">
+                <button type="button" class=" border-0 ps-3 pe-3 pt-0 pb-0 btn-giohang-xoa "style="font-weight: bold ;border-radius: 10px;" >Xóa</button>
+                </div>
             </div>
         </div>
-        <div class="col-4" >
+        <div class="col-12 col-md-4 mt-4 mt-md-0" >
             <div class="mt-0" style="background-color: #E5E5E5;height: 166px; border-radius: 20px;">
                 <h5 class="pt-2 ps-3">Thông Tin Thanh Toán</h5>
                 <h6 class="mt-4 mb-2 ps-3">

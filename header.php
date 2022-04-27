@@ -1,3 +1,5 @@
+<?php include "./database/SanPham.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -168,7 +170,7 @@
                     <a href="./collections.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
-                        if (strpos($cur,'collections.php') !== FALSE) {
+                        if (strpos($cur,'collections.php') !== FALSE || strpos($cur,'product.php') !== FALSE) {
                             echo 'active';
                         }
                     ?>">Sản phẩm</button></a>

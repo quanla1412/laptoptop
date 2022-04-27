@@ -2,17 +2,17 @@
 
 <div class="container-fluid px-4">
     <div class="row mb-2">
-        <div class="col-6">
+        <div class="col-4">
             <span class="h6 me-2">Bộ lọc:</span>
             <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã hóa đơn">
         </div>
-        <div class="col-4">
+        <div class="col-6">
             <div class="row">
-                <div class="col-4 d-flex align-items-center"><p class="h6">Khoảng thời gian: </p></div>
-                <div class="col-8">
-                    <input type="date" class="form-control d-inline-block" placeholder="Từ" style="width: 80px; ">
+                <div class="col-3 d-flex align-items-center"><p class="h6">Khoảng thời gian: </p></div>
+                <div class="col-9">
+                    <input type="date" class="form-control d-inline-block" placeholder="Từ" style="width: 136px; ">
                     <p class="d-none d-lg-inline-block fw-bold mx-2" >~</p>
-                    <input type="date" class="form-control d-inline-block" placeholder="Đến" style="width: 80px; " >
+                    <input type="date" class="form-control d-inline-block" placeholder="Đến" style="width: 136px; " >
                 </div>
             </div>
         </div>
