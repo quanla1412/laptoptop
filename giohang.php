@@ -14,7 +14,9 @@
                         <h6 class="mb-0">Mã máy</h6><br>
                     </div>
                     <div class="col-2 d-flex justify-content-center align-items-center">
-                        <h6 class="">Số lượng: 1</h6><br>
+                    <button class="border-1 " style="">-</button>
+                    <input class="w-25 border-1 text-align:center" style="text-align:center;" value="1">
+                    <button class="border-1 rounded-right" style="">+</button>
                     </div>
                     <div class="col-2 d-flex justify-content-center align-items-center">
                         <h6 class="" style="color: #1E656D">22.000.000</h6><br>
