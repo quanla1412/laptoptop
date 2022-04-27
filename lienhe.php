@@ -12,7 +12,7 @@
         <div class="w-50 ps-0 pe-0 " style="">
             <div class="" style=" ;">
                 <a href="">
-                <button class="border-0 btn-lienhe w-100 active"style="text-align:left; text:black;">Cơ Sở Chính<br>
+                <button class="border-0 btn-lienhe w-100"style="text-align:left; text:black;">Cơ Sở Chính<br>
                 Địa chỉ : 273, An Dương Vương, P.3, Q.5, Tp.Hồ Chí Minh<br>
                 Điện Thoại: 0327658521<br>
                 Email: tuanthanh15112002@gmail.com
