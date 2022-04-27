@@ -12,6 +12,9 @@
     <title>Laptoptop</title>
 </head>
 <body>
+    <div class="container-fluid d-flex justify-content-center align-items-center d-md-none fixed-top fixed-bottom w-100" style="background-color: #333; z-index:1031;">
+        <p class="h2 text-white">Vui lòng xoay điện thoại từ dọc sang ngang</p>
+    </div>
     <div class="container-fluid p-0">
         <div class="row w-100 mx-0">
             <div class="col-2 d-flex flex-column px-0 fixed-top" style="height: 100vh; background-color: var(--primary-color)">
