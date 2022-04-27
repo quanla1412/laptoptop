@@ -256,6 +256,14 @@ float: left;
     background-color: var(--third-color);
     color: white; 
 }
+.btn-lienhe {    
+    background-color: white;
+}
+
+.btn-lienhe:hover,
+.btn-lienhe.active {
+    background-color: var(--gray-color);
+}
 
 .menu-mobile-item:hover,
 .menu-mobile-item.active {
@@ -263,3 +271,4 @@ float: left;
     border: none;
     background-color: #dedede;
 }
+
