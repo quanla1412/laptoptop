@@ -24,7 +24,7 @@
                         </div>
                         
                         <div class="d-flex d-md-none justify-content-around mb-3">      
-                            <a class="d-flex d-md-none align-items-center text-white" data-bs-toggle="offcanvas" href="#menumobile" role="button" aria-controls="boloc" style="">
+                            <a class="d-flex d-md-none align-items-center text-white text-decoration-none" data-bs-toggle="offcanvas" href="#menumobile" role="button" aria-controls="boloc" style="">
                                 <i class="fa-solid fa-bars"></i>
                             </a>                  
                             <div class="offcanvas offcanvas-start" tabindex="-1" id="menumobile" aria-labelledby="offcanvasExampleLabel" style="width: 320px;">
@@ -42,16 +42,48 @@
                                             <li class="menu-mobile-item list-group-item 
                                                 <?php
                                                     $cur = $_SERVER['REQUEST_URI'];
-                                                    if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop//') {
+                                                    if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/') {
                                                         echo 'active';
                                                     }
                                                 ?>                                                
                                             "><a href="./" class="text-dark text-decoration-none">Trang chủ</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./gioithieu.php" class="text-dark text-decoration-none">Giới thiệu</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./lienhe.php" class="text-dark text-decoration-none">Liên hệ</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./collections.php" class="text-dark text-decoration-none">Sản phẩm</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./baohanh.php" class="text-dark text-decoration-none">Bảo hành</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./sale.php" class="text-dark text-decoration-none">Khuyến mãi</a></li>
+                                            <li class="menu-mobile-item list-group-item 
+                                            <?php
+                                                $cur = $_SERVER['REQUEST_URI'];
+                                                if (strpos($cur,'gioithieu.php') !== FALSE) {
+                                                    echo 'active';
+                                                }
+                                            ?>"><a href="./gioithieu.php" class="text-dark text-decoration-none">Giới thiệu</a></li>
+                                            <li class="menu-mobile-item list-group-item 
+                                            <?php
+                                                $cur = $_SERVER['REQUEST_URI'];
+                                                if (strpos($cur,'lienhe.php') !== FALSE) {
+                                                    echo 'active';
+                                                }
+                                            ?>
+                                            "><a href="./lienhe.php" class="text-dark text-decoration-none">Liên hệ</a></li>
+                                            <li class="menu-mobile-item list-group-item 
+                                            <?php
+                                                $cur = $_SERVER['REQUEST_URI'];
+                                                if (strpos($cur,'collections.php') !== FALSE || strpos($cur,'product.php') !== FALSE) {
+                                                    echo 'active';
+                                                }
+                                            ?>
+                                            "><a href="./collections.php" class="text-dark text-decoration-none">Sản phẩm</a></li>
+                                            <li class="menu-mobile-item list-group-item 
+                                            <?php
+                                                $cur = $_SERVER['REQUEST_URI'];
+                                                if (strpos($cur,'baohanh.php') !== FALSE) {
+                                                    echo 'active';
+                                                }
+                                            ?>"><a href="./baohanh.php" class="text-dark text-decoration-none">Bảo hành</a></li>
+                                            <li class="menu-mobile-item list-group-item 
+                                            <?php
+                                                $cur = $_SERVER['REQUEST_URI'];
+                                                if (strpos($cur,'sale.php') !== FALSE) {
+                                                    echo 'active';
+                                                }
+                                            ?>"><a href="./sale.php" class="text-dark text-decoration-none">Khuyến mãi</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./admin/" class="text-dark text-decoration-none">Cài đặt</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./" class="text-dark text-decoration-none">Đăng xuất</a></li>
                                             
