@@ -1,4 +1,8 @@
-<?php include "./header.php"?>
+<?php include "./header.php";    
+    $danhSachSanPham = $tatCaSanPham;
+
+    if(isset($_GET['tenHang'])) $danhSachSanPham = filter(tenHang: $_GET['tenHang']);
+?>
 
 <div class="container-xl">
     <div class="row mb-3">
@@ -125,7 +129,6 @@
     <div class="row mb-3 gy-4">
         <?php
         $quantity = 12;
-        $danhSachSanPham = $tatCaSanPham;
         
         for($i=0; $i<$quantity; $i++) {
             echo '
