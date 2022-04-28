@@ -61,7 +61,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title" style="height: 72px;">'.$danhSachSanPham[$i]->getTenSP().'</h5>
                                                 <p class="card-text">'.$danhSachSanPham[$i]->xuLyGia().' đ</p>
-                                                <a href="./product.php" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
+                                                <a href="./product.php?id='.$danhSachSanPham[$i]->getMaSP().'" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
                                             </div>    
                                         </div>
                                     </div>';
@@ -71,7 +71,7 @@
                         </div>
                         <div class="row mt-3 mx-1">
                             <div class="nav-more col pe-0">
-                                <button type="button" class="btn btn-outline-secondary float-end" >Xem thêm</i></button>
+                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="collections.php?tenHang=DELL" class="text-dark">Xem thêm</a></i></button>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title" style="height: 72px;">'.$danhSachSanPham[$i]->getTenSP().'</h5>
                                                 <p class="card-text">'.$danhSachSanPham[$i]->xuLyGia().' đ</p>
-                                                <a href="./product.php" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
+                                                <a href="./product.php?id='.$danhSachSanPham[$i]->getMaSP().'" class="btn btn-primary" style="background-color: var(--third-color)">Mua ngay</a>
                                             </div>    
                                         </div>
                                     </div>';
@@ -116,7 +116,7 @@
                         </div>
                         <div class="row mt-3 mx-1">
                             <div class="nav-more col pe-0">
-                                <button type="button" class="btn btn-outline-secondary float-end" >Xem thêm</i></button>
+                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="./collections.php?tenHang=ASUS" class="text-dark">Xem thêm</a></i></button>
                             </div>
                         </div>
                     </div>
