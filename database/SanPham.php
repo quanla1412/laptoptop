@@ -99,6 +99,50 @@ class SanPham {
     }
 }
 
+function getAllTenHang() {
+    global $tatCaSanPham;
+    $allTenHang = array();
+
+    foreach ($tatCaSanPham as $sanPham) 
+        if(!in_array($sanPham->getTenHang(),$allTenHang)) 
+            $allTenHang[] = $sanPham->getTenHang();
+
+    return $allTenHang;
+}
+
+function getAllMauSac() {
+    global $tatCaSanPham;
+    $allMauSac = array();
+
+    foreach ($tatCaSanPham as $sanPham) 
+        if(!in_array($sanPham->getMauSac(),$allMauSac)) 
+            $allMauSac[] = $sanPham->getMauSac();
+
+    return $allMauSac;
+}
+
+function getAllCPU() {
+    global $tatCaSanPham;
+    $allCPU = array();
+
+    foreach ($tatCaSanPham as $sanPham) 
+        if(!in_array($sanPham->getCPU(),$allCPU)) 
+            $allCPU[] = $sanPham->getCPU();
+
+    return $allCPU;
+}
+
+function getAllRAM() {
+    global $tatCaSanPham;
+    $allRAM = array();
+
+    foreach ($tatCaSanPham as $sanPham) 
+        if(!in_array($sanPham->getRAM(),$allRAM)) 
+            $allRAM[] = $sanPham->getRAM();
+
+    return $allRAM;
+}
+
 function loadData() {
     $servername = "localhost";
     $username = "laptoptop";
@@ -129,8 +173,8 @@ function loadData() {
                 $row['OCung'], 
                 $row['MauSac'], 
                 $row['CauHinhKhac'], 
-                $row['Gia'], 
-                $row['GiaKhuyenMai'], 
+                intval($row['Gia']), 
+                intval($row['GiaKhuyenMai']), 
                 $row['Youtube'], 
                 $row['Anh']);
             $danhSachSanPham[] = $sanPham;
@@ -143,15 +187,42 @@ function loadData() {
     return $danhSachSanPham;
 }
 
-function filter($maSP = '', $tenSP = '', $tenHang = '', $CPU = '', $RAM = '', $mauSac = '', $giaKhuyenMai = 0) {
+function filter($maSP = '', $tenSP = '', $tenHang = array(), $CPU = array(), $RAM = array(), $mauSac = array(), $minPrice = 0, $maxPrice = 100000000) {
     global $tatCaSanPham;
-    $danhSachMoi = array();
+    $danhSachMoi = $tatCaSanPham;
 
-    if($tenHang != '') {
-        foreach ($tatCaSanPham as $sanPham) {
-            if(strtolower($sanPham->getTenHang()) == strtolower($tenHang)) $danhSachMoi[] = $sanPham;
-        }
+    if(count($tenHang)==0)  $tenHang = getAllTenHang();
+    if(count($mauSac)==0)  $mauSac = getAllMauSac();
+    if(count($CPU)==0)  $CPU = getAllCPU();
+    if(count($RAM)==0)  $RAM = getAllRAM();
+
+
+    foreach ($tenHang as &$tungTenHang) $tungTenHang = strtolower($tungTenHang);
+    foreach ($mauSac as &$tungMauSac) $tungMauSac = mb_strtolower($tungMauSac);
+    foreach ($CPU as &$tungCPU) $tungCPU = strtolower($tungCPU);
+    foreach ($RAM as &$tungRAM) $tungRAM = strtolower($tungRAM);
+
+    for ($i=0; $i < count($danhSachMoi); $i++) {
+        if(
+            !in_array(strtolower($danhSachMoi[$i]->getTenHang()),$tenHang) ||
+            !in_array(mb_strtolower($danhSachMoi[$i]->getMauSac()),$mauSac) ||            
+            !in_array(strtolower($danhSachMoi[$i]->getRAM()),$RAM) ||
+            $danhSachMoi[$i]->getGiaKhuyenMai() < $minPrice ||
+            $danhSachMoi[$i]->getGiaKhuyenMai() > $maxPrice ||
+            strpos(strtolower($danhSachMoi[$i]->getTenSP()),strtolower($tenSP))===false
+        ) array_splice($danhSachMoi, $i--, 1);
     }
+
+    for ($i=0; $i < count($danhSachMoi); $i++) {
+        $flag = 0;
+        foreach ($CPU as $value) {
+            if (strpos(strtolower($danhSachMoi[$i]->getCPU()),strtolower($value))!==false) {
+                $flag = 1;
+            }
+        }
+        if($flag == 0)  array_splice($danhSachMoi, $i--, 1);
+    }
+    
 
    return $danhSachMoi;
 }
@@ -174,6 +245,30 @@ function randomSanPham($danhSachSanPham, $number = 1) {
     }
 
     return $danhSachMoi;
+}
+
+function soTrang($danhSachSanPham, $quantity) {
+    return ceil(count($danhSachSanPham)/$quantity);
+}
+
+function checkTenHang($tenHang) {
+    if(!isset($_GET['tenHang']))    return FALSE;
+    return in_array($tenHang,$_GET['tenHang']);  
+}
+
+function checkMauSac($mauSac) {
+    if(!isset($_GET['mauSac']))    return FALSE;
+    return in_array($mauSac,$_GET['mauSac']);  
+}
+
+function checkCPU($CPU) {
+    if(!isset($_GET['CPU']))    return FALSE;
+    return in_array($CPU,$_GET['CPU']);  
+}
+
+function checkRAM($RAM) {
+    if(!isset($_GET['RAM']))    return FALSE;
+    return in_array($RAM,$_GET['RAM']);  
 }
 
 $tatCaSanPham = loadData();

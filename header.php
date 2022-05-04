@@ -1,4 +1,6 @@
-<?php include "./database/SanPham.php" ?>
+<?php require "./database/SanPham.php";
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,8 +96,10 @@
                                 </div>
                             </div>
                             <div class="search-box position-relative w-75">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm">
-                                <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
+                                <form action="./collections.php" method="get" id="ipad_search_box">
+                                    <input type="text" class="form-control" name="tenSP" placeholder="Tìm kiếm" value="<?php echo $_GET['tenSP'] ?? "" ?>">
+                                    <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;" onclick="document.getElementById('ipad_search_box').submit();"></i>
+                                </form>
                             </div>
                             <div class="d-flex d-md-none align-items-center">
                                 <a href="./giohang.php" class="text-white text-decoration-none"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -104,8 +108,10 @@
                     </div>
                     <div class="col-4 d-none d-md-flex align-items-center">                        
                         <div class="search-box position-relative w-100">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm">
-                            <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
+                                <form action="./collections.php" method="get" id="search_box">
+                                    <input type="text" class="form-control" name="tenSP" placeholder="Tìm kiếm" value="<?php echo $_GET['tenSP'] ?? "" ?>">
+                                    <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;" onclick="document.getElementById('search_box').submit();"></i>
+                                </form>
                         </div>
                     </div>
                     <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
