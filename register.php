@@ -8,24 +8,34 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $hoten=$_POST['hoten'];
+        $email=$_POST['email'];
+        $ngaysinh=$_POST['ngaysinh'];
+        $sdt=$_POST['sdt'];
         if($_POST['password'] == $_POST['repassword'])
             {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-
-            $sql= "SELECT * FROM taikhoan WHERE TenDangNhap = '$username' ";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {?>
-                <script>alert("Tên Đăng Nhập Đã Được Sử Dụng")</script>
-            <?php }
-            else 
-            { 
-                $sql= "INSERT INTO TaiKhoan(TenDangNhap,MatKhau,LoaiTK) VALUES ('$username','$password','us')";
+                $sql= "SELECT * FROM taikhoan WHERE TenDangNhap = '$username' ";
                 $result = $conn->query($sql);
-                header('location: login.php');
+                $check="SELECT * FROM khachhang WHERE Email='$email' OR SoDienThoai='$sdt'";
+                $resul = $conn->query($check);
+                if ($result->num_rows > 0) {?>
+                    <script>alert("Tên Đăng Nhập Đã Được Sử Dụng")</script>
+                <?php }
+                if ($resul->num_rows > 0) {?>
+                    <script>alert("Số điện thoại hoặc Email đã đc sử dụng")</script>
+                <?php }
+                else 
+                { 
+                    $sql= "INSERT INTO TaiKhoan(TenDangNhap,MatKhau,LoaiTK) VALUES ('$username','$password','us')";
+                    $result = $conn->query($sql);
+                    header('location: login.php');
+                    $them="INSERT INTO khachhang(MaKH,TenDangNhap,HoTen,SoDienThoai,NgaySinh,Email) VALUES ('4','$username','$hoten','$sdt','$ngaysinh','$email')";
+                    $result = $conn->query($them);
+                
+                }
             }
-        }
         else
         { ?>
                 <script>alert('Nhập Lại Mật Khẩu Không Chính Xác')</script>
@@ -40,7 +50,7 @@
         <form action="register.php" method="POST">
         <input type="text" class="form-control mb-3" placeholder="Họ và tên" name="hoten" required>
         <input type="tel" class="form-control mb-3" placeholder="Số điện thoại" name="sdt" pattern="[0][0-9]{9}" required>
-        <input type="date" class="form-control mb-3" name="" required>
+        <input type="date" class="form-control mb-3" name="ngaysinh" required>
         <input type="email" class="form-control mb-3" placeholder="Email" name="email" pattern= "[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$" required>
         <input type="text" class="form-control mb-3" placeholder="Tên đăng nhập" name="username" required>
         <input type="password" class="form-control mb-3" placeholder="Nhập mật khẩu" name="password" required>
