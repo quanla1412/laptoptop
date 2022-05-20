@@ -36,7 +36,27 @@
                                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                         <!-- <a href="./login.php" class="text-dark text-decoration-none">Đăng nhập</a> -->
                                         <!-- <i class="fa-solid fa-user me-2"></i>User -->
-                                        <i class="fa-solid fa-user me-2"></i>Admin
+                                        <?php
+                                                                                        if(isset($_COOKIE["dangnhap"]))
+                                                                                        {
+                                                                                            if( $_COOKIE["dangnhap"] == "us")
+                                                                                            {
+                                                                                                echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                                                            }
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            echo '<div class="account me-3 ">                                                        
+                                                                                            <a class="text-dark" href="./login.php">Đăng nhập</a>
+                                                                                            <span >/</span>
+                                                                                            <a class="text-dark" href="./register.php">Đăng ký</a>
+                                                                                            </div>';                                                                                               
+                                                                                        }
+                                                                                ?>
                                     </h5>
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
@@ -89,7 +109,7 @@
                                                 }
                                             ?>"><a href="./sale.php" class="text-dark text-decoration-none">Khuyến mãi</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./admin/" class="text-dark text-decoration-none">Cài đặt</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./" class="text-dark text-decoration-none">Đăng xuất</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./loout.php" class="text-dark text-decoration-none">Đăng xuất</a></li>
                                             
                                         </ul>
                                     </div>
@@ -116,54 +136,67 @@
                     </div>
                     <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
                         <!-- Chua dang nhap -->
-                        <div class="account me-3">                                                        
+                        <?php 
+                        if(isset($_COOKIE["dangnhap"]))
+                        {
+                            if( $_COOKIE["dangnhap"] == "us")
+                            {
+                                echo '<div class="account-user me-3 position-relative">
+                                <i class="fa-solid fa-user"></i>
+                                <span>'.$_COOKIE["user"].'</span>  
+                                <i class="fa-solid fa-caret-down"></i>
+                                <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:1021; ">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
+                                        <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
+                                        <li class="list-group-item"><a class="text-dark" href="./loout.php">Đăng Xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="./giohang.php">
+                                <div class="btn btn-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>Giỏ hàng</span>   
+                                </div>
+                            </a>';
+                            }
+                            else
+                            {
+                                echo '<div class="account-user me-3 position-relative">
+                                <i class="fa-solid fa-user"></i>
+                                <span>Admin</span>  
+                                <i class="fa-solid fa-caret-down"></i>
+                                <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
+                                    <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a class="text-dark" href="./loout.php">Đăng Xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="./admin/">
+                                <div class="btn btn-cart">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <span>Cài đặt</span>   
+                                </div>
+                            </a>';
+                            }
+                        }
+                        else
+                        {
+                            echo '<div class="account me-3">                                                        
                             <a href="./login.php">Đăng nhập</a>
                             <span class="text-light">/</span>
                             <a href="./register.php">Đăng ký</a>
-                        </div>
+                            </div>';
+                        }
+                        
+                        ?>
+                        
                         <!-- <div class="btn btn-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span>Giỏ hàng</span>   
                         </div> -->
 
-                        
-                        <!-- Dang nhap user -->
-                        <!-- <div class="account-user me-3 position-relative">
-                            <i class="fa-solid fa-user"></i>
-                            <span>User</span>  
-                            <i class="fa-solid fa-caret-down"></i>
-                            <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
-                                    <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
-                                    <li class="list-group-item">Đăng xuất</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="./giohang.php">
-                            <div class="btn btn-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <span>Giỏ hàng</span>   
-                            </div>
-                        </a> -->
-
-                         <!-- Dang nhap admin -->
-                        <!-- <div class="account-user me-3 position-relative">
-                            <i class="fa-solid fa-user"></i>
-                            <span>Admin</span>  
-                            <i class="fa-solid fa-caret-down"></i>
-                            <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Đăng xuất</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="./admin/">
-                            <div class="btn btn-cart">
-                                <i class="fa-solid fa-gear"></i>
-                                <span>Cài đặt</span>   
-                            </div>
-                        </a> -->
+                    
                     </div>
                 </div>
             </div>
