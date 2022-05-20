@@ -1,8 +1,4 @@
-<?php 
-    if(isset($_POST['dangxuat']))
-    setcookie("dangnhap", "", time() -3600);
-include "./database/SanPham.php" ;
-?>
+<?php include "./database/SanPham.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +34,27 @@ include "./database/SanPham.php" ;
                                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                         <!-- <a href="./login.php" class="text-dark text-decoration-none">Đăng nhập</a> -->
                                         <!-- <i class="fa-solid fa-user me-2"></i>User -->
-                                        <i class="fa-solid fa-user me-2"></i>Admin
+                                        <?php
+                                                                                        if(isset($_COOKIE["dangnhap"]))
+                                                                                        {
+                                                                                            if( $_COOKIE["dangnhap"] == "us")
+                                                                                            {
+                                                                                                echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                                                            }
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            echo '<div class="account me-3 ">                                                        
+                                                                                            <a class="text-dark" href="./login.php">Đăng nhập</a>
+                                                                                            <span >/</span>
+                                                                                            <a class="text-dark" href="./register.php">Đăng ký</a>
+                                                                                            </div>';                                                                                               
+                                                                                        }
+                                                                                ?>
                                     </h5>
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
@@ -91,7 +107,7 @@ include "./database/SanPham.php" ;
                                                 }
                                             ?>"><a href="./sale.php" class="text-dark text-decoration-none">Khuyến mãi</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./admin/" class="text-dark text-decoration-none">Cài đặt</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./" class="text-dark text-decoration-none">Đăng xuất</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./loout.php" class="text-dark text-decoration-none">Đăng xuất</a></li>
                                             
                                         </ul>
                                     </div>
@@ -114,7 +130,6 @@ include "./database/SanPham.php" ;
                     </div>
                     <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
                         <!-- Chua dang nhap -->
-                        
                         <?php 
                         if(isset($_COOKIE["dangnhap"]))
                         {
@@ -122,15 +137,13 @@ include "./database/SanPham.php" ;
                             {
                                 echo '<div class="account-user me-3 position-relative">
                                 <i class="fa-solid fa-user"></i>
-                                <span>User</span>  
+                                <span>'.$_COOKIE["user"].'</span>  
                                 <i class="fa-solid fa-caret-down"></i>
                                 <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
                                         <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
-                                        <form name="form" action="" method="POST" class="bg-white">
-                                        <button class="list-group-item w-100 text-start" name="dangxuat">Đăng Xuất</button>
-                                  </form>
+                                        <li class="list-group-item"><a class="text-dark" href="./loout.php">Đăng Xuất</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -149,9 +162,7 @@ include "./database/SanPham.php" ;
                                 <i class="fa-solid fa-caret-down"></i>
                                 <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
                                     <ul class="list-group list-group-flush">
-                                    <form name="form" action="" method="POST" class="bg-white">
-                                        <button class="list-group-item w-100 text-start" name="dangxuat">Đăng Xuất</button>
-                                  </form>
+                                    <li class="list-group-item"><a class="text-dark" href="./loout.php">Đăng Xuất</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -179,12 +190,7 @@ include "./database/SanPham.php" ;
                             <span>Giỏ hàng</span>   
                         </div> -->
 
-                        
-                        <!-- Dang nhap user -->
-                        
-
-                         <!-- Dang nhap admin -->
-                        
+                    
                     </div>
                 </div>
             </div>
