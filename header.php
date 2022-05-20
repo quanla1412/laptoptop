@@ -139,7 +139,7 @@
                                 <i class="fa-solid fa-user"></i>
                                 <span>'.$_COOKIE["user"].'</span>  
                                 <i class="fa-solid fa-caret-down"></i>
-                                <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
+                                <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:1021; ">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
                                         <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
