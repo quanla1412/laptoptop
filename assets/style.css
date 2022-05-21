@@ -216,9 +216,13 @@ float: left;
     opacity: 0.9;
 }
 
-/* Điều hướng phân trang admin */
+/* Điều hướng phân trang */
+
 .page-link {
-    color: var(--dark-color) !important;
+    color: var(--dark-color) ;
+}
+.page-item.disabled {
+    color: rgba(0, 0, 0, 0.2) !important;
 }
 
 .page-item.active .page-link{
@@ -280,3 +284,8 @@ float: left;
     background-color: #dedede;
 }
 
+.mobile-filter input[type='checkbox'],
+.filter input[type='checkbox'] {
+    width: 0px;
+    height: 0px;
+}

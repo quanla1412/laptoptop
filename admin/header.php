@@ -97,7 +97,7 @@
                         </h2>
                         <div class="me-4">
                             <i class="fa-solid fa-user"></i>
-                            <span>Admin</span>
+                            <span><?php echo $_COOKIE['user'] ?? "Admin" ?></span>
                         </div>
                         <div class="header-admin-logout" style="cursor: pointer">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
