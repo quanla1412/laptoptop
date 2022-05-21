@@ -31,7 +31,7 @@
                     $sql= "INSERT INTO TaiKhoan(TenDangNhap,MatKhau,LoaiTK) VALUES ('$username','$password','us')";
                     $result = $conn->query($sql);
                     header('location: login.php');
-                    $them="INSERT INTO khachhang(MaKH,TenDangNhap,HoTen,SoDienThoai,NgaySinh,Email) VALUES ('','$username','$hoten','$sdt','$ngaysinh','$email')";
+                    $them="INSERT INTO khachhang(TenDangNhap,HoTen,SoDienThoai,NgaySinh,Email) VALUES ('$username','$hoten','$sdt','$ngaysinh','$email')";
                     $result = $conn->query($them);
                 
                 }
