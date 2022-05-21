@@ -7,7 +7,7 @@
 
     
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $tendangnhap= $_COOKIE["user"];
+    $tendangnhap= $_COOKIE["tenuser"];
     $sql="SELECT * FROM khachhang WHERE TenDangNhap = '$tendangnhap'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -20,24 +20,21 @@
         <form action="thongtinuser.php" method="POST">
             <div class="row mt-1 mb-3">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Tên Đăng Nhập</h6></div>
-                <div class="col-9 pt-2"><?php echo $_COOKIE['user']?></div>
+                <div class="col-9 pt-2"><?=$_COOKIE['tenuser']?></div>
             </div> 
             <div class="row mt-1">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Họ và Tên</h6></div>
-                <div class="col-9"><input type="text" class="form-control mb-3 border border-dark border-2" name="hoten"  placeholder="<?php 
-                echo $row['HoTen'];?>" ></div>
+                <div class="col-9"><input type="text" class="form-control mb-3 border border-dark border-2" name="hoten"  placeholder="<?=$row['HoTen'];?>" ></div>
             </div>
             <div class="row mt-1">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6> Email</h6></div>
-                <div class="col-9"> <input type="email" class="form-control mb-3 border border-dark border-2" pattern= "[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$" name="email" placeholder="<?php 
-                echo $row['Email'];?>" ></div>
+                <div class="col-9"> <input type="email" class="form-control mb-3 border border-dark border-2" pattern= "[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$" name="email" placeholder="<?=$row['Email'];?>" ></div>
             </div>
             <div class="row mt-1">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Số điện thoại</h6></div>
-                <div class="col-9"><input type="tel" class="form-control mb-3 border border-dark border-2" pattern="[0][0-9]{9}" name="sdt" placeholder="<?php 
-                echo $row['SoDienThoai'];
+                <div class="col-9"><input type="tel" class="form-control mb-3 border border-dark border-2" pattern="[0][0-9]{9}" name="sdt" placeholder="<?=$row['SoDienThoai'];
             }
-        }?>" ></div>
+        } $conn->close();?>" ></div>
             </div>
             <div class="row mt-1">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Ngày Sinh</h6></div>
@@ -61,7 +58,7 @@
             $password = "laptoptop";
             $dbname = "laptoptop";
                 
-            $tendn=$_COOKIE["user"];    
+            $tendn=$_COOKIE["tenuser"];    
             $conn = new mysqli($servername, $username, $password, $dbname);
             if (!empty($_POST['hoten']))
             {

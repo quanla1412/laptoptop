@@ -17,7 +17,7 @@
                 $row = $resul->fetch_assoc();
 
                 if ($result->num_rows > 0) {
-                    setcookie("user",$user,time()+3600);
+                    setcookie("tenuser",$user,time()+3600);
                     setcookie("dangnhap",$row["LoaiTK"],time()+3600);
                     header('location: index.php');
                 }
