@@ -1,14 +1,5 @@
 <?php
-class SoLuong {
-    private $maCoSo;
-    private $soLuong;
-
-    public function __construct($maCoSo, $soLuong) {
-        $this->maCoSo = $maCoSo;
-        $this->soLuong = $soLuong;        
-    }
-}
-
+loadData();
 class SanPham {
     private $maSP;
     private $tenSP;
@@ -37,9 +28,7 @@ class SanPham {
         $this->giaKhuyenMai = $giaKhuyenMai;
         $this->youtube = $youtube;
         $this->anh = $anh;
-        $this->soLuong[] = new SoLuong("CSC",0);
-        $this->soLuong[] = new SoLuong("CS1",0);
-        $this->soLuong[] = new SoLuong("CS2",0);        
+        $this->soLuong = array("csc" => 0, "cs1" => 0, "cs2" => 0);       
     }
 
     public function getMaSP() {
@@ -90,12 +79,32 @@ class SanPham {
         return $this->anh;
     }
 
+    public function getSoLuong($maCS) {
+        return $this->soLuong[$maCS];
+    }
+
+    public function getTongSoLuong(){
+        return array_sum($this->soLuong);
+    }
+
     public function xuLyGia() {
         return number_format($this->gia, 0, ',', '.');
     }
 
     public function xuLyGiaKhuyenMai() {
         return number_format($this->giaKhuyenMai, 0, ',', '.');
+    }
+
+    public function setSoLuong($maCS, $soLuong) {
+        $this->soLuong[$maCS] = $soLuong;
+    }
+
+    public function checkTinhTrangHang($maCS){
+        return $this->soLuong[$maCS] == 0 ?  "Hết hàng" : "Còn Hàng";
+    }
+
+    public function checkTinhTrangHangCSS($maCS){
+        return $this->soLuong[$maCS] == 0 ?  "text-danger" : "text-success";
     }
 }
 
@@ -149,7 +158,8 @@ function loadData() {
     $password = "laptoptop";
     $dbname = "laptoptop";
 
-    $danhSachSanPham = array();
+    global $tatCaSanPham;
+    $tatCaSanPham = array();
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -177,14 +187,24 @@ function loadData() {
                 intval($row['GiaKhuyenMai']), 
                 $row['Youtube'], 
                 $row['Anh']);
-            $danhSachSanPham[] = $sanPham;
+
+            $tatCaSanPham[] = $sanPham;
         }
     } else {
         echo "0 results";
     }
-    $conn->close();
 
-    return $danhSachSanPham;
+    $sql = "SELECT * FROM soluongsp";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $sanPham = laySanPham($row['MaSP']);
+            $sanPham->setSoLuong($row['MaCS'],(int)$row['SoLuong']);
+        }
+    }
+    $conn->close();
 }
 
 function filter($maSP = '', $tenSP = '', $tenHang = array(), $CPU = array(), $RAM = array(), $mauSac = array(), $minPrice = 0, $maxPrice = 100000000) {
@@ -270,6 +290,4 @@ function checkRAM($RAM) {
     if(!isset($_GET['RAM']))    return FALSE;
     return in_array($RAM,$_GET['RAM']);  
 }
-
-$tatCaSanPham = loadData();
 ?>
