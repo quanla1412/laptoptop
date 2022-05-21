@@ -32,13 +32,13 @@
             </div>
             <div class="row mt-1">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Số điện thoại</h6></div>
-                <div class="col-9"><input type="tel" class="form-control mb-3 border border-dark border-2" pattern="[0][0-9]{9}" name="sdt" placeholder="<?=$row['SoDienThoai'];
-            }
-        } $conn->close();?>" ></div>
+                <div class="col-9"><input type="tel" class="form-control mb-3 border border-dark border-2" pattern="[0][0-9]{9}" name="sdt" placeholder="<?=$row['SoDienThoai'];?>" ></div>
             </div>
             <div class="row mt-1">
                 <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Ngày Sinh</h6></div>
-                <div class="col-9"><input type="date" class="form-control mb-3 border border-dark border-2" required name="ngaysinh" placeholder="" ></div>
+                <div class="col-9"><input type="date" class="form-control mb-3 border border-dark border-2" name="ngaysinh" value="<?=$row['NgaySinh'];
+            }
+        } $conn->close();?>" ></div>
             </div>
             <div class="row mt-1">
             <div class="col-3 pt-2 "style="text-align: right; font-weight: bold; "><h6>Mật Khẩu</h6></div>
