@@ -26,11 +26,19 @@
                     <a href="./"><div class="btn-admenu px-3 py-1 text-white 
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
-                        if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/admin/') {
+                        if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/admin/' || strpos($cur,'/laptoptop/admin/?') !== FALSE) {
                             echo 'active';
                         }
                     ?>
                     ">Sản phẩm</div></a>
+                    <a href="./themsanpham.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <?php
+                        $cur = $_SERVER['REQUEST_URI'];
+                        if (strpos($cur,'themsanpham.php') !== FALSE) {
+                            echo 'active';
+                        }
+                    ?>                    
+                    ">Thêm sản phẩm</div></a>
                     <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white 
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
@@ -55,7 +63,7 @@
                         }
                     ?>
                     ">Doanh thu</div></a>
-                    <a href="./taikhoanuser.php"><div class="btn-admenu px-3 py-1 text-white                     
+                    <a href="./taikhoanuser.php?search="><div class="btn-admenu px-3 py-1 text-white                     
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
                         if (strpos($cur,'taikhoanuser.php') !== FALSE) {
@@ -63,7 +71,7 @@
                         }
                     ?>
                     ">Tài khoản người dùng</div></a>
-                    <a href="./taikhoanadmin.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <a href="./taikhoanadmin.php?search="><div class="btn-admenu px-3 py-1 text-white 
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
                         if (strpos($cur,'taikhoanadmin.php') !== FALSE) {
@@ -90,6 +98,12 @@
                                 echo 'Tài khoản admin';
                             } elseif (strpos($cur,'taikhoanuser.php') !== FALSE) {
                                 echo 'Tài khoản user';
+                            } elseif (strpos($cur,'themsanpham.php') !== FALSE) {
+                                echo 'Thêm sản phẩm';
+                            } elseif (strpos($cur,'suasanpham.php') !== FALSE) {
+                                echo 'Sửa sản phẩm';
+                            } elseif (strpos($cur,'nhaphang.php') !== FALSE) {
+                                echo 'Nhập hàng';
                             } else {
                                 echo 'Sản phẩm';
                             }

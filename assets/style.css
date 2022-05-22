@@ -6,13 +6,14 @@
     --dark-color: rgb(33, 37, 41);
 }
 
-a,
-a:hover {
+a {
     color: white;
     text-decoration: none;
 }
 
-
+a:hover {
+    color: rgb(135, 134, 134) !important;
+}
     
     .div_left{
     
