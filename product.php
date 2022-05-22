@@ -3,6 +3,23 @@
     $sanPham = laySanPham($id);
 ?>
 
+<script>
+    function cong(){
+        var t = document.getElementById("quantity").value;
+        document.getElementById("quantity").value = parseInt(t)+1;
+    }
+
+    function tru(){
+        var t = document.getElementById("quantity").value;
+        if(parseInt(t)>1){
+            document.getElementById("quantity").value = parseInt(t)-1;
+        }
+    }
+    function formSubmit(){
+    document.forms["myForm"].submit();
+    }
+</script>
+
 <div class="container-xl">
     <div class="row">
         <div class="col-8">
@@ -80,14 +97,16 @@
                         Số lượng: 
                     </div>
                     <div class="col d-flex mb-3">
-                        <div class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius: 30px 0 0 30px; border-right: 1px solid var(--gray-color)">-</div>
-                        <div class="d-flex justify-content-center align-items-center m-0 p-1 mt-3" style="background-color: white; width:36px; height:25px; justify-content: center"><?php $quantity = 1; echo $quantity?></div>
-                        <div class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius:  0 50px 50px 0; border-left: 1px solid var(--gray-color)">+</div>
+                        <input type="button" class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius: 30px 0 0 30px; border-right: 1px solid var(--gray-color)" onclick="tru()" value="-"/>
+                        <form action="./xulythemgiohang.php?id=<?= $_GET['id'] ?>" method="POST" name="myForm">
+                            <input type="text" name="quantity" id="quantity" class="d-flex justify-content-center align-items-center m-0 p-1 mt-3" style="background-color: white; width:36px; height:25px; justify-content: center" value="1"/>
+                        </form>
+                        <input type="button" class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius:  0 50px 50px 0; border-left: 1px solid var(--gray-color)" onclick="cong()" value="+"/>
                     </div>
                 </div>
                 <p class="h5 text-decoration-line-through"><?php echo $sanPham->xuLyGia();?> đ</p>
                 <p class="h3 mb-3" style="color: var(--third-color)"><?php echo $sanPham->xuLyGiaKhuyenMai();?> đ</p>
-                <button class="pt-2 pb-2 ps-5 pe-5 btn btn-giohang-dathang rounded"><a href="./collections.php">Thêm vào giỏ hàng</a></button>
+                <input type="submit" class="pt-2 pb-2 ps-5 pe-5 btn btn-giohang-dathang rounded" value="Thêm vào giỏ hàng" onclick="formSubmit()"/>
             </div>
         </div>
     </div>
