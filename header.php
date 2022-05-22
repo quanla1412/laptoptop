@@ -37,26 +37,26 @@
                                         <!-- <a href="./login.php" class="text-dark text-decoration-none">Đăng nhập</a> -->
                                         <!-- <i class="fa-solid fa-user me-2"></i>User -->
                                         <?php
-                                                                                        if(isset($_COOKIE["dangnhap"]))
-                                                                                        {
-                                                                                            if( $_COOKIE["dangnhap"] == "us")
-                                                                                            {
-                                                                                                echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                echo '<i class="fa-solid fa-user me-2"></i>Admin';
-                                                                                            }
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            echo '<div class="account me-3 ">                                                        
-                                                                                            <a class="text-dark" href="./login.php">Đăng nhập</a>
-                                                                                            <span >/</span>
-                                                                                            <a class="text-dark" href="./register.php">Đăng ký</a>
-                                                                                            </div>';                                                                                               
-                                                                                        }
-                                                                                ?>
+                                            if(isset($_COOKIE["dangnhap"]))
+                                            {
+                                                if( $_COOKIE["dangnhap"] == "us")
+                                                {
+                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["tenuser"].'' ;                                                                                         
+                                                }
+                                                else
+                                                {
+                                                    echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo '<div class="account me-3 ">                                                        
+                                                <a class="text-dark" href="./login.php">Đăng nhập</a>
+                                                <span >/</span>
+                                                <a class="text-dark" href="./register.php">Đăng ký</a>
+                                                </div>';                                                                                               
+                                            }
+                                        ?>
                                     </h5>
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
@@ -143,7 +143,7 @@
                             {
                                 echo '<div class="account-user me-3 position-relative">
                                 <i class="fa-solid fa-user"></i>
-                                <span>'.$_COOKIE["user"].'</span>  
+                                <span>'.$_COOKIE["tenuser"].'</span>  
                                 <i class="fa-solid fa-caret-down"></i>
                                 <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:1021; ">
                                     <ul class="list-group list-group-flush">
