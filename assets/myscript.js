@@ -1,0 +1,3 @@
+function kiemTraReset($url) {
+
+}

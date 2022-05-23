@@ -1,4 +1,6 @@
-<?php include "./database/SanPham.php" ?>
+<?php require "./database/SanPham.php";
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
     
-    <title>Laptoptop</title>
+    <title></title>
 </head>
 <body>
     <div class="container-fluid mb-3">
@@ -35,26 +37,26 @@
                                         <!-- <a href="./login.php" class="text-dark text-decoration-none">Đăng nhập</a> -->
                                         <!-- <i class="fa-solid fa-user me-2"></i>User -->
                                         <?php
-                                                                                        if(isset($_COOKIE["dangnhap"]))
-                                                                                        {
-                                                                                            if( $_COOKIE["dangnhap"] == "us")
-                                                                                            {
-                                                                                                echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                echo '<i class="fa-solid fa-user me-2"></i>Admin';
-                                                                                            }
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            echo '<div class="account me-3 ">                                                        
-                                                                                            <a class="text-dark" href="./login.php">Đăng nhập</a>
-                                                                                            <span >/</span>
-                                                                                            <a class="text-dark" href="./register.php">Đăng ký</a>
-                                                                                            </div>';                                                                                               
-                                                                                        }
-                                                                                ?>
+                                            if(isset($_COOKIE["dangnhap"]))
+                                            {
+                                                if( $_COOKIE["dangnhap"] == "us")
+                                                {
+                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["tenuser"].'' ;                                                                                         
+                                                }
+                                                else
+                                                {
+                                                    echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo '<div class="account me-3 ">                                                        
+                                                <a class="text-dark" href="./login.php">Đăng nhập</a>
+                                                <span >/</span>
+                                                <a class="text-dark" href="./register.php">Đăng ký</a>
+                                                </div>';                                                                                               
+                                            }
+                                        ?>
                                     </h5>
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
@@ -114,8 +116,10 @@
                                 </div>
                             </div>
                             <div class="search-box position-relative w-75">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm">
-                                <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
+                                <form action="./collections.php" method="get" id="ipad_search_box">
+                                    <input type="text" class="form-control" name="tenSP" placeholder="Tìm kiếm" value="<?php echo $_GET['tenSP'] ?? "" ?>">
+                                    <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;" onclick="document.getElementById('ipad_search_box').submit();"></i>
+                                </form>
                             </div>
                             <div class="d-flex d-md-none align-items-center">
                                 <a href="./giohang.php" class="text-white text-decoration-none"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -124,8 +128,10 @@
                     </div>
                     <div class="col-4 d-none d-md-flex align-items-center">                        
                         <div class="search-box position-relative w-100">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm">
-                            <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
+                                <form action="./collections.php" method="get" id="search_box">
+                                    <input type="text" class="form-control" name="tenSP" placeholder="Tìm kiếm" value="<?php echo $_GET['tenSP'] ?? "" ?>">
+                                    <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;" onclick="document.getElementById('search_box').submit();"></i>
+                                </form>
                         </div>
                     </div>
                     <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
@@ -137,9 +143,9 @@
                             {
                                 echo '<div class="account-user me-3 position-relative">
                                 <i class="fa-solid fa-user"></i>
-                                <span>'.$_COOKIE["user"].'</span>  
+                                <span>'.$_COOKIE["tenuser"].'</span>  
                                 <i class="fa-solid fa-caret-down"></i>
-                                <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
+                                <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:1021; ">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
                                         <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>

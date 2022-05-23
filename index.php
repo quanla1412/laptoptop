@@ -49,7 +49,7 @@
                     <div class="col-12 col-lg-9">
                         <div class="row">
                             <?php
-                                $danhSachSanPham = randomSanPham(filter(tenHang: 'DELL'), 4);
+                                $danhSachSanPham = randomSanPham(filter(tenHang: array('DELL')), 4);
 
                                 for($i=0; $i<4; $i++){
                                     echo '
@@ -71,7 +71,7 @@
                         </div>
                         <div class="row mt-3 mx-1">
                             <div class="nav-more col pe-0">
-                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="collections.php?tenHang=DELL" class="text-dark">Xem thêm</a></i></button>
+                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="./collections.php?tenHang=DELL" class="text-dark">Xem thêm</a></i></button>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <div class="col-12 col-lg-9">
                         <div class="row">
                             <?php
-                                $danhSachSanPham = randomSanPham(filter(tenHang: 'ASUS'), 4);
+                                $danhSachSanPham = randomSanPham(filter(tenHang: array('ASUS')), 4);
 
                                 for($i=0; $i<4; $i++){
                                     echo '
