@@ -85,7 +85,8 @@
                 <td><?= $sdt ?></td>
                 <td><?= $ngaysinh ?></td>
                 <td><?= $email ?></td>
-                <td class="edit-admin-acc">Chỉnh sửa</td>
+                <td class="edit-admin-acc"><a class="text-dark" href="chinhsua.php">Chỉnh sửa</a></td>
+                
             </tr>
             <?php } 
             $conn->close();
