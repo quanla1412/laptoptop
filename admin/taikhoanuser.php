@@ -1,3 +1,32 @@
+<?php
+    $severname = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+    if(isset($_COOKIE['tenuser'])){
+        $tenuser=$_COOKIE['tenuser'];
+        $conn = new mysqli($severname, $username, $password, $dbname);
+        if($conn->connect_error) {
+            die('Connection failed: '. $conn->connect_error);
+        }
+        $sql="SELECT * FROM quantri WHERE TenDangNhap= '$tenuser'";
+        $result = $conn->query($sql);
+        while($row= mysqli_fetch_assoc($result)){
+            $capbac=$row['CapBac'];
+        }
+        if($capbac!='giamdoc'){
+            ?>
+                <script>alert('lỗi')</script>
+        <?php
+            header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+        }
+    }else{
+        ?>
+            <script>alert('lỗi1')</script>
+    <?php
+        header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+    }
+?>
 <?php include "./header.php" ?>
 <?php
 
@@ -92,7 +121,7 @@
                 <td><?= $sdt ?></td>
                 <td><?= $ngaysinh ?></td>
                 <td><?= $email ?></td>
-                <td class="edit-admin-acc"><a class="text-dark" href="chinhsua.php">Chỉnh sửa</a></td>
+                <td class="edit-admin-acc"><a class="text-dark" href="suauser.php?makh=<?=$makh?>&tenuser=<?=$tendangnhap?>">Chỉnh sửa</a></td>
                 
             </tr>
             <?php } 
@@ -158,31 +187,40 @@
     </table>
     <div class="pagination d-flex justify-content-center mt-4">
            <?php
-           if($total_page == 1){}
-        else{
-            if($current_page == 1){echo '<li class="page-link" ><<</li>';}
-            if ($current_page > 1 && $total_page >= 1){
-                echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
-            }
- 
-            // Lặp khoảng giữa
-            for ($i = 1; $i <= $total_page; $i++){
-                // Nếu là trang hiện tại thì hiển thị thẻ span
-                // ngược lại hiển thị thẻ a
-                if ($i == $current_page){
-                    echo '<li class="page-item active"><a class="page-link" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
-                }
+            if($total_page == 1){}
                 else{
-                    echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    if($total_page!=0) {
+                        echo '<li class="page-item ';
+                        if($current_page<=1) echo 'disabled';
+                        echo'">
+                            <a class="page-link" href="taikhoanuser.php?page='.($current_page-1).'&search='.$key.'">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>';
+                    }
+                    // Lặp khoảng giữa
+                    for ($i = 1; $i <= $total_page; $i++){
+                        // Nếu là trang hiện tại thì hiển thị thẻ span
+                        // ngược lại hiển thị thẻ a
+                        if ($i == $current_page){
+                            echo '<li class="page-item active"><a class="page-link" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                        }
+                        else{
+                            echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                        }
+                    }
+        
+                    // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+                    if($total_page!=0) {
+                        echo '<li class="page-item ';
+                        if($current_page >= $total_page) echo 'disabled';
+                        echo'">
+                            <a class="page-link" href="taikhoanuser.php?page='.($current_page+1).'&search='.$key.'">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>';
+                    }
                 }
-            }
- 
-            // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-            if ($current_page < $total_page && $total_page >= 1){
-                echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
-            }
-            if($current_page == $total_page){echo '<li class="page-link" >>></li>';}
-        }
            ?>
         </div>    
     <!-- <div class="d-flex justify-content-center mt-4">

@@ -1,3 +1,32 @@
+<?php
+    $severname = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+    if(isset($_COOKIE['tenuser'])){
+        $tenuser=$_COOKIE['tenuser'];
+        $conn = new mysqli($severname, $username, $password, $dbname);
+        if($conn->connect_error) {
+            die('Connection failed: '. $conn->connect_error);
+        }
+        $sql="SELECT * FROM quantri WHERE TenDangNhap= '$tenuser'";
+        $result = $conn->query($sql);
+        while($row= mysqli_fetch_assoc($result)){
+            $capbac=$row['CapBac'];
+        }
+        if($capbac!='quanli'&&$capbac!='giamdoc'){
+            ?>
+                <script>alert('lỗi')</script>
+        <?php
+            header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+        }
+    }else{
+        ?>
+            <script>alert('lỗi1')</script>
+    <?php
+        header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+    }
+?>
 <?php 
     require "./header.php";
 

@@ -59,11 +59,30 @@
             <div class="col-lg-12">
                 <p class="h5">Nhập thêm số lượng</p>
             </div>
+            <?php
+                $severname = "localhost";
+                $username = "laptoptop";
+                $password = "laptoptop";
+                $dbname = "laptoptop";
+                $tenuser=$_COOKIE['tenuser'];
+                $conn = new mysqli($severname, $username, $password, $dbname);
+                if($conn->connect_error) {
+                    die('Connection failed: '. $conn->connect_error);
+                }
+                $sql="SELECT * FROM quantri WHERE TenDangNhap= '$tenuser'";
+                $result = $conn->query($sql);
+                while($row= mysqli_fetch_assoc($result)){
+                    $capbac= $row['CapBac'];
+                    $macs= $row['MaCS'];
+                }
+            ?>
             <div class="col-lg-11 offset-lg-1">
                 <div class="row d-flex align-items-baseline">
                     <label for="themslcsc" class="form-label col-lg-2">CSC</label>
                     <div class="col-lg-4">
-                        <input type="number" min="0" value="0" class="form-control" id="themslcsc" name="themslcsc">
+                        <input type="number" min="0" value="0" class="form-control" id="themslcsc" name="themslcsc"<?php 
+                        if($capbac =='giamdoc' || $macs =='csc'){}else{echo'disabled';}
+                        ?>>
                     </div>
                 </div>
             </div>
@@ -71,7 +90,9 @@
                 <div class="row d-flex align-items-baseline">
                     <label for="themslcs1" class="form-label col-lg-2">CS1</label>
                     <div class="col-lg-4">
-                        <input type="number" min="0" value="0" class="form-control" id="themslcs1" name="themslcs1">
+                        <input type="number" min="0" value="0" class="form-control" id="themslcs1" name="themslcs1"<?php 
+                        if($capbac =='giamdoc' || $macs =='cs1'){}else{echo'disabled';}
+                        ?>>
                     </div>
                 </div>
             </div>
@@ -79,7 +100,9 @@
                 <div class="row d-flex align-items-baseline">
                     <label for="themslcs2" class="form-label col-lg-2">CS2</label>
                     <div class="col-lg-4">
-                        <input type="number" min="0" value="0" class="form-control" id="themslcs2" name="themslcs2">
+                        <input type="number" min="0" value="0" class="form-control" id="themslcs2" name="themslcs2"<?php 
+                        if($capbac =='giamdoc' || $macs =='cs2'){}else{echo'disabled';}
+                        ?>>
                     </div>
                 </div>
             </div>
