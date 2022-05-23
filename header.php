@@ -46,7 +46,7 @@
                                             {
                                                 if( $_COOKIE["dangnhap"] == "us")
                                                 {
-                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
+                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["tenuser"].'' ;                                                                                         
                                                 }
                                                 else
                                                 {
@@ -114,7 +114,7 @@
                                                 }
                                             ?>"><a href="./sale.php" class="text-dark text-decoration-none">Khuyến mãi</a></li>
                                             <li class="menu-mobile-item list-group-item"><a href="./admin/" class="text-dark text-decoration-none">Cài đặt</a></li>
-                                            <li class="menu-mobile-item list-group-item"><a href="./loout.php" class="text-dark text-decoration-none">Đăng xuất</a></li>
+                                            <li class="menu-mobile-item list-group-item"><a href="./logout.php" class="text-dark text-decoration-none">Đăng xuất</a></li>
                                             
                                         </ul>
                                     </div>
@@ -152,13 +152,13 @@
                             {
                                 echo '<div class="account-user me-3 position-relative">
                                 <i class="fa-solid fa-user"></i>
-                                <span>'.$_COOKIE["user"].'</span>  
+                                <span>'.$_COOKIE["tenuser"].'</span>  
                                 <i class="fa-solid fa-caret-down"></i>
                                 <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:1021; ">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
                                         <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
-                                        <li class="list-group-item"><a class="text-dark" href="./loout.php">Đăng Xuất</a></li>
+                                        <li class="list-group-item"><a class="text-dark" href="./logout.php">Đăng Xuất</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                                 <i class="fa-solid fa-caret-down"></i>
                                 <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
                                     <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a class="text-dark" href="./loout.php">Đăng Xuất</a></li>
+                                    <li class="list-group-item"><a class="text-dark" href="./logout.php">Đăng Xuất</a></li>
                                     </ul>
                                 </div>
                             </div>

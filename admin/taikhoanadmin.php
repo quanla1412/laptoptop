@@ -1,36 +1,98 @@
 <?php include "./header.php" ?>
+<?php
+
+    $servername = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if(isset($_GET['search']))
+        {
+            $key=$_GET['search'];
+            $sql="SELECT COUNT(MaAdmin) AS total FROM quantri WHERE MaAdmin LIKE '%$key%' OR TenDangNhap LIKE '%$key%' ";
+        }
+        else{
+        $sql = "SELECT COUNT(MaAdmin) AS total FROM quantri";
+        }
+        $result = $conn->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        $total_records = $row['total'];
+        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $limit =2;
+        $total_page = ceil($total_records / $limit);
+        if ($current_page > $total_page){
+            $current_page = $total_page;
+        }
+        else if ($current_page < 1){
+            $current_page = 1;
+        }
+        
+        $start = ($current_page - 1) * $limit;
+        if(isset($_GET['search']))
+        {
+            $result = $conn->query("SELECT * FROM quantri WHERE MaAdmin LIKE '%$key%' OR TenDangNhap LIKE '%$key%' LIMIT $start, $limit");
+        }
+        else{
+            $result = $conn->query("SELECT * FROM quantri LIMIT $start, $limit");
+    }
+        
+?>
 
 <div class="container-fluid px-4">
     <div class="row mb-3">
-        <div class="col-10">
-            <span class="h6 me-2">Bộ lọc:</span>
-            <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã admin hoặc tên đăng nhập">
-        </div>
-        <div class="col-2 d-flex align-items-center">
-                <div class="btn-qldh-timkiem w-100">Tìm kiếm</div>
-        </div>
+            <form action=""method=GET class="row">
+                <div class="col-10">
+                <span class="h6 me-2">Bộ lọc:</span>
+                <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã Admin hoặc tên đăng nhập">
+                </div>
+                <input class="col-2 d-flex align-items-center btn-qldh-timkiem" type="submit" value="Tìm Kiếm">
+            </form>
     </div>
     <table class="table">
         <thead>
             <tr>
             <th scope="col">Mã Admin</th>
             <th scope="col">Tên đăng nhập</th>
-            <th scope="col">Mật khẩu</th>
+            <th scope="col">Mật Khẩu</th>
             <th scope="col">Cơ sở</th>
             <th scope="col">Cấp bậc</th>
             <th scope="col">Chỉnh sửa</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">AD01</th>
-                <td>adtanphan</td>
-                <td>123123</td>
-                <td>CSC</td>
-                <td>QL</td>
+        <?php
+                while($row= mysqli_fetch_assoc($result)){
+                    $MaAdmin= $row['MaAdmin'];
+                    $CapBac= $row['CapBac'];
+                    $tendangnhap= $row['TenDangNhap'];
+                    $macs= $row['MaCS'];
+                    
+                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$CapBac'");
+                    while($tow= mysqli_fetch_assoc($resul)){
+                        $matkhau= $tow['MatKhau'];
+                    }
+            ?>
+        <tr>
+                <th scope="row"><?= $MaAdmin ?></th>
+                <td><?= $CapBac ?></td>
+                <td><?= $matkhau ?></td>
+                <td><?= $macs ?></td>
+                <td><?= $tendangnhap ?></td>
                 <td class="edit-admin-acc">Chỉnh sửa</td>
             </tr>
-            <tr>
+            <?php } 
+            $conn->close();
+            ?>
+            
+            <!-- <tr>
                 <th scope="row">AD01</th>
                 <td>adtanphan</td>
                 <td>123123</td>
@@ -84,10 +146,41 @@
                 <td>CSC</td>
                 <td>QL</td>
                 <td class="edit-admin-acc">Chỉnh sửa</td>
-            </tr>
+            </tr> -->
         </tbody>
-    </table>    
-    <div class="d-flex justify-content-center mt-4">
+    </table> 
+    <div class="pagination d-flex justify-content-center mt-4">
+           <?php
+           if($total_page == 1){
+
+           }
+           else{
+            if($current_page == 1){echo '<li class="page-link" ><<</li>';}
+            if ($current_page > 1 && $total_page >= 1){
+                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
+                }
+    
+                // Lặp khoảng giữa
+                for ($i = 1; $i <= $total_page; $i++){
+                    // Nếu là trang hiện tại thì hiển thị thẻ span
+                    // ngược lại hiển thị thẻ a
+                    if ($i == $current_page){
+                        echo '<li class="page-item active"><a class="page-link text-dark" href="taikhoanadmin.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    }
+                    else{
+                        echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    }
+                }
+    
+                // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+                if ($current_page < $total_page && $total_page >= 1){
+                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
+                }
+                if($current_page == $total_page){echo '<li class="page-link" >>></li>';}
+            }
+           ?>
+        </div>   
+    <!-- <div class="d-flex justify-content-center mt-4">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <li class="page-item">
@@ -105,7 +198,7 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </div> -->
 </div>
 
 <?php include "./footer.php" ?>

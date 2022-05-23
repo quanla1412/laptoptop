@@ -64,7 +64,7 @@
                         }
                     ?>
                     ">Doanh thu</div></a>
-                    <a href="./taikhoanuser.php"><div class="btn-admenu px-3 py-1 text-white                     
+                    <a href="./taikhoanuser.php?search="><div class="btn-admenu px-3 py-1 text-white                     
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
                         if (strpos($cur,'taikhoanuser.php') !== FALSE) {
@@ -72,7 +72,7 @@
                         }
                     ?>
                     ">Tài khoản người dùng</div></a>
-                    <a href="./taikhoanadmin.php"><div class="btn-admenu px-3 py-1 text-white 
+                    <a href="./taikhoanadmin.php?search="><div class="btn-admenu px-3 py-1 text-white 
                     <?php
                         $cur = $_SERVER['REQUEST_URI'];
                         if (strpos($cur,'taikhoanadmin.php') !== FALSE) {
