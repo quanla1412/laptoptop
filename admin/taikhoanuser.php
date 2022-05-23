@@ -61,6 +61,7 @@
             <tr>
             <th scope="col">Mã KH</th>
             <th scope="col">Tên đăng nhập</th>
+            <th scope="col">Mật Khẩu</th>
             <th scope="col">Họ Tên</th>
             <th scope="col">Số điện thoại</th>
             <th scope="col">Ngày Sinh</th>
@@ -77,15 +78,22 @@
                     $sdt= $row['SoDienThoai'];
                     $ngaysinh= $row['NgaySinh'];
                     $email= $row['Email'];
+                    
+                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$tendangnhap'");
+                    while($tow= mysqli_fetch_assoc($resul)){
+                        $matkhau= $tow['MatKhau'];
+                    }
             ?>
         <tr>
                 <th scope="row"><?= $makh ?></th>
                 <td><?= $tendangnhap ?></td>
+                <td><?= $matkhau ?></td>
                 <td><?= $hoten ?></td>
                 <td><?= $sdt ?></td>
                 <td><?= $ngaysinh ?></td>
                 <td><?= $email ?></td>
-                <td class="edit-admin-acc">Chỉnh sửa</td>
+                <td class="edit-admin-acc"><a class="text-dark" href="chinhsua.php">Chỉnh sửa</a></td>
+                
             </tr>
             <?php } 
             $conn->close();
@@ -150,8 +158,11 @@
     </table>
     <div class="pagination d-flex justify-content-center mt-4">
            <?php
-            if ($current_page >= 1 && $total_page >= 1){
-                echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanuser.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
+           if($total_page == 1){}
+        else{
+            if($current_page == 1){echo '<li class="page-link" ><<</li>';}
+            if ($current_page > 1 && $total_page >= 1){
+                echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
             }
  
             // Lặp khoảng giữa
@@ -159,17 +170,19 @@
                 // Nếu là trang hiện tại thì hiển thị thẻ span
                 // ngược lại hiển thị thẻ a
                 if ($i == $current_page){
-                    echo '<li class="page-item active"><a class="page-link text-dark" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    echo '<li class="page-item active"><a class="page-link" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
                 }
                 else{
-                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
                 }
             }
  
             // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-            if ($current_page <= $total_page && $total_page >= 1){
-                echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanuser.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
+            if ($current_page < $total_page && $total_page >= 1){
+                echo '<li class="page-item "><a class="page-link" href="taikhoanuser.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
             }
+            if($current_page == $total_page){echo '<li class="page-link" >>></li>';}
+        }
            ?>
         </div>    
     <!-- <div class="d-flex justify-content-center mt-4">

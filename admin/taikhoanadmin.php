@@ -61,6 +61,7 @@
             <tr>
             <th scope="col">Mã Admin</th>
             <th scope="col">Tên đăng nhập</th>
+            <th scope="col">Mật Khẩu</th>
             <th scope="col">Cơ sở</th>
             <th scope="col">Cấp bậc</th>
             <th scope="col">Chỉnh sửa</th>
@@ -73,12 +74,18 @@
                     $CapBac= $row['CapBac'];
                     $tendangnhap= $row['TenDangNhap'];
                     $macs= $row['MaCS'];
+                    
+                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$CapBac'");
+                    while($tow= mysqli_fetch_assoc($resul)){
+                        $matkhau= $tow['MatKhau'];
+                    }
             ?>
         <tr>
                 <th scope="row"><?= $MaAdmin ?></th>
                 <td><?= $CapBac ?></td>
-                <td><?= $tendangnhap ?></td>
+                <td><?= $matkhau ?></td>
                 <td><?= $macs ?></td>
+                <td><?= $tendangnhap ?></td>
                 <td class="edit-admin-acc">Chỉnh sửa</td>
             </tr>
             <?php } 
@@ -144,25 +151,32 @@
     </table> 
     <div class="pagination d-flex justify-content-center mt-4">
            <?php
-            if ($current_page >= 1 && $total_page >= 1){
-                echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
-            }
- 
-            // Lặp khoảng giữa
-            for ($i = 1; $i <= $total_page; $i++){
-                // Nếu là trang hiện tại thì hiển thị thẻ span
-                // ngược lại hiển thị thẻ a
-                if ($i == $current_page){
-                    echo '<li class="page-item active"><a class="page-link text-dark" href="taikhoanadmin.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+           if($total_page == 1){
+
+           }
+           else{
+            if($current_page == 1){echo '<li class="page-link" ><<</li>';}
+            if ($current_page > 1 && $total_page >= 1){
+                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
                 }
-                else{
-                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+    
+                // Lặp khoảng giữa
+                for ($i = 1; $i <= $total_page; $i++){
+                    // Nếu là trang hiện tại thì hiển thị thẻ span
+                    // ngược lại hiển thị thẻ a
+                    if ($i == $current_page){
+                        echo '<li class="page-item active"><a class="page-link text-dark" href="taikhoanadmin.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    }
+                    else{
+                        echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.$i.'&search='.$key.'">'.$i.'</a></li>';
+                    }
                 }
-            }
- 
-            // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-            if ($current_page <= $total_page && $total_page >= 1){
-                echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
+    
+                // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+                if ($current_page < $total_page && $total_page >= 1){
+                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
+                }
+                if($current_page == $total_page){echo '<li class="page-link" >>></li>';}
             }
            ?>
         </div>   
