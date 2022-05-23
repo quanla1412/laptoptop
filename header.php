@@ -19,44 +19,50 @@
 </head>
 <body>
     <div class="container-fluid mb-3">
+        <!--Phần trên -->
         <div class="row" style="background-color: var(--primary-color);"> 
             <div class="container-xl">
                 <div class="row">                    
                     <div class="col-12 col-md-4 d-md-flex justify-content-center">
+                        <!-- Logo chính giữa -->
                         <div class="d-flex d-md-inline-block justify-content-center">
                             <a href="./"><img src="./assets/image/logo/logo.jpg" alt="logo" style="height: 60px;"></a>
                         </div>
                         
+                        <!-- Mobile -->
                         <div class="d-flex d-md-none justify-content-around mb-3">      
+                            <!-- Menu Mobile -->
                             <a class="d-flex d-md-none align-items-center text-white text-decoration-none" data-bs-toggle="offcanvas" href="#menumobile" role="button" aria-controls="boloc" style="">
                                 <i class="fa-solid fa-bars"></i>
-                            </a>                  
+                            </a>  
+
                             <div class="offcanvas offcanvas-start" tabindex="-1" id="menumobile" aria-labelledby="offcanvasExampleLabel" style="width: 320px;">
                                 <div class="offcanvas-header">
                                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                         <!-- <a href="./login.php" class="text-dark text-decoration-none">Đăng nhập</a> -->
                                         <!-- <i class="fa-solid fa-user me-2"></i>User -->
                                         <?php
-                                                                                        if(isset($_COOKIE["dangnhap"]))
-                                                                                        {
-                                                                                            if( $_COOKIE["dangnhap"] == "us")
-                                                                                            {
-                                                                                                echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                echo '<i class="fa-solid fa-user me-2"></i>Admin';
-                                                                                            }
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            echo '<div class="account me-3 ">                                                        
-                                                                                            <a class="text-dark" href="./login.php">Đăng nhập</a>
-                                                                                            <span >/</span>
-                                                                                            <a class="text-dark" href="./register.php">Đăng ký</a>
-                                                                                            </div>';                                                                                               
-                                                                                        }
-                                                                                ?>
+                                            if(isset($_COOKIE["dangnhap"]))
+                                            {
+                                                if( $_COOKIE["dangnhap"] == "us")
+                                                {
+                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["user"].'' ;                                                                                         
+                                                }
+                                                else
+                                                {
+                                                    echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo '
+                                                <div class="account me-3 ">                                                        
+                                                    <a class="text-dark" href="./login.php">Đăng nhập</a>
+                                                    <span >/</span>
+                                                    <a class="text-dark" href="./register.php">Đăng ký</a>
+                                                </div>';                                                                                               
+                                            }
+                                        ?>
                                     </h5>
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
@@ -64,23 +70,22 @@
                                     <div class="container-fluid px-0">
                                         <ul class="menu-mobile list-group list-group-flush">
                                             <li class="menu-mobile-item list-group-item 
-                                                <?php
-                                                    $cur = $_SERVER['REQUEST_URI'];
-                                                    if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/') {
-                                                        echo 'active';
-                                                    }
-                                                ?>                                                
+                                            <?php
+                                                $cur = $_SERVER['REQUEST_URI'];
+                                                if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/') {
+                                                    echo 'active';
+                                                }
+                                            ?>                                                
                                             "><a href="./" class="text-dark text-decoration-none">Trang chủ</a></li>
                                             <li class="menu-mobile-item list-group-item 
                                             <?php
-                                                $cur = $_SERVER['REQUEST_URI'];
                                                 if (strpos($cur,'gioithieu.php') !== FALSE) {
                                                     echo 'active';
                                                 }
                                             ?>"><a href="./gioithieu.php" class="text-dark text-decoration-none">Giới thiệu</a></li>
                                             <li class="menu-mobile-item list-group-item 
                                             <?php
-                                                $cur = $_SERVER['REQUEST_URI'];
+                        
                                                 if (strpos($cur,'lienhe.php') !== FALSE) {
                                                     echo 'active';
                                                 }
@@ -88,7 +93,7 @@
                                             "><a href="./lienhe.php" class="text-dark text-decoration-none">Liên hệ</a></li>
                                             <li class="menu-mobile-item list-group-item 
                                             <?php
-                                                $cur = $_SERVER['REQUEST_URI'];
+                        
                                                 if (strpos($cur,'collections.php') !== FALSE || strpos($cur,'product.php') !== FALSE) {
                                                     echo 'active';
                                                 }
@@ -96,14 +101,14 @@
                                             "><a href="./collections.php" class="text-dark text-decoration-none">Sản phẩm</a></li>
                                             <li class="menu-mobile-item list-group-item 
                                             <?php
-                                                $cur = $_SERVER['REQUEST_URI'];
+                        
                                                 if (strpos($cur,'baohanh.php') !== FALSE) {
                                                     echo 'active';
                                                 }
                                             ?>"><a href="./baohanh.php" class="text-dark text-decoration-none">Bảo hành</a></li>
                                             <li class="menu-mobile-item list-group-item 
                                             <?php
-                                                $cur = $_SERVER['REQUEST_URI'];
+                        
                                                 if (strpos($cur,'sale.php') !== FALSE) {
                                                     echo 'active';
                                                 }
@@ -115,12 +120,16 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Search Mobile -->
                             <div class="search-box position-relative w-75">
                                 <form action="./collections.php" method="get" id="ipad_search_box">
                                     <input type="text" class="form-control" name="tenSP" placeholder="Tìm kiếm" value="<?php echo $_GET['tenSP'] ?? "" ?>">
                                     <i class="find-icon fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;" onclick="document.getElementById('ipad_search_box').submit();"></i>
                                 </form>
                             </div>
+
+                            <!-- Cart Mobile -->
                             <div class="d-flex d-md-none align-items-center">
                                 <a href="./giohang.php" class="text-white text-decoration-none"><i class="fa-solid fa-cart-shopping"></i></a>
                             </div>
@@ -201,12 +210,14 @@
                 </div>
             </div>
         </div>
+
+        <!--Phần dưới -->
         <div class="row d-none d-md-flex" style="background-color: var(--third-color); height: 60px;"> 
             <ul class="nav justify-content-center ">
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
-                        $cur = $_SERVER['REQUEST_URI'];
+
                         if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/') {
                             echo 'active';
                         }
@@ -215,7 +226,7 @@
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./gioithieu.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
-                        $cur = $_SERVER['REQUEST_URI'];
+
                         if (strpos($cur,'gioithieu.php') !== FALSE) {
                             echo 'active';
                         }
@@ -224,7 +235,7 @@
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./lienhe.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
-                        $cur = $_SERVER['REQUEST_URI'];
+
                         if (strpos($cur,'lienhe.php') !== FALSE) {
                             echo 'active';
                         }
@@ -233,7 +244,7 @@
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./baohanh.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
-                        $cur = $_SERVER['REQUEST_URI'];
+
                         if (strpos($cur,'baohanh.php') !== FALSE) {
                             echo 'active';
                         }
@@ -242,7 +253,7 @@
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./collections.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
-                        $cur = $_SERVER['REQUEST_URI'];
+
                         if (strpos($cur,'collections.php') !== FALSE || strpos($cur,'product.php') !== FALSE) {
                             echo 'active';
                         }
@@ -251,7 +262,7 @@
                 <li class="nav-item d-flex align-items-center me-2">
                     <a href="./sale.php"><button type="button" class="btn btn-outline-primary border-0 btn-nav text-light 
                     <?php
-                        $cur = $_SERVER['REQUEST_URI'];
+
                         if (strpos($cur,'sale.php') !== FALSE) {
                             echo 'active';
                         }

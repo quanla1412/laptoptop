@@ -71,7 +71,7 @@
                         </div>
                         <div class="row mt-3 mx-1">
                             <div class="nav-more col pe-0">
-                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="./collections.php?tenHang=DELL" class="text-dark">Xem thêm</a></i></button>
+                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="./collections.php?tenHang[]=DELL" class="text-dark">Xem thêm</a></i></button>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="row mt-3 mx-1">
                             <div class="nav-more col pe-0">
-                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="./collections.php?tenHang=ASUS" class="text-dark">Xem thêm</a></i></button>
+                                <button type="button" class="btn btn-outline-secondary float-end" ><a href="./collections.php?tenHang[]=ASUS" class="text-dark">Xem thêm</a></i></button>
                             </div>
                         </div>
                     </div>
