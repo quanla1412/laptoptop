@@ -61,6 +61,7 @@
             <tr>
             <th scope="col">Mã KH</th>
             <th scope="col">Tên đăng nhập</th>
+            <th scope="col">Mật Khẩu</th>
             <th scope="col">Họ Tên</th>
             <th scope="col">Số điện thoại</th>
             <th scope="col">Ngày Sinh</th>
@@ -77,10 +78,16 @@
                     $sdt= $row['SoDienThoai'];
                     $ngaysinh= $row['NgaySinh'];
                     $email= $row['Email'];
+                    
+                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$tendangnhap'");
+                    while($tow= mysqli_fetch_assoc($resul)){
+                        $matkhau= $tow['MatKhau'];
+                    }
             ?>
         <tr>
                 <th scope="row"><?= $makh ?></th>
                 <td><?= $tendangnhap ?></td>
+                <td><?= $matkhau ?></td>
                 <td><?= $hoten ?></td>
                 <td><?= $sdt ?></td>
                 <td><?= $ngaysinh ?></td>

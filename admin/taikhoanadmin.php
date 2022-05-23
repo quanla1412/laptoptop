@@ -61,6 +61,7 @@
             <tr>
             <th scope="col">Mã Admin</th>
             <th scope="col">Tên đăng nhập</th>
+            <th scope="col">Mật Khẩu</th>
             <th scope="col">Cơ sở</th>
             <th scope="col">Cấp bậc</th>
             <th scope="col">Chỉnh sửa</th>
@@ -73,12 +74,18 @@
                     $CapBac= $row['CapBac'];
                     $tendangnhap= $row['TenDangNhap'];
                     $macs= $row['MaCS'];
+                    
+                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$CapBac'");
+                    while($tow= mysqli_fetch_assoc($resul)){
+                        $matkhau= $tow['MatKhau'];
+                    }
             ?>
         <tr>
                 <th scope="row"><?= $MaAdmin ?></th>
                 <td><?= $CapBac ?></td>
-                <td><?= $tendangnhap ?></td>
+                <td><?= $matkhau ?></td>
                 <td><?= $macs ?></td>
+                <td><?= $tendangnhap ?></td>
                 <td class="edit-admin-acc">Chỉnh sửa</td>
             </tr>
             <?php } 
