@@ -104,7 +104,7 @@ $tenuser=$_GET['tenuser'];
         <input type="button" class="btn btn-admin" onclick="formSubmit()" value="Lưu">
         <script>
             function formSubmit(){
-                if (confirm("Bạn muốn chỉnh sửa tài khoản user") == true) {
+                if (confirm("Bạn muốn chỉnh sửa tài khoản User") == true) {
                     document.forms["suauser"].submit();
                 } else {
                     // window.location="./collections.php";

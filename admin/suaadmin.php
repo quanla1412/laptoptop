@@ -103,7 +103,7 @@ $tenadmin=$_GET['tenadmin'];
         <input type="button" class="btn btn-admin" onclick="formSubmit()" value="Lưu">
         <script>
             function formSubmit(){
-                if (confirm("Bạn muốn chỉnh sửa tài khoản user") == true) {
+                if (confirm("Bạn muốn chỉnh sửa tài khoản Admin") == true) {
                     document.forms["suaadmin"].submit();
                 } else {
                     // window.location="./collections.php";
