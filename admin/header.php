@@ -15,6 +15,7 @@
 </head>
 <body>
     
+    <!-- Responsive Mobile Vertical-->
     <div class="container-fluid d-flex justify-content-center align-items-center d-md-none fixed-top fixed-bottom w-100" style="background-color: #333; z-index:1031;">
         <p class="h2 text-white">Vui lòng xoay điện thoại từ dọc sang ngang</p>
     </div>
@@ -194,7 +195,7 @@
                         </div>
                         <div class="header-admin-logout" style="cursor: pointer">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <a href="./../">Đăng xuất</a>
+                            <a href="./../logout.php">Đăng xuất</a>
                         </div>
                     </div>
                 </div>

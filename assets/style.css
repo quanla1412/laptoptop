@@ -261,6 +261,7 @@ float: left;
 .btn-lsdonhang:hover {
     background-color: var(--third-color);
     color: white; 
+    cursor: pointer;
 }
 
 .btn-lsdonhang.active,

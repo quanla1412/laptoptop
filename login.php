@@ -1,31 +1,29 @@
 <?php
-                $servername = "localhost";
-                $username = "laptoptop";
-                $password = "laptoptop";
-                $dbname = "laptoptop";
-        
-        
-                $conn = new mysqli($servername, $username, $password, $dbname);
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                $user = $_POST['username'];
-                $pass = $_POST['password'];
-        
-                $sql= "SELECT * FROM taikhoan WHERE TenDangNhap = '$user' AND Matkhau = '$pass' ";
-                $loaitk= "SELECT LoaiTK FROM taikhoan WHERE TenDangNhap = '$user' AND Matkhau = '$pass' ";
-                $result = $conn->query($sql);
-                $resul = $conn->query($loaitk);
-                $row = $resul->fetch_assoc();
+    $servername = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
 
-                if ($result->num_rows > 0) {
-                    setcookie("tenuser",$user,time()+30*24*60*60);
-                    setcookie("dangnhap",$row["LoaiTK"],time()+30*24*60*60);
-                    header('location: index.php');
-                }
-                else {?>
-                    <script>alert("Tên Đăng Nhập Hoặc Mật Khẩu Không Chính Xác")</script>
-                <?php }
-            }
-            $conn->close();
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $user = $_POST['username'];
+        $pass = $_POST['password'];
+
+        $sql= "SELECT * FROM taikhoan WHERE TenDangNhap = '$user' AND Matkhau = '$pass' ";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+
+        if ($result->num_rows > 0) {
+            setcookie("tenuser",$user,time()+30*24*60*60);
+            setcookie("dangnhap",$row["LoaiTK"],time()+30*24*60*60);
+            header('location: index.php');
+        }
+        else {
+            echo '<script>alert("Tên Đăng Nhập Hoặc Mật Khẩu Không Chính Xác")</script>';
+        }
+    }
+    $conn->close();
 ?>
 <?php include "./header.php"?>
 
