@@ -213,56 +213,6 @@
                             </div>';
                         }
                         ?>
-
-                        if(isset($_COOKIE["dangnhap"])){
-                            if( $_COOKIE["dangnhap"] == "us"){
-                                echo '
-                                <div class="account-user me-3 position-relative">
-                                    <i class="fa-solid fa-user"></i>
-                                    <span>'.$_COOKIE["tenuser"].'</span>  
-                                    <i class="fa-solid fa-caret-down"></i>
-                                    <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:1021; ">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><a class="text-dark" href="./thongtinuser.php">Tài khoản của tôi</a></li>
-                                            <li class="list-group-item"><a class="text-dark" href="./lsdonhang.php">Lịch sử đơn hàng</a></li>
-                                            <li class="list-group-item"><a class="text-dark" href="./logout.php">Đăng Xuất</a></li>
-                                        </ul>
-                                    </div>
-                                   </div>
-                                <a href="./giohang.php">
-                                    <div class="btn btn-cart">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                        <span>Giỏ hàng</span>   
-                                    </div>
-                                </a>';
-                            } else {
-                                echo '
-                                <div class="account-user me-3 position-relative">
-                                    <i class="fa-solid fa-user"></i>
-                                    <span>Admin</span>  
-                                    <i class="fa-solid fa-caret-down"></i>
-                                    <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
-                                        <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><a class="text-dark" href="./logout.php">Đăng Xuất</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <a href="./admin/">
-                                    <div class="btn btn-cart">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <span>Cài đặt</span>   
-                                    </div>
-                                </a>';
-                            }
-                        } else {
-                            echo '
-                            <div class="account me-3">                                                        
-                                <a href="./login.php">Đăng nhập</a>
-                                <span class="text-light">/</span>
-                                <a href="./register.php">Đăng ký</a>
-                            </div>';
-                        }      
-                        ?>
                     </div>
                 </div>
             </div>
