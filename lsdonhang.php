@@ -1,4 +1,16 @@
 <?php include "./header.php"?>
+<script>
+    function trangThai(x){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("giaTongSoLuongSP"+x).innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "trangThaiDonHang.php?trangthai="+x, true);
+        xmlhttp.send();
+    }
+</script>
 <div class="container">
   <div class="row">
         <div class="row pt-2 pb-2 d-flex justify-content-center align-items-center" style="background-color: #E5E5E5;border-radius: 20px;font-weight: bold; font-size: 24px;">
@@ -9,6 +21,7 @@
             <h6 class="col pt-3 pb-3 border border-dark border-2 d-flex justify-content-center align-items-center btn-lsdonhang ">Đang Xử Lí</h6>
             <h6 class="col pt-3 pb-3 border border-dark border-2 d-flex justify-content-center align-items-center btn-lsdonhang ">Đã Hoàn Thành</h6>
         </div>
+        
         <div class="row mt-2 mb-5" style="background-color: #E5E5E5; border-radius: 20px;">
             <div class="row pt-3 mt-2">
                 <h4 class="col-9">Đơn Hàng: Mã Đơn</h4>
@@ -63,7 +76,7 @@
                     </h6>
             </div>
         </div>
-        <!-- <div class="row mt-5 " style="background-color: #E5E5E5; border-radius: 20px;">
+        <div class="row mt-2 mb-5 " style="background-color: #E5E5E5; border-radius: 20px;">
             <div class="row pt-3 mt-2">
                 <h4 class="col-10">Đơn Hàng: Mã Đơn</h4>
                 <h5 class="col-2 ps-5" style="color: #1E656D" >Đang Giao Hàng</h5>
@@ -117,7 +130,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4 " style="background-color: #E5E5E5; border-radius: 20px;">
+        <div class="row mt-2 mb-5 " style="background-color: #E5E5E5; border-radius: 20px;">
             <div class="row pt-3 mt-2">
                 <h4 class="col-10">Đơn Hàng: Mã Đơn</h4>
                 <h5 class="col-2 ps-5" style="color: #1E656D" >Đã Giao Hàng</h5>
@@ -167,7 +180,7 @@
                     66.000.000 
                 </h6>
             </div>
-        </div> -->
+        </div>
   </div>
 </div>
 <?php include "./footer.php" ?>
