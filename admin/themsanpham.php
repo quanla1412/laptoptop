@@ -18,11 +18,11 @@
             ?>
                 <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
         <?php
-            header( "refresh:0 ; url=../login.php" );
+            header( "refresh:0 ; url=../logout.php" );
         }
     }else{
         ?>
-            <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
+            <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin1')</script>
     <?php
         header( "refresh:0 ; url=../login.php" );
     }

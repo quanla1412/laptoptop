@@ -50,7 +50,7 @@
                                                 }
                                                 else
                                                 {
-                                                    echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["tenuser"].'';
                                                 }
                                             }
                                             else
@@ -161,6 +161,7 @@
                     <div class="d-none col-4 header-user d-md-flex align-items-center justify-content-center position-relative">
                         <!-- Chua dang nhap -->
                         <?php 
+
                         if(isset($_COOKIE["dangnhap"])){
                             if( $_COOKIE["dangnhap"] == "us"){
                                 echo '
@@ -175,7 +176,7 @@
                                             <li class="list-group-item"><a class="text-dark" href="./logout.php">Đăng Xuất</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                   </div>
                                 <a href="./giohang.php">
                                     <div class="btn btn-cart">
                                         <i class="fa-solid fa-cart-shopping"></i>
@@ -208,7 +209,7 @@
                                 <span class="text-light">/</span>
                                 <a href="./register.php">Đăng ký</a>
                             </div>';
-                        }                        
+                        }      
                         ?>
                     </div>
                 </div>

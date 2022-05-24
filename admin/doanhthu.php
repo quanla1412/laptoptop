@@ -18,7 +18,7 @@
             ?>
                 <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
         <?php
-            header( "refresh:0 ; url=../login.php" );
+            header( "refresh:0 ; url=../logout.php" );
         }
     }else{
         ?>
