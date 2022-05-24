@@ -1,3 +1,32 @@
+<?php
+    $severname = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+    if(isset($_COOKIE['tenuser'])){
+        $tenuser=$_COOKIE['tenuser'];
+        $conn = new mysqli($severname, $username, $password, $dbname);
+        if($conn->connect_error) {
+            die('Connection failed: '. $conn->connect_error);
+        }
+        $sql="SELECT * FROM quantri WHERE TenDangNhap= '$tenuser'";
+        $result = $conn->query($sql);
+        while($row= mysqli_fetch_assoc($result)){
+            $capbac=$row['CapBac'];
+        }
+        if($capbac!='giamdoc'){
+            ?>
+                <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
+        <?php
+            header( "refresh:0 ; url=../login.php" );
+        }
+    }else{
+        ?>
+            <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
+    <?php
+        header( "refresh:0 ; url=../login.php" );
+    }
+?>
 <?php include "./header.php" ?>
 <?php
 
@@ -24,10 +53,10 @@
         }
         $result = $conn->query($sql);
         $row = mysqli_fetch_assoc($result);
-        $total_records = $row['total'];
-        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $limit =2;
-        $total_page = ceil($total_records / $limit);
+        $total_records = $row['total'];//tổng số lượng trên database
+        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;//trang hiện tại 
+        $limit =10;//giời hạn số lượng trên trang
+        $total_page = ceil($total_records / $limit);//tổng số trang
         if ($current_page > $total_page){
             $current_page = $total_page;
         }
@@ -71,22 +100,22 @@
         <?php
                 while($row= mysqli_fetch_assoc($result)){
                     $MaAdmin= $row['MaAdmin'];
-                    $CapBac= $row['CapBac'];
                     $tendangnhap= $row['TenDangNhap'];
+                    $CapBac= $row['CapBac'];
                     $macs= $row['MaCS'];
                     
-                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$CapBac'");
+                    $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$tendangnhap'");
                     while($tow= mysqli_fetch_assoc($resul)){
                         $matkhau= $tow['MatKhau'];
                     }
             ?>
         <tr>
                 <th scope="row"><?= $MaAdmin ?></th>
-                <td><?= $CapBac ?></td>
+                <td><?= $tendangnhap ?></td>
                 <td><?= $matkhau ?></td>
                 <td><?= $macs ?></td>
-                <td><?= $tendangnhap ?></td>
-                <td class="edit-admin-acc">Chỉnh sửa</td>
+                <td><?= $CapBac ?></td>
+                <td class="edit-admin-acc"><a class="text-dark" href="suaAdmin.php?maad=<?=$MaAdmin?>&tenadmin=<?=$tendangnhap?>">Chỉnh sửa</a></td>
             </tr>
             <?php } 
             $conn->close();
@@ -155,11 +184,16 @@
 
            }
            else{
-            if($current_page == 1){echo '<li class="page-link" ><<</li>';}
-            if ($current_page > 1 && $total_page >= 1){
-                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page-1).'&search='.$key.'"><<</a></li>';
+                if($total_page!=0) {
+                    echo '<li class="page-item ';
+                    if($current_page<=1) echo 'disabled';
+                    echo'">
+                        <a class="page-link" href="taikhoanadmin.php?page='.($current_page-1).'&search='.$key.'">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>';
                 }
-    
+        
                 // Lặp khoảng giữa
                 for ($i = 1; $i <= $total_page; $i++){
                     // Nếu là trang hiện tại thì hiển thị thẻ span
@@ -173,10 +207,15 @@
                 }
     
                 // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-                if ($current_page < $total_page && $total_page >= 1){
-                    echo '<li class="page-item "><a class="page-link text-dark" href="taikhoanadmin.php?page='.($current_page+1).'&search='.$key.'">>></a></li>';
+                if($total_page!=0) {
+                    echo '<li class="page-item ';
+                    if($current_page >= $total_page) echo 'disabled';
+                    echo'">
+                        <a class="page-link" href="taikhoanadmin.php?page='.($current_page+1).'&search='.$key.'">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>';
                 }
-                if($current_page == $total_page){echo '<li class="page-link" >>></li>';}
             }
            ?>
         </div>   

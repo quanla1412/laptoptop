@@ -1,3 +1,15 @@
+<?php
+    $severname = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+    if(!isset($_COOKIE['tenuser'])){
+        ?>
+            <script>alert('Vui lòng Đăng Nhập')</script>
+    <?php
+        header( "refresh:0 ; url=./login.php" );
+    }
+?>
 <?php include "./header.php"?>
 <div class="container">
   <div class="row align-items-start">

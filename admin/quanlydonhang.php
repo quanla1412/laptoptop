@@ -26,6 +26,7 @@
             <th scope="col">Giá</th>
             <th scope="col">Tổng tiền</th>
             <th scope="col">Trạng thái</th>
+            <th class="text-center" scope="col">Xử Lý</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@
                 <td>22.000.000 VND</td>
                 <td>22.000.000 VND</td>
                 <td class="text-danger">Chưa thanh toán</td>
+                <td rowspan="3" class="align-middle text-center"><a class="text-dark" href="">Chỉnh sửa</a></br><a class="text-dark" href="">Nhập hàng</a></td>
             </tr>
             <tr>
                 <th scope="row">20042022</th>

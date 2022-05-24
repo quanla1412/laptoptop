@@ -1,3 +1,32 @@
+<?php
+    $severname = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+    if(isset($_COOKIE['tenuser'])){
+        $tenuser=$_COOKIE['tenuser'];
+        $conn = new mysqli($severname, $username, $password, $dbname);
+        if($conn->connect_error) {
+            die('Connection failed: '. $conn->connect_error);
+        }
+        $sql="SELECT * FROM quantri WHERE TenDangNhap= '$tenuser'";
+        $result = $conn->query($sql);
+        while($row= mysqli_fetch_assoc($result)){
+            $capbac=$row['CapBac'];
+        }
+        if($capbac!='quanli'&&$capbac!='giamdoc'){
+            ?>
+                <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
+        <?php
+            header( "refresh:0 ; url=../login.php" );
+        }
+    }else{
+        ?>
+            <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
+    <?php
+        header( "refresh:0 ; url=../login.php" );
+    }
+?>
 <?php include "./header.php" ?>
 
 <div class="container-xl">
