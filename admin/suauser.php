@@ -51,8 +51,6 @@ $tenuser=$_GET['tenuser'];
 
         $sql_sua = "UPDATE khachhang SET HoTen='$hoten', SoDienThoai='$sdt', NgaySinh='$ngaysinh', Email='$email' WHERE TenDangNhap = '$tenuser'";
         $result_sua = $conn->query($sql_sua);
-        if($result_sua) echo'<script>alert("Sửa thành công");</script>';
-        else echo'<script>alert("Sửa không thành công");</script>';
     }
     while($row= mysqli_fetch_assoc($result)){
         $hoten= $row['HoTen'];
@@ -65,7 +63,7 @@ $tenuser=$_GET['tenuser'];
             $matkhau= $tow['MatKhau'];
         }
 ?>
-<form action="suauser.php?makh=<?=$makh?>&tenuser=<?=$tenuser?>" method="POST">
+<form action="suauser.php?makh=<?=$makh?>&tenuser=<?=$tenuser?>" method="POST" name="suauser">
     <div class="modal-body">
         <div class="row g-3">
             <div class="col-lg-6">
@@ -103,7 +101,16 @@ $tenuser=$_GET['tenuser'];
             ?>
     <div class="float-end">
         <button type="button" class="btn btn-secondary"><a href="suauser.php?makh=<?=$makh?>&tenuser=<?=$tenuser?>">Reset</a></button>
-        <button type="submit" class="btn btn-admin">Lưu</button>
+        <input type="button" class="btn btn-admin" onclick="formSubmit()" value="Lưu">
+        <script>
+            function formSubmit(){
+                if (confirm("Bạn muốn chỉnh sửa tài khoản user") == true) {
+                    document.forms["suauser"].submit();
+                } else {
+                    // window.location="./collections.php";
+                }    
+            }
+        </script>
     </div>
 </form>
 <?php require "./footer.php" ?>

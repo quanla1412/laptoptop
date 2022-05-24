@@ -61,7 +61,7 @@ $tenadmin=$_GET['tenadmin'];
             $matkhau= $tow['MatKhau'];
         }
 ?>
-<form action="suaadmin.php?maad=<?=$maad?>&tenadmin=<?=$tenadmin?>" method="POST">
+<form action="suaadmin.php?maad=<?=$maad?>&tenadmin=<?=$tenadmin?>" method="POST" name="suaadmin">
     <div class="modal-body">
         <div class="row g-3">
             <div class="col-lg-6">
@@ -100,7 +100,16 @@ $tenadmin=$_GET['tenadmin'];
             ?>
     <div class="float-end">
         <button type="button" class="btn btn-secondary"><a href="suaadmin.php?maad=<?=$maad?>&tenadmin=<?=$tenadmin?>">Reset</a></button>
-        <button type="submit" class="btn btn-admin">Lưu</button>
+        <input type="button" class="btn btn-admin" onclick="formSubmit()" value="Lưu">
+        <script>
+            function formSubmit(){
+                if (confirm("Bạn muốn chỉnh sửa tài khoản user") == true) {
+                    document.forms["suaadmin"].submit();
+                } else {
+                    // window.location="./collections.php";
+                }    
+            }
+        </script>
     </div>
 </form>
 <?php require "./footer.php" ?>

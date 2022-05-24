@@ -41,7 +41,7 @@
     }
 ?>
 
-<form action="./suasanpham.php?masp=<?=$_GET['masp']?>" method="post">
+<form action="./suasanpham.php?masp=<?=$_GET['masp']?>" method="post" name="suasp">
     <div class="modal-body">
         <div class="row g-3">
             <div class="col-lg-6">
@@ -125,7 +125,16 @@
     </div>
     <div class="float-end">
         <button type="button" class="btn btn-secondary"><a href="./suasanpham.php?masp=<?=$_GET['masp']?>">Reset</a></button>
-        <button type="submit" class="btn btn-admin">Lưu</button>
+        <input type="button" class="btn btn-admin" onclick="formSubmit()" value="Lưu">
+        <script>
+            function formSubmit(){
+                if (confirm("Bạn muốn chỉnh sửa tài khoản user") == true) {
+                    document.forms["suasp"].submit();
+                } else {
+                    // window.location="./collections.php";
+                }    
+            }
+        </script>
     </div>
 </form>
 

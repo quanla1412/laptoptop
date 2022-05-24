@@ -16,7 +16,11 @@
         }
     }
     function formSubmit(){
-    document.forms["myForm"].submit();
+        if (confirm("Bạn muốn Thêm vào Giỏ Hàng") == true) {
+            document.forms["myForm"].submit();
+        } else {
+            // window.location="./collections.php";
+        }    
     }
 </script>
 
