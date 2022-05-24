@@ -170,7 +170,7 @@ function loadData() {
 
     $sql = "SELECT * FROM sanpham";
     $result = $conn->query($sql);
-
+    
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
@@ -179,8 +179,8 @@ function loadData() {
                 $row['TenSP'], 
                 $row['TenHang'], 
                 $row['CPU'], 
-                $row['RAM'], 
-                $row['OCung'], 
+                $row['RAM'],                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                $row['OCung'],                                                                                                                                         
                 $row['MauSac'], 
                 $row['CauHinhKhac'], 
                 intval($row['Gia']), 
