@@ -189,11 +189,6 @@
                             </div>';
                         }
                         ?>
-                        
-                        <!-- <div class="btn btn-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Giỏ hàng</span>   
-                        </div> -->
 
                     
                     </div>
