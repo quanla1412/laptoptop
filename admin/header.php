@@ -116,7 +116,7 @@
                         </div>
                         <div class="header-admin-logout" style="cursor: pointer">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <a href="./../">Đăng xuất</a>
+                            <a href="./../logout.php">Đăng xuất</a>
                         </div>
                     </div>
                 </div>

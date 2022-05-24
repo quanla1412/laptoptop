@@ -11,17 +11,17 @@
         Hệ thống cửa hàng
         </h6>
         <p>
-          <a href="#!" class="text-reset"style="text-decoration:none;">
+          <a href="./lienhe.php" class="text-reset"style="text-decoration:none;">
               <h5>Cơ sở chính </h5> 273, An Dương Vương, P.3, Q.5, Tp.Hồ Chí Minh 
           </a>
         </p>
         <p>
-        <a href="#!" class="text-reset"style="text-decoration:none;">
+        <a href="./lienhe.php?cs=1" class="text-reset"style="text-decoration:none;">
               <h5>Cơ sở 1 </h5> 105, Bà Huyện Thanh Quan, Q.3, Tp.Hồ Chí Minh
           </a>
         </p>
         <p>
-        <a href="#!" class="text-reset"style="text-decoration:none;">
+        <a href="./lienhe.php?cs=1" class="text-reset"style="text-decoration:none;">
               <h5>Cơ sở 2 </h5> 1A, Nguyễn Hữu Cảnh, P.Bến Nghé, Q.1, Tp.Hồ Chí Minh
           </a>
         </p>
@@ -36,7 +36,7 @@
         </h6>
         <p>
         <a href="#!" class="text-reset"style="text-decoration:none;">
-              <h5>Email </h5>tuanthanh15112002@gmail.com
+              <h5>Email </h5>nhungcaube@gmail.com
           </a>
         </p>
         <p>
@@ -76,6 +76,7 @@
   </div>
 </div>
 
+<script src="./assets/myscript.js"></script>
 <script src="https://kit.fontawesome.com/26a480acf4.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

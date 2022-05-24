@@ -1,4 +1,5 @@
 <?php include "./header.php"?>
+    <!-- Slider -->
     <div class="slider container-xl" >
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="max-height:400px">
@@ -23,24 +24,10 @@
         </div>  
     </div>
 
-    <!-- <div class="sale container-xl mt-5">
-        <div class="row" style="height: 500px">
-            <div class="col-8">
-                <img src="./assets/image/sale/sale1.jpg" alt="Sale1" class="w-100">
-            </div>
-            <div class="col-4">
-                <div class="row" style="height: 33%">
-                    <img src="./assets/image/sale/sale2.jpg" alt="Sale2"></div>
-                <div class="row">
-                    <img src="./assets/image/sale/sale4.jpg" alt="Sale4"></div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Content 1 -->
     <div class="content1 container-xl mt-5">
         <div class="card text-center">
-            <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Máy tính DELL</div>
+            <div class="card-header fw-bold fs-4 text-white" style="background-color: var(--third-color);">Máy tính DELL</div>
             <div class="card-body">
                 <div class="row">
                     <div class="d-none col-lg-3 d-lg-block">
@@ -66,8 +53,7 @@
                                         </div>
                                     </div>';
                                 }
-                            ?>
-                            
+                            ?>                            
                         </div>
                         <div class="row mt-3 mx-1">
                             <div class="nav-more col pe-0">
@@ -82,10 +68,10 @@
     </div>
 
     
-    <!-- Content 1 -->
+    <!-- Content 2 -->
     <div class="content1 container-xl mt-5">
         <div class="card text-center">
-            <div class="card-header fw-bold fs-4" style="background-color: var(--third-color); color: white;">Máy tính ASUS</div>
+            <div class="card-header fw-bold fs-4 text-white" style="background-color: var(--third-color);">Máy tính ASUS</div>
             <div class="card-body">
                 <div class="row">
                     <div class="d-none col-lg-3 d-lg-block">
