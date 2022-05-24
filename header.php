@@ -45,7 +45,7 @@
                                                 }
                                                 else
                                                 {
-                                                    echo '<i class="fa-solid fa-user me-2"></i>Admin';
+                                                    echo '<i class="fa-solid fa-user me-2"></i>'.$_COOKIE["tenuser"].'';
                                                 }
                                             }
                                             else
@@ -164,7 +164,7 @@
                             {
                                 echo '<div class="account-user me-3 position-relative">
                                 <i class="fa-solid fa-user"></i>
-                                <span>Admin</span>  
+                                <span>'.$_COOKIE["tenuser"].'</span>  
                                 <i class="fa-solid fa-caret-down"></i>
                                 <div class="position-absolute pt-2 d-none header-dropdown shadow" style="width: 200px; z-index:2; ">
                                     <ul class="list-group list-group-flush">
