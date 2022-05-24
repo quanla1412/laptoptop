@@ -1,7 +1,7 @@
 <?php 
     $id = $_GET['id'];
     $qtys = $_POST["quantity"];
-    $tenDangNhap = $_COOKIE["user"];
+    $tenDangNhap = $_COOKIE["tenuser"];
 
 
     $servername = "localhost";

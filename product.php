@@ -91,7 +91,7 @@
                     <li>Màu sắc: <?php echo $sanPham->getMauSac();?></li>
                     <li>Bảo hành: 24 tháng</li>
                 </ul>
-                <p>Còn lại: 5 sản phẩm</p>
+                <p>Còn lại: <?= $sanPham->getTongSoLuong() ?> sản phẩm</p>
                 <div class="row">
                     <div class="col-4 d-flex align-items-center">
                         Số lượng: 

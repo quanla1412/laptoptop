@@ -1,6 +1,6 @@
 <?php 
     $id = $_GET['id'];
-    $tenDangNhap = $_COOKIE["user"];
+    $tenDangNhap = $_COOKIE["tenuser"];
 
 
     $servername = "localhost";
@@ -9,10 +9,6 @@
     $dbname = "laptoptop";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    echo "Connected successfully";
 
     $sql = "SELECT * FROM giohang";
     $result = $conn->query($sql);
@@ -23,10 +19,12 @@
                 
                 $sql = "DELETE FROM giohang
                 WHERE TenDangNhap = '$tenDangNhap' AND MaSP = '$id'";
-                
                 $result = $conn->query($sql);
+                
+                $sql = "SELECT * FROM giohang";
+                $result = $conn->query($sql);
+                if($result->num_rows < 1) echo 'Giỏ hàng trống';
                 $conn->close();
-                header("Location: ./giohang.php");
                 exit();
             }
         }

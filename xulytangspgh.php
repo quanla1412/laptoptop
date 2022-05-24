@@ -1,6 +1,7 @@
 <?php 
     $id = $_GET['id'];
-    $tenDangNhap = $_COOKIE["user"];
+    $gia = $_GET['gia'];    
+    $tenDangNhap = $_COOKIE["tenuser"];
 
 
     $servername = "localhost";
@@ -12,10 +13,10 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    echo "Connected successfully";
+
 
     $sql = "SELECT * FROM giohang";
-    $result = $conn->query($sql);
+    $result = $conn->query($sql) or die($conn->error);
 
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
@@ -25,8 +26,8 @@
                 SET SoLuong = '$qtys'
                 WHERE TenDangNhap = '$tenDangNhap' AND MaSP = '$id'";
                 $result = $conn->query($sql);
+                echo number_format($gia*$qtys, 0, ',', '.');
                 $conn->close();
-                header("Location: ./giohang.php");
                 exit();
             }
         }
