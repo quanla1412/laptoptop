@@ -179,6 +179,8 @@
                                 echo 'Nhập hàng';
                             } elseif (strpos($cur,'suauser.php') !== FALSE) {
                                 echo 'Chỉnh sửa Tài Khoản User';
+                            } elseif (strpos($cur,'suaadmin.php') !== FALSE) {
+                                echo 'Chỉnh sửa Tài Khoản Admin';
                             } elseif (strpos($cur,'themadmin.php') !== FALSE) {
                                 echo 'Thêm Admin';
                             } else {
@@ -214,15 +216,15 @@
         }
         if($loaitk!='ad'){
             ?>
-                <script>alert('lỗi')</script>
+                <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
         <?php
-            header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+            header( "refresh:0 ; url=../login.php" );
         }
     }else{
         ?>
-            <script>alert('lỗi')</script>
+            <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
     <?php
-        header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+        header( "refresh:0 ; url=../login.php" );
     }
 ?>
                

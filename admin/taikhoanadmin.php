@@ -16,15 +16,15 @@
         }
         if($capbac!='giamdoc'){
             ?>
-                <script>alert('lỗi')</script>
+                <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
         <?php
-            header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+            header( "refresh:0 ; url=../login.php" );
         }
     }else{
         ?>
-            <script>alert('lỗi1')</script>
+            <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản Admin')</script>
     <?php
-        header( "refresh:0 ; url=http://localhost:8080/laptoptop/index.php" );
+        header( "refresh:0 ; url=../login.php" );
     }
 ?>
 <?php include "./header.php" ?>
@@ -53,10 +53,10 @@
         }
         $result = $conn->query($sql);
         $row = mysqli_fetch_assoc($result);
-        $total_records = $row['total'];
-        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $limit =2;
-        $total_page = ceil($total_records / $limit);
+        $total_records = $row['total'];//tổng số lượng trên database
+        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;//trang hiện tại 
+        $limit =10;//giời hạn số lượng trên trang
+        $total_page = ceil($total_records / $limit);//tổng số trang
         if ($current_page > $total_page){
             $current_page = $total_page;
         }
@@ -115,7 +115,7 @@
                 <td><?= $matkhau ?></td>
                 <td><?= $macs ?></td>
                 <td><?= $CapBac ?></td>
-                <td class="edit-admin-acc">Chỉnh sửa</td>
+                <td class="edit-admin-acc"><a class="text-dark" href="suaAdmin.php?maad=<?=$MaAdmin?>&tenadmin=<?=$tendangnhap?>">Chỉnh sửa</a></td>
             </tr>
             <?php } 
             $conn->close();

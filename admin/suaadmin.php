@@ -28,8 +28,8 @@
     }
 ?>
 <?php require "./header.php";
-$makh=$_GET['makh'];
-$tenuser=$_GET['tenuser'];
+$maad=$_GET['maad'];
+$tenadmin=$_GET['tenadmin'];
 
     $severname = "localhost";
     $username = "laptoptop";
@@ -39,62 +39,59 @@ $tenuser=$_GET['tenuser'];
     if($conn->connect_error) {
         die('Connection failed: '. $conn->connect_error);
     }
-    $sql="SELECT * FROM khachhang WHERE MaKH= '$makh' AND TenDangNhap= '$tenuser'";
+    $sql="SELECT * FROM quantri WHERE MaAdmin= '$maad' AND TenDangNhap= '$tenadmin'";
     $result = $conn->query($sql);
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $matkhau=$_POST['matkhau'];
-        $hoten=$_POST['hoten'];
-        $sdt=$_POST['sdt'];
-        $ngaysinh=$_POST['ngaysinh'];
-        $email=$_POST['email'];
+        $macs=$_POST['macs'];
+        $capbac=$_POST['capbac'];
 
-        $sql_sua = "UPDATE khachhang SET HoTen='$hoten', SoDienThoai='$sdt', NgaySinh='$ngaysinh', Email='$email' WHERE TenDangNhap = '$tenuser'";
+        $sql_sua = "UPDATE quantri SET MaCS='$macs', CapBac='$capbac' WHERE TenDangNhap = '$tenadmin'";
         $result_sua = $conn->query($sql_sua);
         if($result_sua) echo'<script>alert("Sửa thành công");</script>';
         else echo'<script>alert("Sửa không thành công");</script>';
     }
     while($row= mysqli_fetch_assoc($result)){
-        $hoten= $row['HoTen'];
-        $sdt= $row['SoDienThoai'];
-        $ngaysinh= $row['NgaySinh'];
-        $email= $row['Email'];
+        $macs= $row['MaCS'];
+        $capbac= $row['CapBac'];
         
-        $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$tenuser'");
+        $resul = $conn->query("SELECT MatKhau FROM taikhoan WHERE TenDangNhap = '$tenadmin'");
         while($tow= mysqli_fetch_assoc($resul)){
             $matkhau= $tow['MatKhau'];
         }
 ?>
-<form action="suauser.php?makh=<?=$makh?>&tenuser=<?=$tenuser?>" method="POST">
+<form action="suaadmin.php?maad=<?=$maad?>&tenadmin=<?=$tenadmin?>" method="POST">
     <div class="modal-body">
         <div class="row g-3">
             <div class="col-lg-6">
-                <label for="makh" class="form-label">Mã KH</label>
-                <input required type="text" class="form-control" id="makh" name="makh" value="<?=$makh?>" disabled>
+                <label for="maad" class="form-label">Mã AD</label>
+                <input required type="text" class="form-control" id="maad" name="maad" value="<?=$maad?>" disabled>
             </div>
             <div class="col-lg-6">
-                <label for="tenuser" class="form-label">Tên Đăng Nhập</label>
-                <input required type="text" class="form-control" id="tenuser" name="tenuser" value="<?=$tenuser?>"disabled>
+                <label for="tenadmin" class="form-label">Tên Đăng Nhập</label>
+                <input required type="text" class="form-control" id="tenadmin" name="tenadmin" value="<?=$tenadmin?>"disabled>
             </div>
             <div class="col-lg-12">
             <label for="matkhau" class="form-label">Mật Khẩu</label>
                 <input required type="text" class="form-control" id="matkhau" name="matkhau" value="<?= $matkhau ?>">
             </div>
             <div class="col-lg-12">
-                <label for="hoten" class="form-label">Họ Tên</label>
-                <input required class="form-control" type="text" id="hoten" name="hoten" value="<?= $hoten ?>">
+                <label for="macs" class="form-label">Mã Cơ Sở</label>
+                <select required class="form-control" type="text" id="macs" name="macs" >
+                <option value="csc" <?php if($macs=='csc') echo 'selected'?>>csc</option>
+                <option value="cs1" <?php if($macs=='cs1') echo 'selected'?>>cs1</option>
+                <option value="cs2" <?php if($macs=='cs2') echo 'selected'?>>cs2</option>
+                <option value="null" <?php if($macs=='null') echo 'selected'?>>null</option>
+                </select>
             </div>
             <div class="col-lg-12">
-                <label for="sdt" class="form-label">Số Điện Thoại</label>
-                <input required class="form-control" type="text" id="sdt" name="sdt" pattern="[0][0-9]{9}" value="<?= $sdt ?>">
-            </div>
-            <div class="col-lg-12">
-                <label for="ngaysinh" class="form-label">Ngày Sinh</label>
-                <input required class="form-control" type="date" id="ngaysinh" name="ngaysinh" value="<?= $ngaysinh ?>">
-            </div>
-            <div class="col-lg-12">
-                <label for="email" class="form-label">Email</label>
-                <input required class="form-control" type="text" id="email" name="email" pattern= "[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$" value="<?= $email ?>">
+                <label for="capbac" class="form-label">Cấp Bậc</label>
+                <select required class="form-control" type="text" id="capbac" name="capbac">
+                <option value="giamdoc" <?php if($capbac=='giamdoc') echo 'selected'?> >giamdoc</option>
+                <option value="quanli" <?php if($capbac=='quanli') echo 'selected'?>>quanli</option>
+                <option value="nhanvien" <?php if($capbac=='nhanvien') echo 'selected'?>>nhanvien</option>
+                </select>
             </div>
         </div>
     </div>
@@ -102,7 +99,7 @@ $tenuser=$_GET['tenuser'];
             $conn->close();
             ?>
     <div class="float-end">
-        <button type="button" class="btn btn-secondary"><a href="suauser.php?makh=<?=$makh?>&tenuser=<?=$tenuser?>">Reset</a></button>
+        <button type="button" class="btn btn-secondary"><a href="suaadmin.php?maad=<?=$maad?>&tenadmin=<?=$tenadmin?>">Reset</a></button>
         <button type="submit" class="btn btn-admin">Lưu</button>
     </div>
 </form>
