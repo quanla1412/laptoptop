@@ -188,8 +188,6 @@
                             <a href="./register.php">Đăng ký</a>
                             </div>';
                         }
-                        
-                        
                         ?>
                         
                         <!-- <div class="btn btn-cart">
