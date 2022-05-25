@@ -3,7 +3,15 @@
     $username = "laptoptop";
     $password = "laptoptop";
     $dbname = "laptoptop";
-    if(!isset($_COOKIE['tenuser'])){
+    if(isset($_COOKIE['tenuser'])){
+        $loaitk=$_COOKIE['dangnhap'];
+        if($loaitk=='ad'){
+            ?>
+                <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản User')</script>
+        <?php
+            header( "refresh:0 ; url=./logout.php" );
+        }
+    }else{
         ?>
             <script>alert('Vui lòng Đăng Nhập')</script>
     <?php
