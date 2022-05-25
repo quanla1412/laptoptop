@@ -61,7 +61,6 @@
                     $result_cthd = $conn->query($sql_cthd);
                     
                     $date=date_create($row['Ngay']);
-                    echo var_dump( $date < $fromDate);
                     if(strpos($maHD,$search)===FALSE || $date < $fromDate || $date > $toDate)  continue;
 
                     $first_row = TRUE;
