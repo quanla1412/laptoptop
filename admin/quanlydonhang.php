@@ -1,7 +1,5 @@
 <?php 
     include "./header.php" ;
-    $trangHienTai = $_GET['p'] ?? 1;
-    define('MAX_QUANTITY',5);  //So luong hien thi toi da san pham trong 1 trang
     $mode = $_GET['mode'] ?? 1;
     $search = $_GET['search'] ?? "";
 
@@ -30,8 +28,6 @@
     $sql = "SELECT *
             FROM hoadon";
     $result = $conn->query($sql);
-
-    $soTrang = ceil($result->num_rows/MAX_QUANTITY); 
 ?>
 
 <div class="container-fluid px-4">
@@ -52,7 +48,7 @@
                 <button type="submit" class="btn-qldh-timkiem w-100">Tìm kiếm</button>
             </div>
         </form>
-        </div>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -88,7 +84,12 @@
 
                             $sql_sp = "SELECT * FROM sanpham WHERE MaSP = '$maSP'";
                             $result_sp = $conn->query($sql_sp);
-                            $row_sp = $result_sp->fetch_assoc();
+                            $row_sp = $result_sp->fetch_assoc();                            
+
+                            $sql_tong = "select sum(GiaKhuyenMai*SoLuong) as trigia from cthd,hoadon,sanpham where cthd.MaHD=hoadon.MaHD AND sanpham.MaSP = cthd.MaSP and cthd.MaHD='$maHD'";
+                            $result_tong = $conn->query($sql_tong);
+                            $row_tong = $result_tong->fetch_assoc();
+                            $tongTien = $row_tong['trigia'];
 
                             if($first_row) {
                                 echo'
@@ -98,7 +99,7 @@
                                     <td>'.$row_sp['TenSP'].'</td>
                                     <td>'.$row_cthd['SoLuong'].'</td>
                                     <td>'.number_format($row_sp['Gia'], 0, ',', '.').' đ</td>
-                                    <td rowspan="'.$numRowCTHD.'">22.000.000 VND</td>
+                                    <td rowspan="'.$numRowCTHD.'">'.number_format($tongTien, 0, ',', '.').' đ</td>
                                     <td rowspan="'.$numRowCTHD.'">'.$row['Ngay'].'</td>';
                                 if($mode == 2)  echo '<td rowspan="3" class="align-middle text-center"><a class="text-dark" href="./quanlydonhang.php?mode=3&hoanThanh='.$row['MaHD'].'">Hoàn thành</a></br><a class="text-dark" href="./quanlydonhang.php?mode=0&huy='.$row['MaHD'].'">Hủy</a></td>';
                                 echo '
