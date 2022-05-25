@@ -1,5 +1,9 @@
 <?php include "./header.php";
     $search = $_GET['search'] ?? "";
+    if(isset($_GET['fromDate']))   $fromDate = date_create( $_GET['fromDate'] );
+    else $fromDate = date_create("2000-01-01");
+    if(isset($_GET['toDate']))  $toDate = date_create( $_GET['toDate']);
+    else $toDate = date('l');
 
     $servername = "localhost";
     $username = "laptoptop";
@@ -18,15 +22,15 @@
         <form action="./lichsudonhang.php" method="get">
             <div class="col-4">
                 <span class="h6 me-2">Bộ lọc:</span>
-                <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã hóa đơn">
+                <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã hóa đơn" value="<?=$search?>">
             </div>
             <div class="col-6">
                 <div class="row">
                     <div class="col-3 d-flex align-items-center"><p class="h6">Khoảng thời gian: </p></div>
                     <div class="col-9">
-                        <input type="date" class="form-control d-inline-block" placeholder="Từ" style="width: 136px; ">
+                        <input type="date" name="fromDate" class="form-control d-inline-block" placeholder="Từ" style="width: 136px; ">
                         <p class="d-none d-lg-inline-block fw-bold mx-2" >~</p>
-                        <input type="date" class="form-control d-inline-block" placeholder="Đến" style="width: 136px; " >
+                        <input type="date" name="toDate" class="form-control d-inline-block" placeholder="Đến" style="width: 136px; " >
                     </div>
                 </div>
             </div>
@@ -56,6 +60,10 @@
                     $sql_cthd = "SELECT * FROM cthd WHERE MaHD = '$maHD'";
                     $result_cthd = $conn->query($sql_cthd);
                     
+                    $date=date_create($row['Ngay']);
+                    echo var_dump( $date < $fromDate);
+                    if(strpos($maHD,$search)===FALSE || $date < $fromDate || $date > $toDate)  continue;
+
                     $first_row = TRUE;
 
                     if($result_cthd->num_rows > 0) {
@@ -83,7 +91,7 @@
                                     <td>'.$row_cthd['SoLuong'].'</td>
                                     <td>'.number_format($row_sp['Gia'], 0, ',', '.').' đ</td>
                                     <td rowspan="'.$numRowCTHD.'">'.number_format($tongTien, 0, ',', '.').' đ</td>
-                                    <td rowspan="'.$numRowCTHD.'">'.$row['Ngay'].'</td>';
+                                    <td rowspan="'.$numRowCTHD.'">'.date_format($date,"d/m/Y").'</td>';
                                 echo '
                                 </tr>
                                 ';

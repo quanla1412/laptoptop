@@ -41,7 +41,7 @@
         <form class="row " action="./quanlydonhang.php" method="GET">
             <div class="col-6">
                 <span class="h6 me-2">Bộ lọc:</span>
-                <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã đơn hàng">
+                <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã đơn hàng" value="<?=$search?>">
                 <input type="hidden" name="mode" value="<?=$mode?>">
             </div>
             <div class="col-2 d-flex align-items-center">
@@ -72,6 +72,7 @@
                         
                     $sql_cthd = "SELECT * FROM cthd WHERE MaHD = '$maHD'";
                     $result_cthd = $conn->query($sql_cthd);
+                    $date=date_create($row['Ngay']);
                     
                     $first_row = TRUE;
 
@@ -100,7 +101,7 @@
                                     <td>'.$row_cthd['SoLuong'].'</td>
                                     <td>'.number_format($row_sp['Gia'], 0, ',', '.').' đ</td>
                                     <td rowspan="'.$numRowCTHD.'">'.number_format($tongTien, 0, ',', '.').' đ</td>
-                                    <td rowspan="'.$numRowCTHD.'">'.$row['Ngay'].'</td>';
+                                    <td rowspan="'.$numRowCTHD.'">'.date_format($date,"d/m/Y").'</td>';
                                 if($mode == 2)  echo '<td rowspan="3" class="align-middle text-center"><a class="text-dark" href="./quanlydonhang.php?mode=3&hoanThanh='.$row['MaHD'].'">Hoàn thành</a></br><a class="text-dark" href="./quanlydonhang.php?mode=0&huy='.$row['MaHD'].'">Hủy</a></td>';
                                 echo '
                                 </tr>
