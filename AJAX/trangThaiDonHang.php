@@ -1,20 +1,8 @@
-
-<script>
-    function xacNhanThanhToan(x){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                
-            }
-        };
-        xmlhttp.open("GET", "./AJAX/chuyentrangthaidonhang.php?IdHoaDon="+x, true);
-        xmlhttp.send();
-    }
-</script>
-
 <?php
     $trangThai = $_GET['trangthai'];
     $tenDangNhap = $_COOKIE["tenuser"];
+
+
 
     $servername = "localhost";
     $username = "laptoptop";
@@ -38,16 +26,41 @@
         $rowi = $resulti->fetch_assoc();
         $maxMaHD = $rowi['MAX(hoadon.MaHD)'];
 
+        if ($trangThai == 1){
+            $trangThaiDonHang = '<h6 class="col-3 ps-5 text-danger">Chưa Thanh Toán</h6>';
+            $nutThanhToan = '<h6 class="pe-3 mt-2 pt-2 pb-2" style="text-align: right;color: #1E656D; font-size: 24px;">
+                                <button onclick="xacNhanThanhToan('.$maxMaHD.')" class="border-0 ps-5 pe-5 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 10px;">Thanh Toán Đơn Hàng</button>
+                            </h6>';
+        }
+        elseif($trangThai == 2){
+            $trangThaiDonHang = '<h5 class="col-2 ps-5" style="color: #1E656D" >Đang Giao Hàng</h5>';
+            $nutThanhToan = '';
+        }
+        elseif($trangThai == 3){
+            $trangThaiDonHang = '<h5 class="col-2 ps-5" style="color: #1E656D" >Đã Giao Hàng</h5>';
+            $nutThanhToan = '';
+        }
 
         while($row = $result->fetch_assoc()){
             if($row['MaHD'] > $checkMaHD){
                 $checkMaHD = $row['MaHD'];
+                if ($trangThai == 1){
+                    $nutThanhToan1 =    '<h6 class="pe-3 mt-2 pt-2 pb-2" style="text-align: right;color: #1E656D; font-size: 24px;">
+                                            <button onclick="xacNhanThanhToan('.$checkMaHD.')" class="border-0 ps-5 pe-5 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 10px;">Thanh Toán Đơn Hàng</button>
+                                        </h6>';
+                }
+                elseif($trangThai == 2){
+                    $nutThanhToan1 = '';
+                }
+                elseif($trangThai == 3){
+                    $nutThanhToan1 = '';
+                }
                 $tongHoaDon = 0;
                 echo'
                 <div  class="row mt-2 mb-5" style="background-color: #E5E5E5; border-radius: 20px;">
                     <div class="row pt-3 mt-2">
                         <h4 class="col-9">Đơn Hàng: '.$checkMaHD.'</h4>
-                        <h6 class="col-3 ps-5 text-danger">Chưa Thanh Toán</h6>
+                        '.$trangThaiDonHang.'
                     </div>
                 ';
                 $result1 = $conn->query($sql);
@@ -83,9 +96,7 @@
                                     <p style="color: #000;display:inline-block;">Tổng tiền: </p>
                                     '.number_format($tongHoaDon, 0, ',', '.').'
                                 </h6>
-                                <h6 class="pe-3 mt-2 pt-2 pb-2" style="text-align: right;color: #1E656D; font-size: 24px;">
-                                    <button onclick="xacNhanThanhToan('.$checkMaHD.')" class="border-0 ps-5 pe-5 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 10px;">Thanh Toán Đơn Hàng</button>
-                                </h6>
+                                '.$nutThanhToan1.'
                             </div>
                         </div>
                         ';
@@ -99,9 +110,7 @@
                                 <p style="color: #000;display:inline-block;">Tổng tiền: </p>
                                 '.number_format($tongHoaDon, 0, ',', '.').'
                             </h6>
-                            <h6 class="pe-3 mt-2 pt-2 pb-2" style="text-align: right;color: #1E656D; font-size: 24px;">
-                                <button onclick="xacNhanThanhToan('.$maxMaHD.')" class="border-0 ps-5 pe-5 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 10px;">Thanh Toán Đơn Hàng</button>
-                            </h6>
+                            '.$nutThanhToan.'
                         </div>
                     </div>
                     ';
