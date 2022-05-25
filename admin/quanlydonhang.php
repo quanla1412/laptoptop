@@ -41,15 +41,15 @@
         <div onclick="loadPage('./quanlydonhang.php?mode=3')" class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold <?= $mode == 3 ? 'active' : '' ?>" >Đã hoàn thành</div>
         <div onclick="loadPage('./quanlydonhang.php?mode=0')" class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold <?= $mode == 0 ? 'active' : '' ?>" >Đã hủy</div>
     </div>
-    <div class="row ">
-        <form action="./quanlydonhang.php" method="GET">
+    <div>
+        <form class="row " action="./quanlydonhang.php" method="GET">
             <div class="col-6">
                 <span class="h6 me-2">Bộ lọc:</span>
                 <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã đơn hàng">
                 <input type="hidden" name="mode" value="<?=$mode?>">
             </div>
             <div class="col-2 d-flex align-items-center">
-                <button type="submit" class="btn-qldh-timkiem w-100">Tìm kiếm</button>
+                <button type="submit" class="btn-qldh-timkiem w-100 border border-0">Tìm kiếm</button>
             </div>
         </form>
         </div>
