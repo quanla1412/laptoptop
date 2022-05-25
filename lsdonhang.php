@@ -1,44 +1,5 @@
 <?php include "./header.php"?>
 
-
-<script>
-    function active(){
-        var header = document.getElementById("ttdh");
-        var btns = header.getElementsByClassName("btn-lsdonhang");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-            });
-        }
-    }
-
-    function trangThai(x){
-        
-        active();
-        
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("chuyenTrangThai").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "./AJAX/trangThaiDonHang.php?trangthai="+x, true);
-        xmlhttp.send();
-    }
-
-    function xacNhanThanhToan(x){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("chuyenTrangThai").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "./AJAX/chuyentrangthaidonhang.php?IdHoaDon="+x, true);
-        xmlhttp.send();
-    }
-</script>
 <div class="container">
   <div class="row">
         <div class="row pt-2 pb-2 d-flex justify-content-center align-items-center" style="background-color: #E5E5E5;border-radius: 20px;font-weight: bold; font-size: 24px;">
@@ -315,4 +276,42 @@
         </div> -->
   </div>
 </div>
+<script>
+    function active(){
+        var header = document.getElementById("ttdh");
+        var btns = header.getElementsByClassName("btn-lsdonhang");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            });
+        }
+    }
+
+    function trangThai(x){
+        
+        active();
+        
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("chuyenTrangThai").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "./AJAX/trangThaiDonHang.php?trangthai="+x, true);
+        xmlhttp.send();
+    }
+
+    function xacNhanThanhToan(x){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("chuyenTrangThai").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "./AJAX/chuyentrangthaidonhang.php?IdHoaDon="+x, true);
+        xmlhttp.send();
+    }
+</script>
 <?php include "./footer.php" ?>
