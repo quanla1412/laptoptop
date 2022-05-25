@@ -110,39 +110,39 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <?php 
-                if($soTrang==0) {
-                    echo '<div class="p-5 mt-5">
-                    <div class="d-flex justify-content-center">
-                        <img class="" alt="" src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c" loading="lazy" decoding="async">
-                    </div> <br>
-                    <div class="d-flex justify-content-center">Không tìm thấy sản phẩm nào</div>
-                </div> ';}
-                if($soTrang!=0) {
+                $queryString = '';
+                if(isset($_GET)) {
+                    foreach($_GET as $key=>$value) {
+                        if($key == 'p') continue;
+                        if(is_array($value)) {
+                            foreach($value as $valueOfValue) {
+                                $queryString .= $key."[]=".$valueOfValue."&";
+                            }
+                        } else {
+                            $queryString .= $key."=".$value."&";
+                        }
+                    }
+                }
+
+                if($soTrang>1) {
                     echo '<li class="page-item ';
                     if($trangHienTai<=1) echo 'disabled';
                     echo'">
-                        <a class="page-link" href="?'.$_SERVER["QUERY_STRING"].'&p='.($trangHienTai-1).'&" aria-label="Previous">
+                        <a class="page-link" href="?'.$queryString.'p='.($trangHienTai-1).'" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>';
-                }
-                ?>
-                <?php
+
                     for($i=1; $i<=$soTrang; $i++) {
                         echo'<li class="page-item ';
                         if($trangHienTai == $i) echo 'active';
-                        echo '"><a class="page-link" href="?'.$_SERVER['QUERY_STRING'].'&p='.$i.'">'.$i.'</a></li>';
+                        echo '"><a class="page-link" href="?'.$queryString.'p='.$i.'">'.$i.'</a></li>';
                     }
-                ?>
-                <!-- <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                <?php 
-                if($soTrang!=0) {
+                    
                     echo '<li class="page-item ';
                     if($trangHienTai >= $soTrang) echo 'disabled';
                     echo'">
-                        <a class="page-link" href="?'.$_SERVER["QUERY_STRING"].'&p='.($trangHienTai+1).'&" aria-label="Previous">
+                        <a class="page-link" href="?'.$queryString.'p='.($trangHienTai+1).'" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>';
