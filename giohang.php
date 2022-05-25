@@ -105,12 +105,14 @@
                 $tongGioHang = 0;
 
                 if($result->num_rows > 0){
+                    $checkGioHangTrong = 0;
                     while($row = $result->fetch_assoc()){
                         if($row['TenDangNhap'] == $tenDangNhap){
                             $id = $row['MaSP'];
                             $soLuong = $row['SoLuong'];
                             $sanPham = laySanPham($id);
                             $tongGioHang += $sanPham->getGiaKhuyenMai() * $soLuong;
+                            $checkGioHangTrong += 1;
 
                             echo'
                                 <div id="giohangtrong'.$id.'">
@@ -136,6 +138,9 @@
                                 </div>
                             ';
                         }
+                    }
+                    if($checkGioHangTrong == 0){
+                        echo "Giỏ hàng trống";
                     }
                 }
                 else{
