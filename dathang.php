@@ -1,5 +1,6 @@
 <?php
     $tenDangNhap = $_COOKIE["tenuser"];
+    $diaChi = $_POST['diachi'];
 
     $servername = "localhost";
     $username = "laptoptop";
@@ -18,8 +19,8 @@
         $maKH = $row['MaKH'];
         
 
-        $sql = "INSERT INTO  hoadon (MaKH, Ngay, TinhTrang)
-                VALUES ($maKH, '$thGian' , 1)";
+        $sql = "INSERT INTO  hoadon (MaKH, Ngay, TinhTrang,DiaChi)
+                VALUES ($maKH, '$thGian' , 1,'$diaChi')";
         $result = $conn->query($sql);
 
         $sql = "SELECT MAX(MaHD) FROM hoadon";

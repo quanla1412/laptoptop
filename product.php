@@ -16,7 +16,11 @@
         }
     }
     function formSubmit(){
-    document.forms["myForm"].submit();
+        if (confirm("Bạn muốn Thêm vào Giỏ Hàng") == true) {
+            document.forms["myForm"].submit();
+        } else {
+            // window.location="./collections.php";
+        }    
     }
 </script>
 
@@ -97,11 +101,11 @@
                         Số lượng: 
                     </div>
                     <div class="col d-flex mb-3">
-                        <input type="button" class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius: 30px 0 0 30px; border-right: 1px solid var(--gray-color)" onclick="tru()" value="-"/>
+                        <input type="button" class="btn-quantity d-flex justify-content-center align-items-center mt-3" style="background-color: white; border-radius: 30px 0 0 30px; border-right: 1px solid var(--gray-color)" onclick="tru()" value="-"/>
                         <form action="./xulythemgiohang.php?id=<?= $_GET['id'] ?>" method="POST" name="myForm">
-                            <input type="text" name="quantity" id="quantity" class="d-flex justify-content-center align-items-center m-0 p-1 mt-3" style="background-color: white; width:36px; height:25px; justify-content: center" value="1" readonly/>
+                            <input type="text" name="quantity" id="quantity" class="d-flex justify-content-center align-items-center m-0 p-1 mt-3" style="background-color: white; width:36px; justify-content: center" value="1" readonly/>
                         </form>
-                        <input type="button" class="btn-quantity d-flex align-items-center m-0 py-1 px-2 mt-3" style="background-color: white; height:25px; border-radius:  0 50px 50px 0; border-left: 1px solid var(--gray-color)" onclick="cong()" value="+"/>
+                        <input type="button" class="btn-quantity d-flex justify-content-center align-items-center mt-3" style="background-color: white; border-radius:  0 30px 30px 0; border-left: 1px solid var(--gray-color)" onclick="cong()" value="+"/>
                     </div>
                 </div>
                 <p class="h5 text-decoration-line-through"><?php echo $sanPham->xuLyGia();?> đ</p>
