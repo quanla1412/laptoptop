@@ -48,20 +48,17 @@
                                 }
                             echo '">Sản phẩm</div></a>
                             <a href="./themsanpham.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'themsanpham.php') !== FALSE) {
                                     echo 'active';
                                 }
                             echo '">Thêm sản phẩm</div></a>
                             <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'quanlydonhang.php') !== FALSE) {
                                     echo 'active';
                                 }
                                                 
                             echo '">Quản lý đơn hàng</div></a>
                             <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'lichsudonhang.php') !== FALSE) {
                                     echo 'active';
                                 }
@@ -69,25 +66,21 @@
                             echo '">Lịch sử đơn hàng</div></a>
                             <a href="./doanhthu.php"><div class="btn-admenu px-3 py-1 text-white ';
                             
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'doanhthu.php') !== FALSE) {
                                     echo 'active';
                                 }
                             echo '">Doanh thu</div></a>
                             <a href="./themadmin.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'themadmin.php') !== FALSE) {
                                     echo 'active';
                                 }
                             echo '">Thêm Admin</div></a>
                             <a href="./taikhoanuser.php?search="><div class="btn-admenu px-3 py-1 text-white ';                 
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'taikhoanuser.php') !== FALSE) {
                                     echo 'active';
                                 }
                             echo '">Tài khoản người dùng</div></a>
                             <a href="./taikhoanadmin.php?search="><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'taikhoanadmin.php') !== FALSE) {
                                     echo 'active';
                                 }
@@ -97,34 +90,27 @@
                         else
                             if($capbac== "quanli"){
                                 echo '<a href="./"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/admin/' || strpos($cur,'/laptoptop/admin/?') !== FALSE) {
                                     echo 'active';
                                 }
                             echo '">Sản phẩm</div></a>
                             <a href="./themsanpham.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'themsanpham.php') !== FALSE) {
                                     echo 'active';
                                 }
                             echo '">Thêm sản phẩm</div></a>
                             <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'quanlydonhang.php') !== FALSE) {
                                     echo 'active';
-                                }
-                                                
+                                }                
                             echo '">Quản lý đơn hàng</div></a>
                             <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'lichsudonhang.php') !== FALSE) {
                                     echo 'active';
                                 }
-                            
                             echo '">Lịch sử đơn hàng</div></a>
                             <a href="./doanhthu.php"><div class="btn-admenu px-3 py-1 text-white ';
                             
-                                $cur = $_SERVER['REQUEST_URI'];
                                 if (strpos($cur,'doanhthu.php') !== FALSE) {
                                     echo 'active';
                                 }
@@ -133,19 +119,19 @@
                             else
                                 {
                                     echo '<a href="./"><div class="btn-admenu px-3 py-1 text-white ';
-                                    $cur = $_SERVER['REQUEST_URI'];
+
                                     if (strpos($cur,'index.php') !== FALSE || $cur === '/laptoptop/admin/' || strpos($cur,'/laptoptop/admin/?') !== FALSE) {
                                         echo 'active';
                                     }
                                 echo '">Sản phẩm</div></a>
                                 <a href="./quanlydonhang.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                    $cur = $_SERVER['REQUEST_URI'];
+
                                     if (strpos($cur,'quanlydonhang.php') !== FALSE) {
                                         echo 'active';
                                     }              
                                 echo '">Quản lý đơn hàng</div></a>
                                 <a href="./lichsudonhang.php"><div class="btn-admenu px-3 py-1 text-white ';
-                                    $cur = $_SERVER['REQUEST_URI'];
+
                                     if (strpos($cur,'lichsudonhang.php') !== FALSE) {
                                         echo 'active';
                                     }
