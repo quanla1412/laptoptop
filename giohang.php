@@ -152,7 +152,7 @@
                     <div class="d-flex justify-content-center">
                         <img class="" alt="" src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c" loading="lazy" decoding="async">
                     </div> <br>
-                    <div class="d-flex justify-content-center">Không tìm thấy sản phẩm nào</div>
+                    <div class="d-flex justify-content-center">Giỏ Hàng Trống</div>
                 </div> ';
                     }
                 }
@@ -161,7 +161,7 @@
                     <div class="d-flex justify-content-center">
                         <img class="" alt="" src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c" loading="lazy" decoding="async">
                     </div> <br>
-                    <div class="d-flex justify-content-center">Không tìm thấy sản phẩm nào</div>
+                    <div class="d-flex justify-content-center">Giỏ Hàng Trống</div>
                 </div> ';
                 }
             ?>
@@ -221,8 +221,8 @@
             </div> -->
         </div>
         <div class="col-12 col-lg-4 mt-4 mt-lg-0" >
-            <div class="p-2" style="background-color: #E5E5E5; border-radius: 20px;">
-                <h5 class="pt-2 ps-3">Thông Tin Thanh Toán</h5>
+            <div class="pt-3 pb-4" style="background-color: #E5E5E5; border-radius: 20px;">
+                <h5 class=" ps-3">Thông Tin Thanh Toán</h5>
                 <h6 class="mt-4 mb-2 ps-3">
                     <h6><form action="./dathang.php" method="POST" id="diachi" ><input type="text" class=" m-3 ps-3 " style="float: left; width:92%" name="diachi" placeholder="Nhập Địa Chỉ" required ></form></h6><br><br>
                     <h6 class="ps-3" style="float: left;">Tạm tính</h6>
@@ -231,8 +231,14 @@
                     <h6 id="tongTienGioHang2" class="pe-3" style="text-align: right;color: #1E656D; font-size: 24px;"><?php echo number_format($tongGioHang, 0, ',', '.'); ?> </h6>
                 </h6>
                 <a href="./dathang.php" class="d-grid gap-2 mt-2">
-                    <button type="submit" form="diachi" class="border-0 ms-3 me-3 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 20px;">Đặt Hàng</button>
+                    <button type="button" form="diachi" class="border-0 ms-3 me-3 pt-2 pb-2 btn-giohang-dathang" style="border-radius: 20px;" onclick="formSubmit()">Đặt Hàng</button>
                 </a>
+                <script>
+                    function formSubmit(){
+                        alert("Đặt hàng thành công");
+                        document.forms["diachi"].submit();
+                        }
+                </script>
                 
             </div>
         </div>

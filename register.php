@@ -55,7 +55,7 @@
             <input type="date" class="form-control mb-3" name="ngaysinh" required>
             <input type="email" class="form-control mb-3" placeholder="Email" name="email" id="email" onchange="checkEmail(this.value)" pattern= "[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$" required>
             <p id="emailError" class="text-danger"></p>
-            <input type="text" class="form-control mb-3" placeholder="Tên đăng nhập" name="username" id="username" onchange="checkUsername(this.value)" required>
+            <input type="text" class="form-control mb-3" placeholder="Tên đăng nhập" name="username" id="username" pattern= "[a-z0-9]{6,12}" title="Tên Đăng Nhập từ 6 đến 12 kí tự" onchange="checkUsername(this.value)" required>
             <p id="usernameError" class="text-danger"></p>
             <input type="password" class="form-control mb-3" placeholder="Nhập mật khẩu" name="password" id="password" required>
             <input type="password" class="form-control mb-3" placeholder="Nhập lại mật khẩu" name="repassword" id="repassword" oninput="checkRePassword()" required>
