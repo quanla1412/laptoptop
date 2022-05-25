@@ -110,32 +110,39 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <?php 
-                if($soTrang!=0) {
+                $queryString = '';
+                if(isset($_GET)) {
+                    foreach($_GET as $key=>$value) {
+                        if($key == 'p') continue;
+                        if(is_array($value)) {
+                            foreach($value as $valueOfValue) {
+                                $queryString .= $key."[]=".$valueOfValue."&";
+                            }
+                        } else {
+                            $queryString .= $key."=".$value."&";
+                        }
+                    }
+                }
+
+                if($soTrang>1) {
                     echo '<li class="page-item ';
                     if($trangHienTai<=1) echo 'disabled';
                     echo'">
-                        <a class="page-link" href="?'.$_SERVER["QUERY_STRING"].'&p='.($trangHienTai-1).'&" aria-label="Previous">
+                        <a class="page-link" href="?'.$queryString.'p='.($trangHienTai-1).'" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>';
-                }
-                ?>
-                <?php
+
                     for($i=1; $i<=$soTrang; $i++) {
                         echo'<li class="page-item ';
                         if($trangHienTai == $i) echo 'active';
-                        echo '"><a class="page-link" href="?'.$_SERVER['QUERY_STRING'].'&p='.$i.'">'.$i.'</a></li>';
+                        echo '"><a class="page-link" href="?'.$queryString.'p='.$i.'">'.$i.'</a></li>';
                     }
-                ?>
-                <!-- <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                <?php 
-                if($soTrang!=0) {
+                    
                     echo '<li class="page-item ';
                     if($trangHienTai >= $soTrang) echo 'disabled';
                     echo'">
-                        <a class="page-link" href="?'.$_SERVER["QUERY_STRING"].'&p='.($trangHienTai+1).'&" aria-label="Previous">
+                        <a class="page-link" href="?'.$queryString.'p='.($trangHienTai+1).'" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>';

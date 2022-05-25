@@ -90,7 +90,7 @@
             }
             document.getElementById('usernameError').innerHTML = this.responseText;
         }
-        xmlhttp.open("GET", "checkRegister.php?username=" + username);
+        xmlhttp.open("GET", "./AJAX/checkRegister.php?username=" + username);
         xmlhttp.send();
     }
 
@@ -104,7 +104,7 @@
             }
             document.getElementById('sdtError').innerHTML = this.responseText;
         }
-        xmlhttp.open("GET", "checkRegister.php?sdt=" + sdt);
+        xmlhttp.open("GET", "./AJAX/checkRegister.php?sdt=" + sdt);
         xmlhttp.send();
     }
 
@@ -118,7 +118,7 @@
             }
             document.getElementById('emailError').innerHTML = this.responseText;
         }
-        xmlhttp.open("GET", "checkRegister.php?email=" + email);
+        xmlhttp.open("GET", "./AJAX/checkRegister.php?email=" + email);
         xmlhttp.send();
     }
 </script>
