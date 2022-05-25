@@ -1,7 +1,7 @@
 <?php include "./header.php" ?>
 
 <div class="container-fluid px-4">
-    <div class="row rounded mb-3">
+    <div class="row rounded mb-3" >
         <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold active">Chưa thanh toán</div>
         <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đang xử lý</div>
         <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hoàn thành</div>
