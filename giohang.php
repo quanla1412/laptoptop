@@ -3,7 +3,15 @@
     $username = "laptoptop";
     $password = "laptoptop";
     $dbname = "laptoptop";
-    if(!isset($_COOKIE['tenuser'])){
+    if(isset($_COOKIE['tenuser'])){
+        $loaitk=$_COOKIE['dangnhap'];
+        if($loaitk=='ad'){
+            ?>
+                <script>alert('Vui lòng Đăng Nhập bằng Tài Khoản User')</script>
+        <?php
+            header( "refresh:0 ; url=./logout.php" );
+        }
+    }else{
         ?>
             <script>alert('Vui lòng Đăng Nhập')</script>
     <?php
@@ -140,11 +148,21 @@
                         }
                     }
                     if($checkGioHangTrong == 0){
-                        echo "Giỏ hàng trống";
+                        echo '<div class="p-5 mt-5">
+                    <div class="d-flex justify-content-center">
+                        <img class="" alt="" src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c" loading="lazy" decoding="async">
+                    </div> <br>
+                    <div class="d-flex justify-content-center">Không tìm thấy sản phẩm nào</div>
+                </div> ';
                     }
                 }
                 else{
-                    echo "Giỏ hàng trống";
+                    echo '<div class="p-5 mt-5">
+                    <div class="d-flex justify-content-center">
+                        <img class="" alt="" src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/no-products-found.png?alt=media&amp;token=2f22ae28-6d48-49a7-a36b-e1a696618f9c" loading="lazy" decoding="async">
+                    </div> <br>
+                    <div class="d-flex justify-content-center">Không tìm thấy sản phẩm nào</div>
+                </div> ';
                 }
             ?>
             <!-- <div class="row  mt-1 rounded" style="background-color: #E5E5E5;">
