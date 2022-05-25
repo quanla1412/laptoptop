@@ -225,8 +225,6 @@
                 <h5 class="pt-2 ps-3">Thông Tin Thanh Toán</h5>
                 <h6 class="mt-4 mb-2 ps-3">
                     <h6><form action="./dathang.php" method="POST" id="diachi" ><input type="text" class=" m-3 ps-3 " style="float: left; width:92%" name="diachi" placeholder="Nhập Địa Chỉ" required ></form></h6><br><br>
-                    <h6 class="ps-3" style="float: left;">Tạm tính</h6>
-                    <h6 id="tongTienGioHang1" class="pe-3" style="text-align: right;"> <?php echo number_format($tongGioHang, 0, ',', '.'); ?> </h6>
                     <h6 class="ps-3" style="float: left;">Thành tiền</h6>
                     <h6 id="tongTienGioHang2" class="pe-3" style="text-align: right;color: #1E656D; font-size: 24px;"><?php echo number_format($tongGioHang, 0, ',', '.'); ?> </h6>
                 </h6>

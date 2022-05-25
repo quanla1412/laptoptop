@@ -1,36 +1,127 @@
-<?php include "./header.php" ?>
+<?php 
+    include "./header.php" ;
+    $trangHienTai = $_GET['p'] ?? 1;
+    define('MAX_QUANTITY',5);  //So luong hien thi toi da san pham trong 1 trang
+    $mode = $_GET['mode'] ?? 1;
+    $search = $_GET['search'] ?? "";
+
+    $servername = "localhost";
+    $username = "laptoptop";
+    $password = "laptoptop";
+    $dbname = "laptoptop";
+    
+    if(isset($_GET['hoanThanh'])){
+        $masp = $_GET['hoanThanh'];
+        $sql = "UPDATE hoadon
+            SET TinhTrang = 3
+            WHERE MaHD = $masp";
+        $result = $conn->query($sql);
+    }
+
+    if(isset($_GET['huy'])){
+        $masp = $_GET['huy'];
+        $sql = "UPDATE hoadon
+            SET TinhTrang = 0
+            WHERE MaHD = $masp";
+        $result = $conn->query($sql);
+    }
+            
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT *
+            FROM hoadon";
+    $result = $conn->query($sql);
+
+    $soTrang = ceil($result->num_rows/MAX_QUANTITY); 
+?>
 
 <div class="container-fluid px-4">
     <div class="row rounded mb-3" >
-        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold active">Chưa thanh toán</div>
-        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đang xử lý</div>
-        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hoàn thành</div>
-        <div class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold">Đã hủy</div>
+        <div onclick="loadPage('./quanlydonhang.php?mode=1')" class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold <?= $mode == 1 ? 'active' : '' ?>" >Chưa thanh toán</div>
+        <div onclick="loadPage('./quanlydonhang.php?mode=2')" class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold <?= $mode == 2 ? 'active' : '' ?>" >Đang xử lý</div>
+        <div onclick="loadPage('./quanlydonhang.php?mode=3')" class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold <?= $mode == 3 ? 'active' : '' ?>" >Đã hoàn thành</div>
+        <div onclick="loadPage('./quanlydonhang.php?mode=0')" class="qldh-nav col-3 border border-1 p-2 d-flex justify-content-center fw-bold <?= $mode == 0 ? 'active' : '' ?>" >Đã hủy</div>
     </div>
     <div class="row ">
-        <div class="col-6">
-            <span class="h6 me-2">Bộ lọc:</span>
-            <input type="text" name="" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã đơn hàng">
+        <form action="./quanlydonhang.php" method="GET">
+            <div class="col-6">
+                <span class="h6 me-2">Bộ lọc:</span>
+                <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã đơn hàng">
+                <input type="hidden" name="mode" value="<?=$mode?>">
+            </div>
+            <div class="col-2 d-flex align-items-center">
+                <button type="submit" class="btn-qldh-timkiem w-100">Tìm kiếm</button>
+            </div>
+        </form>
         </div>
-        <div class="col-2 d-flex align-items-center">
-                <div class="btn-qldh-timkiem w-100">Tìm kiếm</div>
-        </div>
-    </div>
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">Mã đơn hàng</th>
-            <th scope="col">Sản phẩm</th>
-            <th scope="col">Cơ sở</th>
-            <th scope="col">Số lượng</th>
-            <th scope="col">Giá</th>
-            <th scope="col">Tổng tiền</th>
-            <th scope="col">Trạng thái</th>
-            <th class="text-center" scope="col">Xử Lý</th>
+                <th scope="col">Mã đơn hàng</th>
+                <th scope="col">Mã khách hàng</th>
+                <th scope="col">Sản phẩm</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Tổng tiền</th>
+                <th scope="col">Ngày</th>
+                <?= $mode == 2 ? '<th class="text-center" scope="col">Xử Lý</th>' : '' ?>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <?php
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $maHD = $row['MaHD'];
+
+                    if($row['TinhTrang'] != $mode || strpos($maHD,$search)===FALSE)  continue;
+                        
+                    $sql_cthd = "SELECT * FROM cthd WHERE MaHD = '$maHD'";
+                    $result_cthd = $conn->query($sql_cthd);
+                    
+                    $first_row = TRUE;
+
+                    if($result_cthd->num_rows > 0) {
+                        $numRowCTHD = $result_cthd->num_rows;
+
+                        while($row_cthd = $result_cthd->fetch_assoc()) {
+                            
+                            $maSP = $row_cthd['MaSP'];
+
+                            $sql_sp = "SELECT * FROM sanpham WHERE MaSP = '$maSP'";
+                            $result_sp = $conn->query($sql_sp);
+                            $row_sp = $result_sp->fetch_assoc();
+
+                            if($first_row) {
+                                echo'
+                                <tr>
+                                    <th scope="row" rowspan="'.$numRowCTHD.'">'.$row['MaHD'].'</th>
+                                    <td rowspan="'.$numRowCTHD.'">'.$row['MaKH'].'</td>
+                                    <td>'.$row_sp['TenSP'].'</td>
+                                    <td>'.$row_cthd['SoLuong'].'</td>
+                                    <td>'.number_format($row_sp['Gia'], 0, ',', '.').' đ</td>
+                                    <td rowspan="'.$numRowCTHD.'">22.000.000 VND</td>
+                                    <td rowspan="'.$numRowCTHD.'">'.$row['Ngay'].'</td>';
+                                if($mode == 2)  echo '<td rowspan="3" class="align-middle text-center"><a class="text-dark" href="./quanlydonhang.php?mode=3&hoanThanh='.$row['MaHD'].'">Hoàn thành</a></br><a class="text-dark" href="./quanlydonhang.php?mode=0&huy='.$row['MaHD'].'">Hủy</a></td>';
+                                echo '
+                                </tr>
+                                ';
+                                $first_row = FALSE;
+                            } else {
+                                echo'
+                                <tr>
+                                    <td>'.$row_sp['TenSP'].'</td>
+                                    <td>'.$row_cthd['SoLuong'].'</td>
+                                    <td>'.number_format($row_sp['Gia'], 0, ',', '.').' đ</td>
+                                    
+                                </tr>
+                                ';
+                            }                            
+                        }
+                    }
+                }
+                
+            } 
+            ?>
+            <!-- <tr>
                 <th scope="row">20042022</th>
                 <td>AN520212022</td>
                 <td>CSC</td>
@@ -57,74 +148,19 @@
                 <td>22.000.000 VND</td>
                 <td>22.000.000 VND</td>
                 <td class="text-danger">Chưa thanh toán</td>
-            </tr>
-            <tr>
-                <th scope="row">20042022</th>
-                <td>AN520212022</td>
-                <td>CSC</td>
-                <td>1</td>
-                <td>22.000.000 VND</td>
-                <td>22.000.000 VND</td>
-                <td class="text-danger">Chưa thanh toán</td>
-            </tr>
-            <tr>
-                <th scope="row">20042022</th>
-                <td>AN520212022</td>
-                <td>CSC</td>
-                <td>1</td>
-                <td>22.000.000 VND</td>
-                <td>22.000.000 VND</td>
-                <td class="text-danger">Chưa thanh toán</td>
-            </tr>
-            <tr>
-                <th scope="row">20042022</th>
-                <td>AN520212022</td>
-                <td>CSC</td>
-                <td>1</td>
-                <td>22.000.000 VND</td>
-                <td>22.000.000 VND</td>
-                <td class="text-danger">Chưa thanh toán</td>
-            </tr>
-            <tr>
-                <th scope="row">20042022</th>
-                <td>AN520212022</td>
-                <td>CSC</td>
-                <td>1</td>
-                <td>22.000.000 VND</td>
-                <td>22.000.000 VND</td>
-                <td class="text-danger">Chưa thanh toán</td>
-            </tr>
-            <tr>
-                <th scope="row">20042022</th>
-                <td>AN520212022</td>
-                <td>CSC</td>
-                <td>1</td>
-                <td>22.000.000 VND</td>
-                <td>22.000.000 VND</td>
-                <td class="text-danger">Chưa thanh toán</td>
-            </tr>
+            </tr> -->
+            
         </tbody>
     </table>    
-    <div class="d-flex justify-content-center mt-4">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link text-dark" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link text-dark" href="#">1</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link text-dark" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 </div>
 
+<script>
+    function loadPage(url){
+        window.location.href = url;
+    }
+</script>
 
-<?php include "./footer.php" ?>
+<?php 
+    $conn->close();
+    include "./footer.php";
+?>
