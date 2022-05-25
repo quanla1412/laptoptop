@@ -33,7 +33,7 @@
                             </h6>';
         }
         elseif($trangThai == 2){
-            $trangThaiDonHang = '<h5 class="col-2 ps-5" style="color: #1E656D" >Đang Giao Hàng</h5>';
+            $trangThaiDonHang = '<h5 class="col-2 ps-5" style="color: #1E656D" >Đang Xử Lí</h5>';
             $nutThanhToan = '';
         }
         elseif($trangThai == 3){

@@ -26,7 +26,7 @@
         <form class="d-flex" action="./">
             <div class="col-6">
                 <label for="tenSP" class="h6 me-2">Bộ lọc:</label>
-                <input type="text" name="tenSP" id="tenSP" class="form-control w-75 d-inline-block" placeholder="Nhập tên sản phẩm hoặc mã sản phẩm" value="<?= $f_tenSP ?>">
+                <input type="text" name="tenSP" id="tenSP" class="form-control w-75 d-inline-block" placeholder="Nhập tên sản phẩm " value="<?= $f_tenSP ?>">
             </div>
             <div class="col-4">
                 <div class="row">
