@@ -22,7 +22,7 @@
                 document.getElementById("giaTongSoLuongSP"+x).innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "xulytangspgh.php?id="+x+"&gia="+y, true);
+        xmlhttp.open("GET", "./AJAX/xulytangspgh.php?id="+x+"&gia="+y, true);
         xmlhttp.send();
         a = 1;
         var xmlhttp = new XMLHttpRequest();
@@ -32,7 +32,7 @@
                 document.getElementById("tongTienGioHang2").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "xulytongtiengiohang.php?id="+x+"&bien="+a, true);
+        xmlhttp.open("GET", "./AJAX/xulytongtiengiohang.php?id="+x+"&bien="+a, true);
         xmlhttp.send();
     }
 
@@ -47,7 +47,7 @@
                 document.getElementById("giaTongSoLuongSP"+x).innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "xulygiamspgh.php?id="+x+"&gia="+y, true);
+        xmlhttp.open("GET", "./AJAX/xulygiamspgh.php?id="+x+"&gia="+y, true);
         xmlhttp.send();
         a = 0;
         var xmlhttp = new XMLHttpRequest();
@@ -57,7 +57,7 @@
                 document.getElementById("tongTienGioHang2").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "xulytongtiengiohang.php?id="+x+"&bien="+a, true);
+        xmlhttp.open("GET", "./AJAX/xulytongtiengiohang.php?id="+x+"&bien="+a, true);
         xmlhttp.send();
     }
 
@@ -68,7 +68,7 @@
                 document.getElementById("giohangtrong"+x).innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "xulyxoaspgiohang.php?id="+x, true);
+        xmlhttp.open("GET", "./AJAX/xulyxoaspgiohang.php?id="+x, true);
         xmlhttp.send();
         a = 2;
         var xmlhttp = new XMLHttpRequest();
@@ -78,19 +78,10 @@
                 document.getElementById("tongTienGioHang2").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "xulytongtiengiohang.php?id="+x+"&bien="+a, true);
+        xmlhttp.open("GET", "./AJAX/xulytongtiengiohang.php?id="+x+"&bien="+a, true);
         xmlhttp.send();
     }
 
-    function datHang(){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            }
-        };
-        xmlhttp.open("GET", "dathang.php", true);
-        xmlhttp.send();
-    }
 </script>
 
 <div class="container">
@@ -114,12 +105,14 @@
                 $tongGioHang = 0;
 
                 if($result->num_rows > 0){
+                    $checkGioHangTrong = 0;
                     while($row = $result->fetch_assoc()){
                         if($row['TenDangNhap'] == $tenDangNhap){
                             $id = $row['MaSP'];
                             $soLuong = $row['SoLuong'];
                             $sanPham = laySanPham($id);
                             $tongGioHang += $sanPham->getGiaKhuyenMai() * $soLuong;
+                            $checkGioHangTrong += 1;
 
                             echo'
                                 <div id="giohangtrong'.$id.'">
@@ -145,6 +138,9 @@
                                 </div>
                             ';
                         }
+                    }
+                    if($checkGioHangTrong == 0){
+                        echo "Giỏ hàng trống";
                     }
                 }
                 else{

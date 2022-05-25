@@ -28,7 +28,8 @@
         $maHD = $row['MAX(MaHD)'];
 
         $sql = "SELECT *
-                FROM giohang";
+                FROM giohang
+                WHERE TenDangNhap = '$tenDangNhap'";
         $result = $conn->query($sql) ;
         // var_dump($result->num_rows);
         if ($result->num_rows > 0){
