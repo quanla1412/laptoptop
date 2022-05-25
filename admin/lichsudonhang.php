@@ -14,8 +14,8 @@
 ?>
 
 <div class="container-fluid px-4">
-    <div class="row mb-2">
-        <form action="./lichsudonhang.php" method="get">
+    <div>
+        <form class="row mb-2" action="./lichsudonhang.php" method="get">
             <div class="col-4">
                 <span class="h6 me-2">Bộ lọc:</span>
                 <input type="text" name="search" id="" class="form-control w-75 d-inline-block" placeholder="Nhập mã hóa đơn">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="col-2 d-flex align-items-center">
-                <button type="submit" class="btn-qldh-timkiem w-100">Tìm kiếm</button>
+                <button type="submit" class="btn-qldh-timkiem border border-0 w-100">Tìm kiếm</button>
             </div>
         </form>
     </div>
